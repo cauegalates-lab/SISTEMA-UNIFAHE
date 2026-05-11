@@ -2028,18 +2028,6 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
 #dashboardView .main-content, #dashboardIndividualView .ind-report-wrap { transform: scale(.985); transform-origin: top center; }
 #dashboardView .charts-grid { min-height: 0 !important; }
 #dashboardView .chart-container { min-height: 0 !important; }
-#diarioView { max-width: none !important; width: 100% !important; min-height: 100vh; padding: 22px 28px 34px !important; background: #f1f5f9; }
-.diario-shell { height: calc(100vh - 56px); display: flex; flex-direction: column; gap: 14px; overflow: hidden; }
-.diario-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 22px; border-radius: 24px; background: linear-gradient(135deg, #061b30 0%, #0e3c6d 64%, #132b55 100%); color: #fff; box-shadow: 0 20px 44px rgba(14,60,109,.18); flex-shrink: 0; }
-.diario-header h2 { margin: 0; font-size: 1.35rem; }
-.diario-header p { margin: 4px 0 0; color: rgba(255,255,255,.72); font-size: .84rem; }
-.diario-controls { display: flex; align-items: end; gap: 10px; flex-wrap: wrap; }
-.diario-controls label { display: grid; gap: 5px; color: rgba(255,255,255,.72); font-size: 11px; font-weight: 800; text-transform: uppercase; }
-.diario-controls input { height: 38px; border-radius: 12px; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.10); color: #fff; }
-.diario-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; flex-shrink: 0; }
-.diario-kpi { background: #fff; border: 1px solid rgba(14,60,109,.10); border-radius: 22px; padding: 16px 18px; box-shadow: 0 14px 34px rgba(15,23,42,.06); }
-.diario-kpi span { display: block; color: #64748b; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
-.diario-kpi strong { display: block; margin-top: 8px; color: #0e3c6d; font-size: 1.35rem; }
 .ranking-top3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; flex-shrink: 0; }
 .ranking-card { position: relative; overflow: hidden; border-radius: 22px; padding: 16px 18px; color: #fff; background: linear-gradient(135deg, #0f172a, #0e3c6d); border: 1px solid rgba(249,115,22,.22); box-shadow: 0 18px 38px rgba(14,60,109,.16); }
 .ranking-card:nth-child(1){ background: linear-gradient(135deg, #0f172a, #92400e); }
@@ -2048,15 +2036,6 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
 .ranking-card small { color: rgba(255,255,255,.68); font-weight: 800; }
 .ranking-card h3 { margin: 8px 0 8px; font-size: 1rem; }
 .ranking-card strong { font-size: 1.25rem; color: #fed7aa; }
-.diario-table-card { flex: 1; min-height: 0; background: #fff; border: 1px solid rgba(14,60,109,.10); border-radius: 24px; overflow: hidden; box-shadow: 0 18px 42px rgba(15,23,42,.07); }
-.diario-table-scroll { height: 100%; overflow: auto; }
-.diario-table { min-width: 900px; width: 100%; border-collapse: collapse; }
-.diario-table th { position: sticky; top: 0; z-index: 2; background: #0e3c6d; color: #fff; padding: 13px 14px; text-align: center; }
-.diario-table td { padding: 12px 14px; text-align: center; border-top: 1px solid #e2e8f0; color: #1e293b; font-weight: 600; }
-.diario-table td:nth-child(2) { text-align: left; font-weight: 800; color: #0e3c6d; }
-.diario-table tr.top1 td { background: rgba(249,115,22,.12); }
-.diario-table tr.top2 td { background: rgba(14,60,109,.06); }
-.diario-table tr.top3 td { background: rgba(14,60,109,.04); }
 #timesView { max-width: none !important; width: 100% !important; min-height: 100vh; padding: 18px 24px 28px !important; margin: 0 !important; background: linear-gradient(135deg, #020617 0%, #061b30 46%, #0e3c6d 100%); overflow: hidden; }
 .times-arena { height: calc(100vh - 46px); display: flex; flex-direction: column; gap: 12px; overflow: hidden; }
 .times-arena-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 14px 18px; border-radius: 24px; background: rgba(2, 6, 23, .64); border: 1px solid rgba(249,115,22,.22); color: #fff; box-shadow: 0 18px 44px rgba(0,0,0,.22); flex-shrink: 0; }
@@ -2084,8 +2063,6 @@ body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-seri
 .gamer-time-actions button:last-child { background: #c55a18; }
 .campanha-modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
 .campanha-modal-grid .field:last-child { grid-column: 1 / -1; }
-@media (max-width: 1100px){ #timesView { overflow: auto; } .times-arena { height: auto; overflow: visible; } .times-grid.gamer-times-grid { grid-template-columns: repeat(2, 1fr) !important; grid-template-rows: none; overflow: visible; } .diario-shell { height: auto; overflow: visible; } .diario-cards, .ranking-top3 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 700px){ .times-grid.gamer-times-grid, .diario-cards, .ranking-top3 { grid-template-columns: 1fr !important; } .diario-header, .times-arena-top { align-items: flex-start; flex-direction: column; } }
 
 
 
@@ -3113,42 +3090,31 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
   font-size: 0.78rem !important;
 }
 
-/* Dashboard diário */
-#diarioView,
-#diarioView * {
+/* Ajustes de responsividade */
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
 }
 
-#diarioView .diario-header h2 {
   font-size: 1.48rem !important;
 }
 
-#diarioView .diario-header p {
   font-size: 0.92rem !important;
 }
 
-#diarioView .diario-kpi span {
   font-size: 0.82rem !important;
 }
 
-#diarioView .diario-kpi strong {
   font-size: 1.52rem !important;
 }
 
-#diarioView .ranking-card small {
   font-size: 0.76rem !important;
 }
 
-#diarioView .ranking-card h3 {
   font-size: 1.08rem !important;
 }
 
-#diarioView .ranking-card strong {
   font-size: 1.34rem !important;
 }
 
-#diarioView .diario-table th,
-#diarioView .diario-table td {
   font-size: 0.82rem !important;
   line-height: 1.2 !important;
 }
@@ -3215,7 +3181,6 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
 /* Em telas menores, pode rolar para preservar legibilidade */
 @media (max-width: 1100px) {
   #dashboardView .value,
-  #diarioView .diario-kpi strong {
     font-size: 1.22rem !important;
   }
 
@@ -3251,7 +3216,6 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
 <div class="nav-item" onclick="navegarPara('home')">Início</div>
 <div class="nav-item" onclick="navegarPara('VENDAS')">Vendas</div>
 <div class="nav-item" onclick="navegarPara('TIMES')">Times</div>
-<div class="nav-item" onclick="navegarPara('DIARIO')">Diário</div>
 <div class="nav-item" onclick="navegarPara('DASHBOARD')">Dashboard</div>
 <div class="nav-item" data-extra="painel" onclick="navegarPara('PAINEL_INDICADORES')">Painel de Indicadores</div>
 <div class="nav-item" data-extra="comissoes" onclick="navegarPara('COMISSOES')">Comissões</div>
@@ -3295,7 +3259,6 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
 <div class="menu-dashboard-grid home-premium-grid">
 <div class="menu-card home-action-card" onclick="navegarPara('VENDAS')"><span>💰</span><h3>Vendas</h3><p>Cadastre matrículas, valores, parcelas, taxas, origem e forma de pagamento.</p></div>
 <div class="menu-card home-action-card" onclick="navegarPara('TIMES')"><span>👥</span><h3>Times</h3><p>Acompanhe equipes, vendedores, capitães e produção semanal.</p></div>
-<div class="menu-card home-action-card" onclick="navegarPara('DIARIO')"><span>⚡</span><h3>Diário</h3><p>Ranking do dia com quantidade de cursos, taxa, quitado e total faturado.</p></div>
 <div class="menu-card home-action-card" onclick="navegarPara('DASHBOARD')"><span>📊</span><h3>Dashboard</h3><p>Veja indicadores gerais e acesse a visão individual por vendedor.</p></div>
 <div class="menu-card home-action-card home-card-indicadores" data-home-extra="painel" onclick="navegarPara('PAINEL_INDICADORES')"><span>📈</span><h3>Painel de Indicadores</h3><p>Acompanhe metas, projeção mensal, gap diário e desempenho por vendedor.</p></div>
 <div class="menu-card home-action-card home-card-comissoes" data-home-extra="comissoes" onclick="navegarPara('COMISSOES')"><span>💼</span><h3>Comissões</h3><p>Acompanhe comissão estimada, bônus, ranking e próximos níveis conforme as vendas registradas.</p></div>
@@ -3377,37 +3340,6 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
 <tbody id="vendasTbody"></tbody>
 </table>
 </div>
-</div>
-
-<!-- DIÁRIO -->
-<div class="section-container" id="diarioView" style="display:none;">
-  <div class="diario-shell">
-    <div class="diario-header">
-      <div>
-        <h2>Diário Comercial</h2>
-        <p>Ranking automático por vendedor, atualizado ao vivo pelo Firebase.</p>
-      </div>
-      <div class="diario-controls">
-        <label>Data <input id="diarioData" type="date" onchange="carregarDiario()"/></label>
-        <button class="btn-primary small" type="button" onclick="carregarDiario()">Atualizar</button>
-      </div>
-    </div>
-    <div class="diario-cards">
-      <div class="diario-kpi"><span>Cursos</span><strong id="diarioTotalCursos">0</strong></div>
-      <div class="diario-kpi"><span>Taxa</span><strong id="diarioTotalTaxa">R$ 0,00</strong></div>
-      <div class="diario-kpi"><span>Quitado</span><strong id="diarioTotalQuitado">R$ 0,00</strong></div>
-      <div class="diario-kpi"><span>Total</span><strong id="diarioTotalGeral">R$ 0,00</strong></div>
-    </div>
-    <div class="ranking-top3" id="rankingTop3Container"></div>
-    <div class="diario-table-card">
-      <div class="diario-table-scroll">
-        <table class="diario-table">
-          <thead><tr><th>Posição</th><th>Vendedor</th><th>Quantidade de Curso</th><th>Taxa</th><th>Quitado</th><th>Total</th></tr></thead>
-          <tbody id="diarioTbody"></tbody>
-        </table>
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- TIMES -->
@@ -4231,13 +4163,12 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
     async function navegarPara(section){
         const alvo = section || 'home';
         document.getElementById('homeView').style.display='none';
-        let views=['vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView'];
+        let views=['vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView'];
         views.forEach(v=>{ const el=document.getElementById(v); if(el) el.style.display='none'; });
-        document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-diario','view-campanhas','view-comissoes','view-painel-indicadores');
+        document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-campanhas','view-comissoes','view-painel-indicadores');
         if(alvo==='home'){ document.getElementById('homeView').style.display='block'; document.body.classList.add('view-home'); }
         if(alvo==='VENDAS'){ document.getElementById('vendasView').style.display='block'; document.body.classList.add('view-vendas'); carregarVendas(); }
         if(alvo==='TIMES'){ document.getElementById('timesView').style.display='block'; document.body.classList.add('view-times'); carregarTimes(); }
-        if(alvo==='DIARIO'){ const d=document.getElementById('diarioView'); if(d) d.style.display='block'; document.body.classList.add('view-diario'); carregarDiario(); }
         if(alvo==='DASHBOARD'){ document.getElementById('dashboardView').style.display='block'; document.body.classList.add('view-dashboard'); carregarDashboard(); }
         if(alvo==='CAMPANHAS'){ await abrirTreinamentosCampanhas(); return; }
         if(alvo==='COMISSOES'){ const c=document.getElementById('comissoesView'); if(c) c.style.display='block'; document.body.classList.add('view-comissoes'); if(typeof carregarComissoes==='function') await carregarComissoes(); }
@@ -4344,10 +4275,10 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
     }
 
     async function abrirTreinamentosCampanhas(){
-        const ids = ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView'];
+        const ids = ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView'];
         ids.forEach(id => { const el = document.getElementById(id); if(el) el.style.setProperty('display','none','important'); });
         if(document.body){
-            document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-diario','view-painel-indicadores');
+            document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-painel-indicadores');
             document.body.classList.add('view-campanhas');
         }
         const view = document.getElementById('campanhasView');
@@ -5071,11 +5002,11 @@ window.iniciarSessao = async function(){
     setDefaultTimesRange();
     prepararSelectDashboardIndividual();
     const vd = document.getElementById('vendaData'); if(vd && !vd.value) vd.valueAsDate = new Date();
-    const diarioData = document.getElementById('diarioData'); if(diarioData && !diarioData.value) diarioData.value = hojeISO();
+    
     const vendaSelect = document.getElementById('vendaVendedor');
     if(vendaSelect && user.perfil !== 'gestor') vendaSelect.value = user.nome;
     setupVendasRealtime();
-    carregarVendas(); carregarTimes(); carregarDashboard(); carregarDiario(); carregarDashboardIndividual();
+    carregarVendas(); carregarTimes(); carregarDashboard();  carregarDashboardIndividual();
     toast('Bem-vindo, ' + user.nome);
 };
 
@@ -5099,40 +5030,6 @@ async function carregarCampanhaTimes(){
     if(endInput && campanhaTimesConfig.fim) endInput.value = campanhaTimesConfig.fim;
     const meta = document.getElementById('timeWeekMeta');
     if(meta) meta.innerText = formatarMoeda(Number(campanhaTimesConfig.meta)||0);
-}
-
-function agruparDiario(dataISO){
-    const mapa = {};
-    vendasCache.filter(v=>!dataISO || dataVendaISO(v) === dataISO).forEach(v=>{
-        const nome = v.vendedor || 'Sem vendedor';
-        if(!mapa[nome]) mapa[nome] = { vendedor:nome, cursos:0, taxa:0, quitado:0, total:0 };
-        mapa[nome].cursos += Number(v.quantidadeCursos) || 1;
-        mapa[nome].taxa += Number(v.taxa) || 0;
-        mapa[nome].quitado += Number(v.valor) || 0;
-        mapa[nome].total += valorFaturado(v);
-    });
-    return Object.values(mapa).sort((a,b)=>b.total-a.total);
-}
-function carregarDiario(){
-    const data = document.getElementById('diarioData')?.value || hojeISO();
-    const linhas = agruparDiario(data);
-    const totalCursos = linhas.reduce((a,b)=>a+b.cursos,0);
-    const totalTaxa = linhas.reduce((a,b)=>a+b.taxa,0);
-    const totalQuitado = linhas.reduce((a,b)=>a+b.quitado,0);
-    const totalGeral = linhas.reduce((a,b)=>a+b.total,0);
-    atualizarTexto('diarioTotalCursos', totalCursos);
-    atualizarTexto('diarioTotalTaxa', formatarMoeda(totalTaxa));
-    atualizarTexto('diarioTotalQuitado', formatarMoeda(totalQuitado));
-    atualizarTexto('diarioTotalGeral', formatarMoeda(totalGeral));
-    const rank = document.getElementById('rankingTop3Container');
-    if(rank){
-        const medalhas = ['🥇','🥈','🥉'];
-        rank.innerHTML = (linhas.slice(0,3).map((l,i)=>`<div class="ranking-card"><small>${medalhas[i]} TOP ${i+1}</small><h3>${l.vendedor}</h3><strong>${formatarMoeda(l.total)}</strong></div>`).join('')) || '<div class="ranking-card"><small>Sem dados</small><h3>Nenhuma venda no dia</h3><strong>R$ 0,00</strong></div>';
-    }
-    const tbody = document.getElementById('diarioTbody');
-    if(tbody){
-        tbody.innerHTML = linhas.map((l,i)=>`<tr class="${i===0?'top1':i===1?'top2':i===2?'top3':''}"><td>${i+1}º</td><td>${l.vendedor}</td><td>${l.cursos}</td><td>${formatarMoeda(l.taxa)}</td><td>${formatarMoeda(l.quitado)}</td><td><strong>${formatarMoeda(l.total)}</strong></td></tr>`).join('') || '<tr><td colspan="6">Nenhum resultado para a data selecionada.</td></tr>';
-    }
 }
 
 carregarTimes = async function(){
@@ -5218,13 +5115,12 @@ navegarPara = async function(section){
         return;
     }
     document.getElementById('homeView').style.display='none';
-    let views=['vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView'];
+    let views=['vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView'];
     views.forEach(v=>{ const el=document.getElementById(v); if(el) el.style.display='none'; });
-    document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-diario','view-campanhas','view-comissoes','view-painel-indicadores');
+    document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-campanhas','view-comissoes','view-painel-indicadores');
     if(section==='home'){ document.getElementById('homeView').style.display='block'; document.body.classList.add('view-home'); }
     if(section==='VENDAS'){ document.getElementById('vendasView').style.display='block'; document.body.classList.add('view-vendas'); carregarVendas(); }
     if(section==='TIMES'){ document.getElementById('timesView').style.display='block'; document.body.classList.add('view-times'); carregarTimes(); }
-    if(section==='DIARIO'){ const d=document.getElementById('diarioView'); if(d) d.style.display='block'; document.body.classList.add('view-diario'); carregarDiario(); }
     if(section==='DASHBOARD'){ document.getElementById('dashboardView').style.display='block'; document.body.classList.add('view-dashboard'); carregarDashboard(); }
     document.getElementById('sidebar').classList.remove('open');
     document.getElementById('toggleSidebarBtn').classList.remove('open');
@@ -5237,7 +5133,7 @@ setupVendasRealtime = function(){
         vendasCache = snapshot.docs.map(doc=>({ id: doc.id, ...doc.data() }));
         atualizarVendasTabela(vendasCache);
         carregarTimes();
-        carregarDiario();
+        
         carregarDashboard();
         carregarDashboardIndividual();
         if(typeof carregarComissoes === 'function' && document.body.classList.contains('view-comissoes')) carregarComissoes();
@@ -5246,14 +5142,12 @@ setupVendasRealtime = function(){
 
 window.addEventListener('DOMContentLoaded', ()=>{
     carregarUsuariosSistema();
-    const diarioData = document.getElementById('diarioData'); if(diarioData && !diarioData.value) diarioData.value = hojeISO();
+    
 });
 </script>
 
 <style>
 .login-upgraded-card{max-height:calc(100vh - 42px);overflow:auto}.login-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:-10px 0 16px;position:relative;z-index:2}.login-tab{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);color:rgba(255,255,255,.78);border-radius:14px;min-height:36px;cursor:pointer;font-size:11px;font-weight:800}.login-tab.active{background:#c55a18;color:#fff}.login-panel{display:none}.login-panel.active{display:grid}.login-real-form b{color:#fff}
-#diarioView{padding:24px 32px!important}.diario-shell{max-width:1240px;margin:0 auto;height:calc(100vh - 72px)!important;width:100%}.diario-table{min-width:760px!important}#timesView{padding:24px 32px!important}.times-arena{max-width:1240px;margin:0 auto;height:calc(100vh - 72px)!important;width:100%}.times-arena-top{padding:12px 16px!important}.times-grid.gamer-times-grid{gap:10px!important}.time-card.gamer-time-card{border-radius:20px!important}.gamer-time-head{padding:10px 12px!important}.gamer-time-body{padding:10px 12px!important;gap:7px!important}.gamer-member-row{padding:7px 9px!important}.gamer-time-actions button{flex:initial!important;width:100%}.times-config-btn-top{border:none;border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(135deg,#f97316,#c55a18);box-shadow:0 14px 28px rgba(249,115,22,.24)}
-.dashboard-filter-box,.ind-filter-box{display:flex;align-items:end;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:10px 12px;box-shadow:0 12px 28px rgba(15,23,42,.05)}.dashboard-filter-box label,.ind-filter-box label{display:grid;gap:4px;font-size:10px;font-weight:900;color:#64748b;text-transform:uppercase;letter-spacing:.06em}.dashboard-filter-box select,.dashboard-filter-box input,.ind-filter-box select,.ind-filter-box input{height:34px;padding:6px 10px;border-radius:10px;font-size:12px;min-width:130px}.dashboard-filter-box button,.ind-filter-box button{height:34px;border:none;border-radius:999px;padding:0 14px;background:#0e3c6d;color:#fff;font-weight:900;cursor:pointer}.vendedor-lock-note{font-size:11px;color:#0e3c6d;font-weight:800;margin-top:8px}@media(max-width:1100px){.diario-shell,.times-arena{height:auto!important;overflow:visible!important}#diarioView,#timesView{overflow:auto!important}}
 
 
 /* ===== VER SENHA + PRIMEIRO ACESSO ADM ===== */
@@ -5386,7 +5280,7 @@ async function validarLoginUsuario(usuario,senha){
     }
     return null;
 }
-window.iniciarSessao=async function(){const usuario=document.getElementById('loginUsuarioInput')?.value||'',senha=document.getElementById('loginSenhaInput')?.value||'',erro=document.getElementById('loginErroMsg');if(erro)erro.textContent='';const user=await validarLoginUsuario(usuario,senha);if(!user){if(erro)erro.textContent='Usuário ou senha incorretos.';return}window.usuarioLogado=user;usuarioLogado=user;document.getElementById('loginOverlay').style.display='none';document.getElementById('mainPortal').style.display='block';await carregarTimesConfig();if(typeof carregarCampanhaTimes==='function')await carregarCampanhaTimes();carregarSelects();setDefaultTimesRange();prepararSelectDashboardIndividual();const vd=document.getElementById('vendaData');if(vd&&!vd.value)vd.valueAsDate=new Date();const diarioData=document.getElementById('diarioData');if(diarioData&&!diarioData.value)diarioData.value=hojeISO();const vendaSelect=document.getElementById('vendaVendedor');if(vendaSelect&&user.perfil!=='gestor'&&user.perfil!=='adm'){vendaSelect.value=user.nome;vendaSelect.disabled=true;const form=document.querySelector('#vendasView .form-card');if(form&&!form.querySelector('.vendedor-lock-note'))form.insertAdjacentHTML('beforeend','<div class="vendedor-lock-note">Login de vendedor: você registra e visualiza somente suas próprias vendas.</div>')}else if(vendaSelect){vendaSelect.disabled=false}setupVendasRealtime();carregarVendas();carregarTimes();carregarDashboard();carregarDiario();carregarDashboardIndividual();toast('Bem-vindo, '+user.nome)};
+window.iniciarSessao=async function(){const usuario=document.getElementById('loginUsuarioInput')?.value||'',senha=document.getElementById('loginSenhaInput')?.value||'',erro=document.getElementById('loginErroMsg');if(erro)erro.textContent='';const user=await validarLoginUsuario(usuario,senha);if(!user){if(erro)erro.textContent='Usuário ou senha incorretos.';return}window.usuarioLogado=user;usuarioLogado=user;document.getElementById('loginOverlay').style.display='none';document.getElementById('mainPortal').style.display='block';await carregarTimesConfig();if(typeof carregarCampanhaTimes==='function')await carregarCampanhaTimes();carregarSelects();setDefaultTimesRange();prepararSelectDashboardIndividual();const vd=document.getElementById('vendaData');if(vd&&!vd.value)vd.valueAsDate=new Date();const vendaSelect=document.getElementById('vendaVendedor');if(vendaSelect&&user.perfil!=='gestor'&&user.perfil!=='adm'){vendaSelect.value=user.nome;vendaSelect.disabled=true;const form=document.querySelector('#vendasView .form-card');if(form&&!form.querySelector('.vendedor-lock-note'))form.insertAdjacentHTML('beforeend','<div class="vendedor-lock-note">Login de vendedor: você registra e visualiza somente suas próprias vendas.</div>')}else if(vendaSelect){vendaSelect.disabled=false}setupVendasRealtime();carregarVendas();carregarTimes();carregarDashboard();carregarDashboardIndividual();toast('Bem-vindo, '+user.nome)};
 const EMAILJS_PUBLIC_KEY='VfrVBdTh0HZZrgqVs';
 const EMAILJS_SERVICE_ID='service_5shjdir';
 const EMAILJS_TEMPLATE_ID='template_umgv3nb';
@@ -5402,13 +5296,12 @@ function periodoPorDataControle(prefix){const tipo=document.getElementById(prefi
 function filtrarListaPorControle(lista,prefix){const p=periodoPorDataControle(prefix);return(lista||[]).filter(v=>vendaDentroPeriodo(v,p.inicio,p.fim))}
 function garantirFiltroDashboardGeral(){const header=document.querySelector('#dashboardView .header');if(!header||document.getElementById('dashDataFiltro'))return;const datePicker=header.querySelector('.date-picker');if(datePicker)datePicker.remove();header.insertAdjacentHTML('beforeend',`<div class="dashboard-filter-box"><label>Período<select id="dashTipoPeriodo" onchange="carregarDashboard()"><option value="dia">Dia</option><option value="semana">Semana</option><option value="mes" selected>Mês</option><option value="ano">Ano</option></select></label><label>Data<input id="dashDataFiltro" type="date" value="${hojeISO()}" onchange="carregarDashboard()"></label><button type="button" onclick="carregarDashboard()">Filtrar</button></div>`)}
 function garantirFiltroDashboardIndividual(){const actions=document.querySelector('#dashboardIndividualView .ind-report-actions');if(!actions||document.getElementById('indDataFiltro'))return;actions.insertAdjacentHTML('afterbegin',`<div class="ind-filter-box"><label>Período<select id="indTipoPeriodo" onchange="carregarDashboardIndividual()"><option value="dia">Dia</option><option value="semana">Semana</option><option value="mes" selected>Mês</option><option value="ano">Ano</option></select></label><label>Data<input id="indDataFiltro" type="date" value="${hojeISO()}" onchange="carregarDashboardIndividual()"></label></div>`)}
-window.agruparDiario=agruparDiario=function(dataISO){const mapa={};getVendasParaRelatorios().filter(v=>!dataISO||dataVendaISO(v)===dataISO).forEach(v=>{const nome=v.vendedor||'Sem vendedor';if(!mapa[nome])mapa[nome]={vendedor:nome,cursos:0,taxa:0,quitado:0,total:0};mapa[nome].cursos+=Number(v.quantidadeCursos)||1;mapa[nome].taxa+=Number(v.taxa)||0;mapa[nome].quitado+=Number(v.valor)||0;mapa[nome].total+=valorFaturado(v)});return Object.values(mapa).sort((a,b)=>b.total-a.total)};
 window.carregarTimes=carregarTimes=async function(){let vendasDados=vendasCache.length?vendasCache:(await db.collection('vendas').get()).docs.map(doc=>({id:doc.id,...doc.data()}));const inicio=campanhaTimesConfig.inicio||document.getElementById('timeStartDate')?.value||'',fim=campanhaTimesConfig.fim||document.getElementById('timeEndDate')?.value||'';vendasDados=vendasDados.filter(v=>vendaDentroPeriodo(v,inicio,fim));const vendasMap={};let totalGeral=0;vendasDados.forEach(v=>{if(v.vendedor){const val=valorFaturado(v);vendasMap[v.vendedor]=(vendasMap[v.vendedor]||0)+val;totalGeral+=val}});const meta=Number(campanhaTimesConfig.meta)||0,timesView=document.getElementById('timesView');if(timesView)timesView.innerHTML=`<div class="times-arena"><div class="times-arena-top"><div class="times-arena-title"><span>Arena Comercial UNIFAHE</span><h2>Disputa dos Times</h2><p>Valor faturado = taxa + quitado. Filtrado pelo período da campanha.</p></div><div class="times-arena-stats"><div class="times-stat-pill"><small>Período</small><strong id="timesPeriodoResumo">--</strong></div><div class="times-stat-pill"><small>Meta</small><strong id="timeWeekMeta">R$ 0,00</strong></div><div class="times-stat-pill"><small>Total Geral</small><strong id="totalGeralValor">R$ 0,00</strong></div><button class="times-config-btn-top" type="button" onclick="abrirModalCampanhaTimes()">Definir meta e período</button></div></div><div class="times-grid gamer-times-grid" id="timesGridContainer"></div></div>`;const cont=document.getElementById('timesGridContainer');if(!cont)return;cont.innerHTML='';DEFAULT_TIMES.slice().forEach(nome=>{const conf=timesConfig[nome]||{logo:logoTime(nome),membros:[],capitao:''};let membros=(conf.membros||[]).slice(0,4);if(conf.capitao&&membros.includes(conf.capitao))membros=[conf.capitao,...membros.filter(m=>m!==conf.capitao)];let somaTime=0;const membrosHtml=membros.map(m=>{const valor=vendasMap[m]||0;somaTime+=valor;return`<div class="gamer-member-row"><span>${conf.capitao===m?'<span class="gamer-captain">👑</span>':''}${m}</span><b>${formatarMoeda(valor)}</b></div>`}).join('')||'<div class="gamer-member-row"><span>Sem membros configurados</span><b>R$ 0,00</b></div>';const progresso=meta?Math.min(100,(somaTime/meta)*100):0;const card=document.createElement('div');card.className='time-card gamer-time-card';card.innerHTML=`<div class="gamer-time-head"><img class="gamer-time-logo" src="${logoTime(nome,conf)}" onerror="this.onerror=null;this.src=LOGO_PADRAO_TIME"><div><h3>${nome}</h3><small>${membros.length}/4 membros • ${Math.round(progresso)}% da meta</small></div></div><div class="gamer-time-body">${membrosHtml}<div class="gamer-time-total"><span>Total faturado</span><strong>${formatarMoeda(somaTime)}</strong></div><div class="gamer-time-actions"><button onclick="abrirModalTime('${nome}')">Escolher membros</button></div></div>`;cont.appendChild(card)});atualizarTexto('totalGeralValor',formatarMoeda(totalGeral));atualizarTexto('timeWeekMeta',formatarMoeda(meta));atualizarTexto('timesPeriodoResumo',`${inicio?formatarData(inicio):'Início'} até ${fim?formatarData(fim):'Fim'}`)};
 window.salvarTimeEditado=async function(){let nomeTime=document.getElementById('timeNomeEdit').value,capitao=document.getElementById('capitaoSelect').value,membros=Array.from(document.querySelectorAll('#membrosCheckboxList input:checked')).map(c=>c.value).slice(0,4);if(capitao&&!membros.includes(capitao)){toast('Capitão deve estar nos membros','error');return}if(capitao)membros=[capitao,...membros.filter(m=>m!==capitao)].slice(0,4);timesConfig[nomeTime].membros=membros;timesConfig[nomeTime].capitao=capitao;await db.collection('config').doc('times').set({config:timesConfig});fecharModal('modalTime');carregarTimes();toast('Time atualizado')};
 window.carregarDashboard=carregarDashboard=async function(){garantirFiltroDashboardGeral();const lista=filtrarListaPorControle(getVendasParaRelatorios(),'dash'),totalQuitado=lista.reduce((a,v)=>a+(Number(v.valor)||0),0),totalTaxa=lista.reduce((a,v)=>a+(Number(v.taxa)||0),0),totalCursos=lista.reduce((a,v)=>a+(Number(v.quantidadeCursos)||1),0),totalFaturado=totalQuitado+totalTaxa,vals=document.querySelectorAll('#dashboardView .value');if(vals[0])vals[0].textContent=formatarMoeda(totalQuitado);if(vals[1])vals[1].textContent=totalCursos;if(vals[2])vals[2].textContent=formatarMoeda(totalTaxa);if(vals[3])vals[3].textContent=formatarMoeda(totalFaturado);const resumoTotal=document.querySelector('#dashboardView .chart-container div[style*="font-size:1.5rem"]');if(resumoTotal)resumoTotal.textContent=formatarMoeda(totalFaturado);return true};
 const prepararSelectDashboardIndividualBase=prepararSelectDashboardIndividual;window.prepararSelectDashboardIndividual=prepararSelectDashboardIndividual=function(){prepararSelectDashboardIndividualBase();const select=document.getElementById('selectVendedorDashboard');if(!select)return;if(window.usuarioLogado&&usuarioLogado.perfil!=='gestor'&&usuarioLogado.perfil!=='adm'){select.innerHTML=`<option value="${usuarioLogado.nome}">${usuarioLogado.nome}</option>`;select.value=usuarioLogado.nome;select.disabled=true}else{select.disabled=false}garantirFiltroDashboardIndividual()};
 window.carregarDashboardIndividual=carregarDashboardIndividual=function(){garantirFiltroDashboardIndividual();const select=document.getElementById('selectVendedorDashboard');if(!select)return;if(window.usuarioLogado&&usuarioLogado.perfil!=='gestor'&&usuarioLogado.perfil!=='adm'){select.value=usuarioLogado.nome}const vendedor=select.value,base=filtrarListaPorControle(getVendasParaRelatorios(),'ind'),vendasDoVendedor=vendedor?base.filter(v=>(v.vendedor||'')===vendedor):[],receitaBruta=vendasDoVendedor.reduce((a,v)=>a+(Number(v.valor)||0),0),taxas=vendasDoVendedor.reduce((a,v)=>a+(Number(v.taxa)||0),0),receitaLiquida=receitaBruta-taxas,ticketMedio=vendasDoVendedor.length?receitaBruta/vendasDoVendedor.length:0;atualizarTexto('dashIndReceitaBruta',moedaCurta(receitaBruta));atualizarTexto('dashIndReceitaLiquida',moedaCurta(receitaLiquida));atualizarTexto('dashIndTaxas',moedaCurta(taxas));atualizarTexto('dashIndTicket',moedaCurta(ticketMedio));const porMes=topEntradas(somarPorMes(vendasDoVendedor),6),porModalidade=topEntradas(somarPorCampo(vendasDoVendedor,'modalidade'),4),porPagamento=topEntradas(somarPorCampo(vendasDoVendedor,'tipo'),4),porProduto=topEntradas(somarPorCampo(vendasDoVendedor,'curso'),5);criarGraficoIndividual('indLineChart',{type:'line',data:{labels:porMes.length?porMes.map(i=>i[0]):['Sem dados'],datasets:[{data:porMes.length?porMes.map(i=>i[1]):[0],borderColor:'#1e90ff',backgroundColor:'rgba(30,144,255,.10)',tension:.35,pointRadius:4,pointBackgroundColor:'#1e90ff',fill:false}]},options:{maintainAspectRatio:false,responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,ticks:{display:false},grid:{color:'#eef2f7'}},x:{grid:{display:false}}}}});criarGraficoIndividual('indBarChart',{type:'bar',data:{labels:porModalidade.length?porModalidade.map(i=>i[0]):['Sem dados'],datasets:[{data:porModalidade.length?porModalidade.map(i=>i[1]):[0],backgroundColor:'#1e90ff',borderRadius:4}]},options:{indexAxis:'y',maintainAspectRatio:false,responsive:true,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,ticks:{display:false},grid:{display:false}},y:{grid:{display:false}}}}});criarGraficoIndividual('indPieChart',{type:'pie',data:{labels:porPagamento.length?porPagamento.map(i=>i[0]):['Sem dados'],datasets:[{data:porPagamento.length?porPagamento.map(i=>i[1]):[1],backgroundColor:['#1e90ff','#111e9a','#f97316','#94a3b8'],borderWidth:0}]},options:{maintainAspectRatio:false,responsive:true,plugins:{legend:{position:'right',labels:{boxWidth:10,font:{size:10}}}}}});criarGraficoIndividual('indProductChart',{type:'bar',data:{labels:porProduto.length?porProduto.map(i=>i[0]):['Sem dados'],datasets:[{data:porProduto.length?porProduto.map(i=>i[1]):[0],backgroundColor:'#1e90ff',borderRadius:4}]},options:{indexAxis:'y',maintainAspectRatio:false,responsive:true,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,ticks:{display:false},grid:{display:false}},y:{grid:{display:false},ticks:{font:{size:10}}}}}})};
-window.setupVendasRealtime=setupVendasRealtime=function(){if(vendasUnsubscribe)vendasUnsubscribe();vendasUnsubscribe=db.collection('vendas').orderBy('criadoEm','desc').onSnapshot(snapshot=>{vendasCache=snapshot.docs.map(doc=>({id:doc.id,...doc.data()}));atualizarVendasTabela(vendasCache);carregarTimes();carregarDiario();carregarDashboard();carregarDashboardIndividual();if(typeof carregarComissoes==='function'&&document.body.classList.contains('view-comissoes'))carregarComissoes()})};
+window.setupVendasRealtime=setupVendasRealtime=function(){if(vendasUnsubscribe)vendasUnsubscribe();vendasUnsubscribe=db.collection('vendas').orderBy('criadoEm','desc').onSnapshot(snapshot=>{vendasCache=snapshot.docs.map(doc=>({id:doc.id,...doc.data()}));atualizarVendasTabela(vendasCache);carregarTimes();carregarDashboard();carregarDashboardIndividual();if(typeof carregarComissoes==='function'&&document.body.classList.contains('view-comissoes'))carregarComissoes()})};
 window.addEventListener('DOMContentLoaded',()=>{carregarUsuariosSistemaNovo();garantirFiltroDashboardGeral();garantirFiltroDashboardIndividual()});
 </script>
 
@@ -5419,16 +5312,13 @@ body{background:#f5f7fb!important;color:#111827!important;font-family:Arial,Helv
 .sidebar-open-btn{top:18px!important;left:18px!important;right:auto!important;width:42px!important;height:42px!important;border-radius:14px!important;background:#0e3c6d!important;box-shadow:0 14px 30px rgba(14,60,109,.18)!important;z-index:1800!important;opacity:.96!important;}
 .sidebar-open-btn:hover{background:#f97316!important;transform:translateY(-1px)!important;}
 #sidebar.open{z-index:2500!important}.sidebar-open-btn.open{z-index:2600!important}
-#vendasView,#diarioView,#timesView{padding-left:76px!important;}
+#vendasView,#timesView{padding-left:76px!important;}
 #dashboardView .header,#dashboardIndividualView .ind-report-header{padding-left:54px!important;}
 #homeView{min-height:100vh;background:linear-gradient(180deg,#f8fafc 0%,#eef4fb 100%);}
 .home-academic-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);gap:28px;align-items:center;padding:72px 58px 52px 86px;overflow:hidden;background:linear-gradient(135deg,#072341 0%,#0e3c6d 58%,#123f71 100%);border-bottom:5px solid #f97316;}
 .home-academic-hero:before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(14,60,109,.12), rgba(249,115,22,.08));pointer-events:none;}
 .home-academic-content,.home-academic-card{position:relative;z-index:1}.home-brand-line{display:inline-flex;align-items:center;gap:14px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:999px;margin-bottom:24px}.home-brand-line img{height:34px;width:auto}.home-brand-line span{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#fed7aa}.home-academic-content h1{max-width:720px;margin:0;color:#fff;font-size:clamp(2rem,4vw,4rem);line-height:1.02;letter-spacing:-.05em}.home-academic-content p{max-width:690px;margin:18px 0 0;color:rgba(255,255,255,.80);font-size:1.05rem;line-height:1.6}.home-academic-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.home-academic-actions button{border:none;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer;background:#f97316;color:#fff;box-shadow:0 16px 32px rgba(249,115,22,.25)}.home-academic-actions button.secondary{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)}.home-academic-card{background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.5);border-radius:30px;padding:28px;box-shadow:0 28px 70px rgba(0,0,0,.18)}.home-academic-card>span{display:inline-block;color:#f97316;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}.home-academic-card>strong{display:block;color:#0e3c6d;font-size:1.55rem;line-height:1.15}.home-academic-card p{color:#64748b;margin:12px 0 18px;line-height:1.5}.academic-mini-grid{display:grid;grid-template-columns:1fr;gap:10px}.academic-mini-grid div{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:12px 14px}.academic-mini-grid b{color:#0e3c6d}.academic-mini-grid small{color:#64748b;text-align:right}.home-academic-main{max-width:1180px;margin:0 auto;padding:42px 28px 54px}.academic-title{text-align:center;margin-bottom:24px}.academic-title span{color:#f97316;font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:12px}.academic-title h2{margin:8px 0 8px;color:#0e3c6d;font-size:2rem}.academic-title p{margin:0 auto;max-width:720px;color:#64748b;line-height:1.55}.home-academic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.academic-module-card{text-align:left;border:1px solid #dbe5f0;background:#fff;border-radius:24px;padding:22px;min-height:190px;cursor:pointer;box-shadow:0 18px 45px rgba(14,60,109,.07);transition:.22s ease}.academic-module-card:hover{transform:translateY(-5px);border-color:#f97316;box-shadow:0 24px 56px rgba(14,60,109,.12)}.academic-module-card i{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:14px;background:#eff6ff;color:#0e3c6d;font-style:normal;font-weight:900;margin-bottom:18px}.academic-module-card strong{display:block;color:#0e3c6d;font-size:1.15rem;margin-bottom:10px}.academic-module-card span{display:block;color:#64748b;font-size:.9rem;line-height:1.45}.home-academic-footer-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.home-academic-footer-strip div{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:16px 18px}.home-academic-footer-strip strong{display:block;color:#0e3c6d}.home-academic-footer-strip span{color:#64748b;font-size:.88rem}
-#diarioView{background:#f3f6fa!important;padding:24px 42px 32px 82px!important}.diario-shell{max-width:1120px!important;margin:0 auto!important;height:calc(100vh - 76px)!important}.diario-header{background:linear-gradient(135deg,#082947,#0e3c6d)!important;border:1px solid rgba(14,60,109,.12)!important;box-shadow:0 18px 42px rgba(14,60,109,.14)!important}.diario-cards{grid-template-columns:repeat(4,minmax(0,1fr))!important}.diario-kpi{border-radius:18px!important;box-shadow:0 10px 26px rgba(15,23,42,.05)!important}.ranking-card{background:linear-gradient(135deg,#082947,#0e3c6d)!important;border-color:rgba(249,115,22,.18)!important}.ranking-card:nth-child(1){background:linear-gradient(135deg,#0e3c6d,#b45309)!important}.ranking-card:nth-child(2){background:linear-gradient(135deg,#0e3c6d,#475569)!important}.ranking-card:nth-child(3){background:linear-gradient(135deg,#0e3c6d,#9a3412)!important}.diario-table th,.diario-table td{text-align:center!important}.diario-table td:nth-child(2){text-align:center!important}.diario-table tr.top1 td{background:rgba(249,115,22,.08)!important}.diario-table tr.top2 td,.diario-table tr.top3 td{background:#f8fafc!important}.diario-table{min-width:720px!important}.diario-table-card{border-radius:20px!important;box-shadow:0 14px 34px rgba(15,23,42,.06)!important}
 #timesView{padding-left:82px!important}.times-arena{max-width:1160px!important}.login-card.login-real-card{width:min(420px,calc(100% - 44px))!important;padding:30px 28px!important}.login-card.login-real-card img{width:170px!important;margin-bottom:16px!important}.login-card.login-real-card h2{margin-bottom:10px!important}.login-real-subtitle{font-size:12px!important;margin:0 0 14px!important}.login-tabs{gap:5px!important;margin:0 0 14px!important}.login-tab{font-size:10px!important;min-height:34px!important}.recuperar-discreto .recover-intro{display:grid;gap:4px;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:12px}.recuperar-discreto .recover-intro strong{color:#fff;font-size:13px}.recuperar-discreto .recover-intro span{color:rgba(255,255,255,.58);font-size:11px;line-height:1.35}.recuperar-discreto .recover-code-area{display:grid;gap:10px;margin-top:4px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10)}.recover-send-btn{padding:12px 18px!important}.login-help{font-size:10px!important;color:rgba(255,255,255,.48)!important}.login-real-form{gap:9px!important}.login-real-form input,.login-real-form select{min-height:42px!important;border-radius:13px!important}.login-real-form label{font-size:10px!important}.field select#vendaParcelas{font-weight:700;color:#0e3c6d}.vendas-table-wrapper{box-shadow:0 12px 34px rgba(14,60,109,.06)!important}
-@media(max-width:1100px){#vendasView,#diarioView,#timesView{padding-left:20px!important;padding-right:20px!important}.home-academic-hero{grid-template-columns:1fr;padding:70px 24px 38px}.home-academic-grid{grid-template-columns:repeat(2,1fr)}.home-academic-footer-strip{grid-template-columns:1fr}.sidebar-open-btn{top:14px!important;left:14px!important}.diario-shell,.times-arena{height:auto!important;overflow:visible!important}.diario-cards{grid-template-columns:repeat(2,1fr)!important}}
-@media(max-width:700px){.home-academic-grid,.diario-cards{grid-template-columns:1fr!important}.home-academic-content h1{font-size:2.1rem}.home-academic-card{padding:22px}.diario-header{flex-direction:column;align-items:flex-start!important}.diario-controls{width:100%}}
 
 
 /* ===== VER SENHA + PRIMEIRO ACESSO ADM ===== */
@@ -5504,12 +5394,6 @@ body{background:#f5f7fb!important;color:#111827!important;font-family:Arial,Helv
     document.addEventListener('DOMContentLoaded', preencherParcelasVenda);
     setTimeout(preencherParcelasVenda,300);
 
-    // Garante que a tela de Diário use somente a área necessária, sem ficar esticada demais.
-    const oldCarregarDiario=window.carregarDiario;
-    window.carregarDiario=function(){
-        if(typeof oldCarregarDiario==='function') oldCarregarDiario();
-        document.querySelectorAll('.diario-table th,.diario-table td').forEach(el=>el.style.textAlign='center');
-    };
 
     // Mantém o menu à esquerda, mas com respiro para não cobrir títulos/conteúdo.
     const oldNavegarPara=window.navegarPara;
@@ -6195,7 +6079,6 @@ window.setupVendasRealtime = setupVendasRealtime = function(){
         vendasCache = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         atualizarVendasTabela(vendasCache);
         if(typeof carregarTimes === 'function') carregarTimes();
-        if(typeof carregarDiario === 'function') carregarDiario();
         if(typeof carregarDashboard === 'function') carregarDashboard();
         if(typeof carregarDashboardIndividual === 'function') carregarDashboardIndividual();
         if(typeof carregarComissoes === 'function' && document.body.classList.contains('view-comissoes')) carregarComissoes();
@@ -6654,7 +6537,7 @@ body:not(.usuario-adm) .home-admin-only{display:none !important;}
         if(section === 'CAMPANHAS' || section === 'PAINEL_INDICADORES'){
             if(!isAdm()){ if(typeof toast==='function') toast('Área disponível somente para ADM.','error'); return; }
             document.getElementById('homeView').style.display='none';
-            ['vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView'].forEach(id => { const el=document.getElementById(id); if(el) el.style.display='none'; });
+            ['vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView'].forEach(id => { const el=document.getElementById(id); if(el) el.style.display='none'; });
             if(section === 'CAMPANHAS'){ const el=document.getElementById('campanhasView'); if(el) el.style.display='block'; await carregarCampanhaIndicadores(); renderCampanhas(); }
             if(section === 'PAINEL_INDICADORES'){ const el=document.getElementById('painelIndicadoresView'); if(el) el.style.display='block'; await carregarCampanhaIndicadores(); await carregarPainelIndicadores(); }
             document.getElementById('sidebar')?.classList.remove('open'); document.getElementById('toggleSidebarBtn')?.classList.remove('open');
@@ -6707,7 +6590,6 @@ body:not(.usuario-adm) .home-admin-only{display:none !important;}
 body.theme-dark{background:#07111f!important;color:#e5edf8!important;}
 body.theme-dark #homeView,
 body.theme-dark #vendasView,
-body.theme-dark #diarioView,
 body.theme-dark #timesView,
 body.theme-dark #dashboardView,
 body.theme-dark #dashboardIndividualView,
@@ -6722,8 +6604,6 @@ body.theme-dark .chart-container,
 body.theme-dark .dashboard-mini-card,
 body.theme-dark .dashboard-individual-panel,
 body.theme-dark .ind-panel,
-body.theme-dark .diario-kpi,
-body.theme-dark .diario-table-card,
 body.theme-dark .campanhas-form,
 body.theme-dark .home-academic-card,
 body.theme-dark .academic-module-card,
@@ -6758,9 +6638,6 @@ body.theme-dark .campanhas-actions button{background:linear-gradient(135deg,#ff8
 body.theme-dark table td{background:#0f1f33!important;color:#e5edf8!important;border-color:#203a59!important;}
 body.theme-dark table th{background:#102f5f!important;color:#fff!important;border-color:#203a59!important;}
 body.theme-dark .vendas-filter-row th{background:#0b1728!important;}
-body.theme-dark .diario-table tr.top1 td,
-body.theme-dark .diario-table tr.top2 td,
-body.theme-dark .diario-table tr.top3 td{background:#152b45!important;}
 body.theme-dark .sidebar-open-btn{background:#ff7a00!important;}
 body.theme-dark #sidebar{background:linear-gradient(180deg,#061727 0%,#0e3c6d 60%,#ff7a00 180%)!important;}
 body.theme-dark .theme-toggle-wrap{background:#061727!important;}
@@ -6941,13 +6818,13 @@ body.theme-light{background:#f5f7fb!important;color:#111827!important;}
         if(section==='CAMPANHAS'){
             if(!isAdmFinal()){ if(typeof toast==='function') toast('Área disponível somente para ADM.','error'); return; }
             if(typeof garantirViewsExtras==='function') garantirViewsExtras();
-            ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView'].forEach(id=>{ const el=document.getElementById(id); if(el) el.style.display='none'; });
+            ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView'].forEach(id=>{ const el=document.getElementById(id); if(el) el.style.display='none'; });
             const el=document.getElementById('campanhasView'); if(el) el.style.display='block'; await carregarCampanhaFinal(true); renderCampanhasFinal(); document.getElementById('sidebar')?.classList.remove('open'); document.getElementById('toggleSidebarBtn')?.classList.remove('open'); return;
         }
         if(section==='PAINEL_INDICADORES'){
             if(!isAdmFinal()){ if(typeof toast==='function') toast('Área disponível somente para ADM.','error'); return; }
             if(typeof garantirViewsExtras==='function') garantirViewsExtras();
-            ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView'].forEach(id=>{ const el=document.getElementById(id); if(el) el.style.display='none'; });
+            ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView'].forEach(id=>{ const el=document.getElementById(id); if(el) el.style.display='none'; });
             const el=document.getElementById('painelIndicadoresView'); if(el) el.style.display='block'; await carregarCampanhaFinal(true); await window.carregarPainelIndicadores(); document.getElementById('sidebar')?.classList.remove('open'); document.getElementById('toggleSidebarBtn')?.classList.remove('open'); return;
         }
         return navegarAnteriorTemaPainel ? navegarAnteriorTemaPainel.apply(this,arguments) : undefined;
@@ -6981,7 +6858,6 @@ body.theme-dark #mainPortal,
 body.theme-dark #conteudoDinamico,
 body.theme-dark #homeView,
 body.theme-dark #vendasView,
-body.theme-dark #diarioView,
 body.theme-dark #timesView,
 body.theme-dark #dashboardView,
 body.theme-dark #dashboardIndividualView,
@@ -7010,8 +6886,6 @@ body.theme-dark .chart-container,
 body.theme-dark .dashboard-mini-card,
 body.theme-dark .dashboard-individual-panel,
 body.theme-dark .ind-panel,
-body.theme-dark .diario-kpi,
-body.theme-dark .diario-table-card,
 body.theme-dark .campanhas-form,
 body.theme-dark .home-academic-card,
 body.theme-dark .academic-module-card,
@@ -7026,7 +6900,6 @@ body.theme-dark .modal-card{
 }
 body.theme-dark .home-academic-hero,
 body.theme-dark .hero-institucional,
-body.theme-dark .diario-header,
 body.theme-dark .times-arena-top{
     background:linear-gradient(135deg,#020713 0%,#061d38 58%,#092b52 100%)!important;
     border-color:#ff7a1a!important;
@@ -7070,9 +6943,6 @@ body.theme-dark table td{background:#071426!important;color:#eef6ff!important;bo
 body.theme-dark table th{background:#08294f!important;color:#fff!important;border-color:#143557!important;}
 body.theme-dark .vendas-filter-row th{background:#040c19!important;}
 body.theme-dark .limpar-filtros-btn{background:#ff7a1a!important;color:#06101f!important;}
-body.theme-dark .diario-table tr.top1 td,
-body.theme-dark .diario-table tr.top2 td,
-body.theme-dark .diario-table tr.top3 td{background:#0d223a!important;}
 body.theme-dark .academic-module-card i{background:#0d2b51!important;color:#ffb06b!important;}
 
 /* Painel de Indicadores usando mais tela e sem scroll no desktop */
@@ -7291,7 +7161,7 @@ body.theme-dark .painel-toolbar-controls input{background:#06162a!important;colo
 
     if(section === 'CAMPANHAS'){
       document.getElementById('homeView').style.display = 'none';
-      ['vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','painelIndicadoresView','campanhasView','comissoesView'].forEach(id => {
+      ['vendasView','timesView','dashboardView','dashboardIndividualView','painelIndicadoresView','campanhasView','comissoesView'].forEach(id => {
         const el = document.getElementById(id);
         if(el) el.style.display = 'none';
       });
@@ -7336,7 +7206,6 @@ body.theme-dark .painel-toolbar-controls input{background:#06162a!important;colo
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #homeView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #vendasView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #timesView,
-body.view-painel-indicadores #mainPortal #conteudoDinamico > #diarioView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #dashboardView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #dashboardIndividualView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #campanhasView,
@@ -7361,7 +7230,7 @@ body.view-painel-indicadores #mainPortal #conteudoDinamico > #painelIndicadoresV
         'view-times',
         'view-dashboard',
         'view-dashboard-individual',
-        'view-diario',
+        
         'view-campanhas',
         'view-comissoes',
         'view-painel-indicadores'
@@ -7373,7 +7242,7 @@ body.view-painel-indicadores #mainPortal #conteudoDinamico > #painelIndicadoresV
         'timesView',
         'dashboardView',
         'dashboardIndividualView',
-        'diarioView',
+        
         'campanhasView',
         'comissoesView',
         'painelIndicadoresView'
@@ -7682,7 +7551,7 @@ body.view-painel-indicadores #mainPortal #conteudoDinamico > #painelIndicadoresV
 }
 </style>
 <style>
-/* ===== PATCH FINAL: SUBMENU DASHBOARD + OLHO PADRÃO + DIÁRIO ===== */
+/* ===== SUBMENU DASHBOARD + OLHO PADRÃO ===== */
 .nav-group { margin: 4px 16px; }
 .nav-group .nav-item { margin: 0; display: flex; align-items: center; justify-content: space-between; }
 .nav-arrow { font-size: 11px; opacity: .8; transition: transform .2s ease; }
@@ -7693,32 +7562,23 @@ body.view-painel-indicadores #mainPortal #conteudoDinamico > #painelIndicadoresV
 .nav-subitem:hover { background: rgba(255,255,255,.12); color: #fff; transform: translateX(3px); }
 .password-toggle-btn svg { width: 18px; height: 18px; display:block; stroke: currentColor; }
 .password-toggle-btn { font-size: 0 !important; }
-.diario-kpi.primary { background: linear-gradient(135deg,#0e3c6d,#082947) !important; color:#fff !important; }
-.diario-kpi.primary span, .diario-kpi.primary strong { color:#fff !important; }
-.diario-kpi.primary strong { font-size: 1.55rem !important; }
 </style>
 <script>
 (function(){
     const SVG_EYE = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path><circle cx="12" cy="12" r="3"></circle></svg>';
     const SVG_EYE_OFF = '<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 3 18 18"></path><path d="M10.6 10.6A2 2 0 0 0 13.4 13.4"></path><path d="M9.9 5.2A10.7 10.7 0 0 1 12 5c6.5 0 10 7 10 7a18 18 0 0 1-3.1 4.1"></path><path d="M6.1 6.8C3.5 8.6 2 12 2 12s3.5 7 10 7a10.8 10.8 0 0 0 5.1-1.3"></path></svg>';
-    function formatMoedaLocal(valor){ return (typeof formatarMoeda === 'function') ? formatarMoeda(valor || 0) : new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(valor || 0); }
-    function normalizarPagamento(valor){ return String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().trim(); }
-    function dataISOHoje(){ return (typeof hojeISO === 'function') ? hojeISO() : new Date().toISOString().slice(0,10); }
-    function vendaDataISOFinal(venda){ if(typeof dataVendaISO === 'function') return dataVendaISO(venda); if(!venda || !venda.dataVenda) return ''; const d = new Date(venda.dataVenda); return isNaN(d) ? String(venda.dataVenda).slice(0,10) : d.toISOString().slice(0,10); }
     window.toggleDashboardSubmenu = function(event){ if(event) event.stopPropagation(); const group = document.querySelector('.dashboard-nav-group'); if(group) group.classList.toggle('open'); };
     function garantirSubmenuDashboard(){
         const sidebar = document.getElementById('sidebar');
         if(!sidebar || sidebar.dataset.dashboardSubmenuReady === '1') return;
         const itens = Array.from(sidebar.querySelectorAll(':scope > .nav-item'));
-        const diario = itens.find(i => ['diário','diario'].includes(i.textContent.trim().toLowerCase()));
         const dashboard = itens.find(i => i.textContent.trim().toLowerCase() === 'dashboard');
         if(dashboard){
             const group = document.createElement('div');
             group.className = 'nav-group dashboard-nav-group';
-            group.innerHTML = '<div class="nav-item nav-parent" onclick="toggleDashboardSubmenu(event)">Dashboard <span class="nav-arrow">▾</span></div><div class="nav-submenu" id="dashboardSubmenu"><div class="nav-subitem" onclick="navegarPara(\'DASHBOARD\')">Dashboard Geral</div><div class="nav-subitem" onclick="navegarPara(\'DASHBOARD_INDIVIDUAL\')">Vendedor</div><div class="nav-subitem" onclick="navegarPara(\'DIARIO\')">Diário</div></div>';
+            group.innerHTML = `<div class="nav-item nav-parent" onclick="toggleDashboardSubmenu(event)">Dashboard <span class="nav-arrow">▾</span></div><div class="nav-submenu" id="dashboardSubmenu"><div class="nav-subitem" onclick="navegarPara('DASHBOARD')">Dashboard Geral</div><div class="nav-subitem" onclick="navegarPara('DASHBOARD_INDIVIDUAL')">Vendedor</div></div>`;
             dashboard.replaceWith(group);
         }
-        if(diario) diario.remove();
         sidebar.dataset.dashboardSubmenuReady = '1';
     }
     function trocarOlhosEmojiPorPadrao(){
@@ -7740,49 +7600,17 @@ body.view-painel-indicadores #mainPortal #conteudoDinamico > #painelIndicadoresV
             btn.replaceWith(novo);
         });
     }
-    function calcularDiarioPorData(data){
-        const lista = (typeof getVendasParaRelatorios === 'function' ? getVendasParaRelatorios() : (window.vendasCache || [])).filter(v => !data || vendaDataISOFinal(v) === data);
-        const mapa = {}; let totalCartao = 0, totalQuitado = 0, matriculas = 0;
-        lista.forEach(v => {
-            const nome = v.vendedor || 'Sem vendedor'; const qtd = Number(v.quantidadeCursos) || 1; const valor = Number(v.valor) || 0; const tipo = normalizarPagamento(v.tipo);
-            const valorCartao = tipo.includes('CARTAO') ? valor : 0;
-            const valorQuitado = (tipo.includes('VISTA') || tipo.includes('QUITADO')) ? valor : 0;
-            if(!mapa[nome]) mapa[nome] = { vendedor:nome, matriculas:0, cartao:0, quitado:0, faturado:0 };
-            mapa[nome].matriculas += qtd; mapa[nome].cartao += valorCartao; mapa[nome].quitado += valorQuitado; mapa[nome].faturado += valorCartao + valorQuitado;
-            matriculas += qtd; totalCartao += valorCartao; totalQuitado += valorQuitado;
-        });
-        return { linhas: Object.values(mapa).sort((a,b)=>b.faturado-a.faturado), totalCartao, totalQuitado, matriculas, faturado: totalCartao + totalQuitado };
-    }
-    function ajustarEstruturaDiario(){
-        const title = document.querySelector('#diarioView .diario-header h2'); const sub = document.querySelector('#diarioView .diario-header p');
-        if(title) title.textContent = 'Dashboard Diário';
-        if(sub) sub.textContent = 'Resumo do dia atual com faturado, matrículas e ranking por vendedor.';
-        const cards = document.querySelector('#diarioView .diario-cards');
-        if(cards && cards.dataset.patchDiario !== '1'){
-            cards.dataset.patchDiario = '1';
-            cards.innerHTML = '<div class="diario-kpi primary"><span>Faturado hoje</span><strong id="diarioFaturadoHoje">R$ 0,00</strong></div><div class="diario-kpi primary"><span>Matrículas hoje</span><strong id="diarioMatriculasHoje">0</strong></div><div class="diario-kpi"><span>Cartão hoje</span><strong id="diarioCartaoHoje">R$ 0,00</strong></div><div class="diario-kpi"><span>Quitado hoje</span><strong id="diarioQuitadoHoje">R$ 0,00</strong></div>';
-        }
-        const thead = document.querySelector('#diarioView .diario-table thead tr');
-        if(thead) thead.innerHTML = '<th>Posição</th><th>Vendedor</th><th>Matrículas</th><th>Cartão</th><th>Quitado</th><th>Faturado</th>';
-    }
-    window.carregarDiario = function(){
-        ajustarEstruturaDiario();
-        const input = document.getElementById('diarioData'); if(input && !input.value) input.value = dataISOHoje();
-        const res = calcularDiarioPorData(input?.value || dataISOHoje());
-        const set = (id, txt) => { const el = document.getElementById(id); if(el) el.textContent = txt; };
-        set('diarioFaturadoHoje', formatMoedaLocal(res.faturado)); set('diarioMatriculasHoje', String(res.matriculas)); set('diarioCartaoHoje', formatMoedaLocal(res.totalCartao)); set('diarioQuitadoHoje', formatMoedaLocal(res.totalQuitado));
-        set('diarioTotalCursos', String(res.matriculas)); set('diarioTotalQuitado', formatMoedaLocal(res.totalQuitado)); set('diarioTotalGeral', formatMoedaLocal(res.faturado));
-        const rank = document.getElementById('rankingTop3Container');
-        if(rank){ const medalhas = ['1º lugar','2º lugar','3º lugar']; rank.innerHTML = res.linhas.slice(0,3).map((l,i)=>'<div class="ranking-card"><small>'+medalhas[i]+'</small><h3>'+l.vendedor+'</h3><strong>'+formatMoedaLocal(l.faturado)+'</strong></div>').join('') || '<div class="ranking-card"><small>Sem dados</small><h3>Nenhuma venda no dia</h3><strong>R$ 0,00</strong></div>'; }
-        const tbody = document.getElementById('diarioTbody');
-        if(tbody){ tbody.innerHTML = res.linhas.map((l,i)=>'<tr class="'+(i===0?'top1':i===1?'top2':i===2?'top3':'')+'"><td>'+(i+1)+'º</td><td>'+l.vendedor+'</td><td>'+l.matriculas+'</td><td>'+formatMoedaLocal(l.cartao)+'</td><td>'+formatMoedaLocal(l.quitado)+'</td><td><strong>'+formatMoedaLocal(l.faturado)+'</strong></td></tr>').join('') || '<tr><td colspan="6">Nenhum resultado para a data selecionada.</td></tr>'; }
-    };
     const navegarBase = window.navegarPara;
     window.navegarPara = function(section){
         garantirSubmenuDashboard();
-        if(section === 'DASHBOARD_INDIVIDUAL'){ if(typeof navegarBase === 'function') navegarBase('DASHBOARD'); if(typeof abrirDashboardIndividual === 'function') abrirDashboardIndividual(); }
-        else if(typeof navegarBase === 'function'){ navegarBase(section); }
-        const group = document.querySelector('.dashboard-nav-group'); if(group && ['DASHBOARD','DASHBOARD_INDIVIDUAL','DIARIO'].includes(section)) group.classList.add('open');
+        if(section === 'DASHBOARD_INDIVIDUAL'){
+            if(typeof navegarBase === 'function') navegarBase('DASHBOARD');
+            if(typeof abrirDashboardIndividual === 'function') abrirDashboardIndividual();
+        }else if(typeof navegarBase === 'function'){
+            navegarBase(section);
+        }
+        const group = document.querySelector('.dashboard-nav-group');
+        if(group && ['DASHBOARD','DASHBOARD_INDIVIDUAL'].includes(section)) group.classList.add('open');
     };
     window.enviarCodigoRecuperacaoEmail = async function(email, codigo, nome){
         if(!window.emailjs) throw new Error('EmailJS não carregou.');
@@ -7810,8 +7638,8 @@ body.view-painel-indicadores #mainPortal #conteudoDinamico > #painelIndicadoresV
             if(erro){ erro.style.color='#16a34a'; erro.textContent='Código enviado. Verifique a caixa de entrada e o spam.'; }
         }catch(e){ console.error('Falha ao enviar recuperação:', e); if(erro) erro.textContent='Não foi possível enviar o e-mail. Verifique SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY e se o template usa {{to_email}}.'; }
     };
-    function inicializarPatchFinal(){ garantirSubmenuDashboard(); ajustarEstruturaDiario(); trocarOlhosEmojiPorPadrao(); setTimeout(trocarOlhosEmojiPorPadrao, 400); setTimeout(trocarOlhosEmojiPorPadrao, 1000); }
-    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', inicializarPatchFinal); else inicializarPatchFinal();
+    function inicializarMenuSenha(){ garantirSubmenuDashboard(); trocarOlhosEmojiPorPadrao(); setTimeout(trocarOlhosEmojiPorPadrao, 400); setTimeout(trocarOlhosEmojiPorPadrao, 1000); }
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', inicializarMenuSenha); else inicializarMenuSenha();
 })();
 </script>
 
@@ -8041,7 +7869,6 @@ body.theme-dark #conteudoDinamico{
 }
 body.theme-dark #homeView,
 body.theme-dark #vendasView,
-body.theme-dark #diarioView,
 body.theme-dark #timesView,
 body.theme-dark #dashboardView,
 body.theme-dark #dashboardIndividualView,
@@ -8069,8 +7896,6 @@ body.theme-dark .chart-container,
 body.theme-dark .dashboard-mini-card,
 body.theme-dark .dashboard-individual-panel,
 body.theme-dark .ind-panel,
-body.theme-dark .diario-kpi,
-body.theme-dark .diario-table-card,
 body.theme-dark .campanhas-form,
 body.theme-dark .home-academic-card,
 body.theme-dark .academic-module-card,
@@ -8169,7 +7994,7 @@ body.theme-dark #painelIndicadoresView .indicador-table .cell-orange{background:
         return !!(window.usuarioLogado && (usuarioLogado.perfil==='gestor' || usuarioLogado.perfil==='adm' || usuarioLogado.id==='ADM' || String(usuarioLogado.usuario||'').toUpperCase()==='ADM'));
     }
     function limparClasseView(){
-        document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-diario','view-campanhas','view-comissoes','view-painel-indicadores');
+        document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-campanhas','view-comissoes','view-painel-indicadores');
     }
     function esconderViewsExtras(){
         const ids=['campanhasView','painelIndicadoresView'];
@@ -8198,7 +8023,7 @@ body.theme-dark #painelIndicadoresView .indicador-table .cell-orange{background:
         }
     }
     function mostrarSoViewExtra(id,classe){
-        const all=['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView'];
+        const all=['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView'];
         all.forEach(viewId=>{ const el=document.getElementById(viewId); if(el) el.style.display='none'; });
         const el=document.getElementById(id);
         if(el) el.style.display='block';
@@ -8229,7 +8054,6 @@ body.theme-dark #painelIndicadoresView .indicador-table .cell-orange{background:
         }
         esconderViewsExtras();
         limparClasseView();
-        const mapa={home:'view-home',VENDAS:'view-vendas',TIMES:'view-times',DASHBOARD:'view-dashboard',DIARIO:'view-diario'};
         if(mapa[section]) document.body.classList.add(mapa[section]);
         return navAnteriorFinal ? navAnteriorFinal.apply(this,arguments) : undefined;
     };
@@ -8394,7 +8218,7 @@ body.theme-dark #sidebar .nav-item.sair{background:rgba(239,68,68,.11)!important
 .sidebar-open-btn:hover,#toggleSidebarBtn.sidebar-open-btn:hover{background:#0e3c6d!important;box-shadow:7px 0 18px rgba(2,8,23,.22)!important;transform:translateY(-50%)!important;}
 body.theme-dark .sidebar-open-btn,body.theme-dark #toggleSidebarBtn.sidebar-open-btn{background:#0a223c!important;border-color:rgba(249,115,22,.24)!important;}
 @media (min-width:960px){#homeView{min-height:100vh!important;overflow:hidden!important;background:linear-gradient(180deg,#eef4fb 0%,#f8fafc 50%,#fff 100%)!important;}.home-premium-hero,.home-academic-clean{min-height:342px!important;padding:34px 64px 38px!important;gap:26px!important;grid-template-columns:minmax(0,1.16fr) minmax(300px,.84fr)!important;border-bottom-left-radius:30px!important;border-bottom-right-radius:30px!important;}.home-logo-pill{margin-bottom:18px!important;padding:8px 14px!important;}.home-logo-pill img{width:118px!important;}.home-hero-content h1{font-size:clamp(2rem,3.1vw,3.2rem)!important;margin-bottom:12px!important;}.home-hero-content p{font-size:.96rem!important;line-height:1.5!important;}.home-hero-actions{margin-top:20px!important;gap:10px!important;}.home-hero-actions button{padding:11px 18px!important;font-size:13px!important;}.home-hero-panel{padding:20px!important;border-radius:26px!important;}.hero-panel-top{margin-bottom:14px!important;}.hero-metric-grid{gap:10px!important;}.hero-metric-grid div{min-height:84px!important;border-radius:18px!important;padding:14px 16px!important;}.hero-metric-grid small{font-size:12px!important;}.hero-metric-grid strong{font-size:1.14rem!important;}.home-premium-content,.home-academic-clean-content{padding:22px 26px 24px!important;max-width:1320px!important;}.home-section-title{margin-bottom:14px!important;}.home-section-title h2{font-size:1.52rem!important;margin-top:4px!important;}.home-section-title span{font-size:11px!important;}.home-premium-grid,.menu-dashboard-grid.home-premium-grid{grid-template-columns:repeat(auto-fit,minmax(148px,1fr))!important;gap:12px!important;align-items:stretch!important;}.home-action-card,.menu-card.home-action-card{min-height:132px!important;padding:16px!important;border-radius:20px!important;}.home-action-card span{width:42px!important;height:42px!important;border-radius:14px!important;font-size:22px!important;margin-bottom:10px!important;}.home-action-card h3{font-size:1rem!important;margin-bottom:5px!important;}.home-action-card p{font-size:.78rem!important;line-height:1.32!important;}.home-info-strip{margin-top:12px!important;gap:10px!important;}.home-info-strip div{padding:12px 14px!important;border-radius:16px!important;}.home-info-strip strong{font-size:1rem!important;}.home-info-strip span{font-size:.82rem!important;}}
-@media (min-width:1280px){.home-premium-grid,.menu-dashboard-grid.home-premium-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important;}}
+@media (min-width:1280px){.home-premium-grid,.menu-dashboard-grid.home-premium-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;}}
 @media (max-height:720px) and (min-width:960px){.home-premium-hero,.home-academic-clean{min-height:310px!important;padding-top:28px!important;padding-bottom:30px!important;}.home-premium-content,.home-academic-clean-content{padding-top:16px!important;padding-bottom:16px!important;}.home-action-card,.menu-card.home-action-card{min-height:118px!important;padding:14px!important;}.home-action-card p{display:none!important;}.home-info-strip{display:none!important;}}
 body.view-painel-indicadores #painelIndicadoresView,#painelIndicadoresView{padding:8px!important;height:100vh!important;min-height:100vh!important;overflow:hidden!important;display:flex!important;align-items:stretch!important;justify-content:center!important;background:#edf3f8!important;}
 #painelIndicadoresView .painel-wrap,.painel-wrap{width:calc(100vw - 16px)!important;max-width:none!important;height:calc(100vh - 17px)!important;margin:0 auto!important;border-radius:18px!important;display:flex!important;flex-direction:column!important;overflow:hidden!important;box-shadow:0 18px 48px rgba(15,23,42,.16)!important;}
@@ -8404,7 +8228,6 @@ body.view-painel-indicadores #painelIndicadoresView,#painelIndicadoresView{paddi
 #painelIndicadoresView .indicador-title,.indicador-title{height:25px!important;min-height:25px!important;line-height:25px!important;font-size:12px!important;}
 #painelIndicadoresView .indicador-table,.indicador-table{height:calc(100% - 25px)!important;font-size:10.2px!important;}#painelIndicadoresView .indicador-table th,.indicador-table th{height:24px!important;padding:2px 3px!important;font-size:9.7px!important;line-height:1.08!important;}#painelIndicadoresView .indicador-table td,.indicador-table td{height:calc((100vh - 108px) / 28)!important;max-height:none!important;padding:1px 3px!important;font-size:10.1px!important;line-height:1.05!important;}#painelIndicadoresView .indicador-table td.nome,.indicador-table td.nome{font-size:10.25px!important;padding-left:5px!important;}#painelIndicadoresView .indicador-table .total-row td,.indicador-table .total-row td{font-size:10px!important;height:22px!important;}body.theme-dark #painelIndicadoresView .painel-wrap{border-color:rgba(249,115,22,.40)!important;}
 @media (max-width:1100px){body.view-painel-indicadores #painelIndicadoresView,#painelIndicadoresView{display:block!important;height:auto!important;min-height:100vh!important;padding:14px!important;overflow:auto!important;}#painelIndicadoresView .painel-wrap,.painel-wrap{width:100%!important;height:auto!important;min-height:100vh!important;}#painelIndicadoresView .painel-toolbar,.painel-toolbar{padding-left:14px!important;height:auto!important;min-height:58px!important;align-items:flex-start!important;flex-direction:column!important;}#painelIndicadoresView .painel-indicadores-grid,.painel-indicadores-grid{display:block!important;overflow:visible!important;}#painelIndicadoresView .indicador-table-box,.indicador-table-box{height:auto!important;overflow:auto!important;border-right:0!important;border-bottom:1px solid #d8e2ef!important;}#painelIndicadoresView .indicador-table,.indicador-table{height:auto!important;min-width:760px!important;}}
-#dashboardView .title-area h1{font-size:1.42rem!important;}#dashboardView .title-area p{font-size:.84rem!important;}#dashboardView .top-cards{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:9px!important;}#dashboardView .card{padding:9px 12px!important;border-radius:15px!important;}#dashboardView .card h3{font-size:.84rem!important;font-weight:750!important;}#dashboardView .value{font-size:1.26rem!important;line-height:1.05!important;}#dashboardView .sub{font-size:.70rem!important;}#dashboardView .chart-container h4{font-size:.88rem!important;font-weight:850!important;}#dashboardView .resumo-list,#dashboardView .resumo-label{font-size:.80rem!important;}#dashboardView .footer-note{font-size:.66rem!important;}.diario-kpi span{font-size:.84rem!important;}.diario-kpi strong{font-size:1.62rem!important;}.diario-table th{font-size:.82rem!important;}.diario-table td{font-size:.86rem!important;}.dashboard-individual-header h1,.ind-report-title h1{font-size:1.28rem!important;}.dashboard-mini-card span,.ind-stat span{font-size:.72rem!important;}.dashboard-mini-card strong,.ind-stat strong{font-size:1.14rem!important;}
 </style><script id="patch-tema-claro-inicial-2904">
 (function(){function deixarTemaClaroInicial(){try{localStorage.setItem('temaSistemaUnifahe','light');}catch(e){}document.documentElement.classList.remove('theme-dark');document.documentElement.classList.add('theme-light');if(document.body){document.body.classList.remove('theme-dark');document.body.classList.add('theme-light');}var btn=document.getElementById('themeToggleBtn');if(btn)btn.textContent='Modo escuro';}if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',function(){setTimeout(deixarTemaClaroInicial,0);});}else{setTimeout(deixarTemaClaroInicial,0);}var iniciarAnterior=window.iniciarSessao;if(typeof iniciarAnterior==='function'){window.iniciarSessao=async function(){var r=await iniciarAnterior.apply(this,arguments);setTimeout(deixarTemaClaroInicial,0);return r;};}})();
 </script>
@@ -8423,7 +8246,6 @@ body.view-home #mainPortal #conteudoDinamico > #homeView {
 
 body.view-vendas #mainPortal #conteudoDinamico > #vendasView,
 body.view-times #mainPortal #conteudoDinamico > #timesView,
-body.view-diario #mainPortal #conteudoDinamico > #diarioView,
 body.view-dashboard #mainPortal #conteudoDinamico > #dashboardView,
 body.view-dashboard-individual #mainPortal #conteudoDinamico > #dashboardIndividualView,
 body.view-campanhas #mainPortal #conteudoDinamico > #campanhasView {
@@ -8453,7 +8275,6 @@ body.view-home #conteudoDinamico {
 
 body.view-vendas #vendasView,
 body.view-times #timesView,
-body.view-diario #diarioView,
 body.view-dashboard #dashboardView,
 body.view-dashboard-individual #dashboardIndividualView,
 body.view-campanhas #campanhasView,
@@ -8478,7 +8299,7 @@ body.view-home #conteudoDinamico {
         'view-times',
         'view-dashboard',
         'view-dashboard-individual',
-        'view-diario',
+        
         'view-campanhas',
         'view-comissoes',
         'view-painel-indicadores'
@@ -8488,7 +8309,6 @@ body.view-home #conteudoDinamico {
         home: { id: 'homeView', cls: 'view-home', display: 'block' },
         VENDAS: { id: 'vendasView', cls: 'view-vendas', display: 'block' },
         TIMES: { id: 'timesView', cls: 'view-times', display: 'block' },
-        DIARIO: { id: 'diarioView', cls: 'view-diario', display: 'block' },
         DASHBOARD: { id: 'dashboardView', cls: 'view-dashboard', display: 'block' },
         DASHBOARD_INDIVIDUAL: { id: 'dashboardIndividualView', cls: 'view-dashboard-individual', display: 'block' },
         CAMPANHAS: { id: 'campanhasView', cls: 'view-campanhas', display: 'block' },
@@ -8496,7 +8316,7 @@ body.view-home #conteudoDinamico {
     };
 
     function todosIds(){
-        return ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView'];
+        return ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView'];
     }
 
     function forcarPaginaUnica(section){
@@ -8532,9 +8352,7 @@ body.view-home #conteudoDinamico {
         forcarPaginaUnica(alvo);
 
         if(alvo === 'VENDAS' && typeof window.carregarVendas === 'function') window.carregarVendas();
-        if(alvo === 'TIMES' && typeof window.carregarTimes === 'function') window.carregarTimes();
-        if(alvo === 'DIARIO' && typeof window.carregarDiario === 'function') window.carregarDiario();
-        if(alvo === 'DASHBOARD' && typeof window.carregarDashboard === 'function') window.carregarDashboard();
+        if(alvo === 'TIMES' && typeof window.carregarTimes === 'function') window.carregarTimes();        if(alvo === 'DASHBOARD' && typeof window.carregarDashboard === 'function') window.carregarDashboard();
         if(alvo === 'PAINEL_INDICADORES' && typeof window.carregarPainelIndicadores === 'function') window.carregarPainelIndicadores();
         return retorno;
     };
@@ -9062,7 +8880,6 @@ body.view-home #conteudoDinamico {
                 }
                 if(typeof carregarVendas === 'function') carregarVendas();
                 if(typeof carregarTimes === 'function') carregarTimes();
-                if(typeof carregarDiario === 'function') carregarDiario();
                 if(typeof carregarDashboard === 'function') carregarDashboard();
             }catch(erro){
                 console.error(erro);
@@ -9792,6 +9609,661 @@ body.dark-mode #dashboardView .udash-meta-input input {
 }
 
 
+/* Dashboard Individual consolidado: layout premium com dados reais da área Vendas */
+#dashboardIndividualView.ind4-ready,
+body.view-dashboard-individual #dashboardIndividualView.ind4-ready {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: calc(100vh - 24px) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #f4f8fc !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+}
+
+#dashboardIndividualView .ind4-shell {
+  width: 100% !important;
+  min-height: calc(100vh - 24px) !important;
+  padding: 22px 24px 28px !important;
+  background: #f4f8fc !important;
+  color: #0f172a !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+}
+
+#dashboardIndividualView .ind4-header {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin-bottom: 14px !important;
+}
+
+#dashboardIndividualView .ind4-title h1 {
+  margin: 0 !important;
+  color: #111827 !important;
+  font-size: clamp(23px, 2.4vw, 32px) !important;
+  line-height: 1.05 !important;
+  font-weight: 950 !important;
+  letter-spacing: -.035em !important;
+}
+
+#dashboardIndividualView .ind4-title p {
+  margin: 7px 0 0 !important;
+  color: #486178 !important;
+  font-size: 13px !important;
+  font-weight: 750 !important;
+}
+
+#dashboardIndividualView .ind4-actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+}
+
+#dashboardIndividualView .ind4-filter {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 8px !important;
+  border: 1px solid #d8e4f2 !important;
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, .06) !important;
+}
+
+#dashboardIndividualView .ind4-filter label {
+  display: grid !important;
+  gap: 4px !important;
+  margin: 0 !important;
+  color: #7a8ba0 !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+}
+
+#dashboardIndividualView .ind4-filter select,
+#dashboardIndividualView .ind4-filter input {
+  height: 38px !important;
+  min-width: 156px !important;
+  border: 1px solid #d6e2ef !important;
+  border-radius: 12px !important;
+  background: #f8fbff !important;
+  color: #0f172a !important;
+  padding: 0 12px !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+#dashboardIndividualView .ind4-btn {
+  border: 0 !important;
+  min-height: 42px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+  background: linear-gradient(180deg, #123f70 0%, #0b315d 100%) !important;
+  box-shadow: 0 14px 28px rgba(14, 60, 109, .20) !important;
+}
+
+#dashboardIndividualView .ind4-main-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 14px !important;
+}
+
+#dashboardIndividualView .ind4-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+
+#dashboardIndividualView .ind4-card {
+  min-height: 132px !important;
+  background: #ffffff !important;
+  border: 1px solid #e3ebf5 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, .06) !important;
+  padding: 14px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+#dashboardIndividualView .ind4-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 5px !important;
+  background: #0e3c6d !important;
+}
+
+#dashboardIndividualView .ind4-card.boleto::before { background: #f97316 !important; }
+#dashboardIndividualView .ind4-card.dia::before { background: linear-gradient(90deg, #f97316, #0e3c6d) !important; }
+
+#dashboardIndividualView .ind4-card-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+#dashboardIndividualView .ind4-card-head h3 {
+  margin: 0 !important;
+  color: #1f2f46 !important;
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+  font-weight: 950 !important;
+}
+
+#dashboardIndividualView .ind4-card-head span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 13px !important;
+  background: #0e3c6d !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  box-shadow: 0 12px 24px rgba(14, 60, 109, .20) !important;
+}
+
+#dashboardIndividualView .ind4-card.boleto .ind4-card-head span,
+#dashboardIndividualView .ind4-card.dia.boleto .ind4-card-head span {
+  background: #f97316 !important;
+  box-shadow: 0 12px 24px rgba(249, 115, 22, .22) !important;
+}
+
+#dashboardIndividualView .ind4-values {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+}
+
+#dashboardIndividualView .ind4-value-box {
+  min-height: 56px !important;
+  border: 1px solid #d8e3ef !important;
+  background: #f5f8fc !important;
+  border-radius: 14px !important;
+  display: grid !important;
+  align-content: center !important;
+  justify-items: center !important;
+  padding: 10px 8px !important;
+}
+
+#dashboardIndividualView .ind4-value-box small {
+  color: #8493a7 !important;
+  font-size: 9px !important;
+  font-weight: 950 !important;
+  letter-spacing: .07em !important;
+  text-transform: uppercase !important;
+}
+
+#dashboardIndividualView .ind4-value-box strong {
+  margin-top: 4px !important;
+  color: #0e3c6d !important;
+  font-size: clamp(15px, 1.45vw, 21px) !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  white-space: nowrap !important;
+}
+
+#dashboardIndividualView .ind4-card.boleto .ind4-value-box strong { color: #f97316 !important; }
+
+#dashboardIndividualView .ind4-note {
+  margin-top: 9px !important;
+  color: #64748b !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+}
+
+#dashboardIndividualView .ind4-summary {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr) !important;
+  gap: 12px !important;
+  background: #ffffff !important;
+  border: 1px solid #e3ebf5 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, .06) !important;
+  padding: 16px !important;
+}
+
+#dashboardIndividualView .ind4-summary h3,
+#dashboardIndividualView .ind4-panel h3 {
+  margin: 0 !important;
+  color: #1f2f46 !important;
+  font-size: 16px !important;
+  font-weight: 950 !important;
+}
+
+#dashboardIndividualView .ind4-summary p,
+#dashboardIndividualView .ind4-panel p {
+  margin: 6px 0 0 !important;
+  color: #64748b !important;
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+  font-weight: 750 !important;
+}
+
+#dashboardIndividualView .ind4-insights {
+  margin-top: 12px !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 9px !important;
+}
+
+#dashboardIndividualView .ind4-insight {
+  border: 1px solid #d8e3ef !important;
+  background: #f5f8fc !important;
+  border-radius: 14px !important;
+  padding: 10px !important;
+  min-width: 0 !important;
+}
+
+#dashboardIndividualView .ind4-insight span {
+  display: block !important;
+  margin-bottom: 4px !important;
+  color: #8493a7 !important;
+  font-size: 9px !important;
+  font-weight: 950 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+}
+
+#dashboardIndividualView .ind4-insight strong {
+  color: #0e3c6d !important;
+  font-size: 14px !important;
+  font-weight: 950 !important;
+  line-height: 1.15 !important;
+}
+
+#dashboardIndividualView .ind4-progress-box {
+  display: grid !important;
+  align-content: center !important;
+  gap: 9px !important;
+  min-width: 0 !important;
+}
+
+#dashboardIndividualView .ind4-progress-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 10px !important;
+  color: #64748b !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+}
+
+#dashboardIndividualView .ind4-progress-track {
+  height: 13px !important;
+  background: #f1f5fa !important;
+  border: 1px solid #d8e3ef !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+#dashboardIndividualView .ind4-progress-track i {
+  display: block !important;
+  height: 100% !important;
+  width: 0% !important;
+  border-radius: inherit !important;
+  background: linear-gradient(90deg, #0e3c6d, #f97316) !important;
+}
+
+#dashboardIndividualView .ind4-charts-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr) !important;
+  gap: 12px !important;
+}
+
+#dashboardIndividualView .ind4-panel,
+#dashboardIndividualView .ind4-chart-panel {
+  min-width: 0 !important;
+  background: #ffffff !important;
+  border: 1px solid #e3ebf5 !important;
+  border-radius: 20px !important;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, .06) !important;
+  padding: 16px !important;
+  overflow: hidden !important;
+}
+
+#dashboardIndividualView .ind4-chart-panel { min-height: 292px !important; }
+#dashboardIndividualView .ind4-chart-head {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  margin-bottom: 10px !important;
+}
+
+#dashboardIndividualView .ind4-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 7px 10px !important;
+  border-radius: 999px !important;
+  background: #e8f2ff !important;
+  color: #0e3c6d !important;
+  border: 1px solid #cfe2fa !important;
+  font-size: 11px !important;
+  font-weight: 950 !important;
+  white-space: nowrap !important;
+}
+
+#dashboardIndividualView .ind4-chart-wrap {
+  position: relative !important;
+  width: 100% !important;
+  height: 225px !important;
+  min-height: 225px !important;
+}
+
+#dashboardIndividualView .ind4-chart-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+#dashboardIndividualView .ind4-lower-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 340px !important;
+  gap: 12px !important;
+}
+
+#dashboardIndividualView .ind4-table-wrap {
+  margin-top: 12px !important;
+  border: 1px solid #d8e3ef !important;
+  border-radius: 16px !important;
+  overflow-x: auto !important;
+}
+
+#dashboardIndividualView .ind4-table {
+  width: 100% !important;
+  min-width: 650px !important;
+  border-collapse: collapse !important;
+}
+
+#dashboardIndividualView .ind4-table th,
+#dashboardIndividualView .ind4-table td {
+  padding: 11px 12px !important;
+  border-bottom: 1px solid #d8e3ef !important;
+  font-size: 12px !important;
+  text-align: left !important;
+  color: #24364d !important;
+}
+
+#dashboardIndividualView .ind4-table th {
+  background: #f5f8fc !important;
+  color: #8493a7 !important;
+  font-size: 10px !important;
+  font-weight: 950 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+}
+
+#dashboardIndividualView .ind4-table tr:last-child td { border-bottom: 0 !important; }
+#dashboardIndividualView .ind4-table strong { color: #0e3c6d !important; font-weight: 950 !important; }
+
+#dashboardIndividualView .ind4-pay {
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 999px !important;
+  padding: 6px 9px !important;
+  background: #fff2e8 !important;
+  color: #d85b09 !important;
+  border: 1px solid #fed7aa !important;
+  font-size: 11px !important;
+  font-weight: 950 !important;
+}
+
+#dashboardIndividualView .ind4-alert-list {
+  display: grid !important;
+  gap: 9px !important;
+  margin-top: 12px !important;
+}
+
+#dashboardIndividualView .ind4-alert {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  border: 1px solid #d8e3ef !important;
+  background: #f5f8fc !important;
+  border-radius: 16px !important;
+  padding: 11px !important;
+  color: #64748b !important;
+  font-size: 12px !important;
+  line-height: 1.42 !important;
+  font-weight: 750 !important;
+}
+
+#dashboardIndividualView .ind4-alert i {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  flex: 0 0 28px !important;
+  border-radius: 10px !important;
+  background: #e8f2ff !important;
+  color: #0e3c6d !important;
+  font-style: normal !important;
+}
+
+#dashboardIndividualView .ind4-alert b { color: #1f2f46 !important; font-weight: 950 !important; }
+#dashboardIndividualView .ind4-empty { padding: 22px 14px !important; text-align: center !important; color: #64748b !important; font-weight: 850 !important; }
+
+body.theme-dark #dashboardIndividualView.ind4-ready,
+body.theme-dark #dashboardIndividualView .ind4-shell,
+body.dark-mode #dashboardIndividualView.ind4-ready,
+body.dark-mode #dashboardIndividualView .ind4-shell,
+html.theme-dark #dashboardIndividualView.ind4-ready,
+html.theme-dark #dashboardIndividualView .ind4-shell {
+  background: #081426 !important;
+  color: #e5eefb !important;
+}
+
+body.theme-dark #dashboardIndividualView .ind4-title h1,
+body.dark-mode #dashboardIndividualView .ind4-title h1,
+html.theme-dark #dashboardIndividualView .ind4-title h1,
+body.theme-dark #dashboardIndividualView .ind4-card-head h3,
+body.dark-mode #dashboardIndividualView .ind4-card-head h3,
+html.theme-dark #dashboardIndividualView .ind4-card-head h3,
+body.theme-dark #dashboardIndividualView .ind4-summary h3,
+body.dark-mode #dashboardIndividualView .ind4-summary h3,
+html.theme-dark #dashboardIndividualView .ind4-summary h3,
+body.theme-dark #dashboardIndividualView .ind4-panel h3,
+body.dark-mode #dashboardIndividualView .ind4-panel h3,
+html.theme-dark #dashboardIndividualView .ind4-panel h3,
+body.theme-dark #dashboardIndividualView .ind4-alert b,
+body.dark-mode #dashboardIndividualView .ind4-alert b,
+html.theme-dark #dashboardIndividualView .ind4-alert b { color: #f8fbff !important; }
+
+body.theme-dark #dashboardIndividualView .ind4-title p,
+body.dark-mode #dashboardIndividualView .ind4-title p,
+html.theme-dark #dashboardIndividualView .ind4-title p,
+body.theme-dark #dashboardIndividualView .ind4-summary p,
+body.dark-mode #dashboardIndividualView .ind4-summary p,
+html.theme-dark #dashboardIndividualView .ind4-summary p,
+body.theme-dark #dashboardIndividualView .ind4-panel p,
+body.dark-mode #dashboardIndividualView .ind4-panel p,
+html.theme-dark #dashboardIndividualView .ind4-panel p,
+body.theme-dark #dashboardIndividualView .ind4-note,
+body.dark-mode #dashboardIndividualView .ind4-note,
+html.theme-dark #dashboardIndividualView .ind4-note { color: #9fb2ca !important; }
+
+body.theme-dark #dashboardIndividualView .ind4-card,
+body.theme-dark #dashboardIndividualView .ind4-filter,
+body.theme-dark #dashboardIndividualView .ind4-summary,
+body.theme-dark #dashboardIndividualView .ind4-panel,
+body.theme-dark #dashboardIndividualView .ind4-chart-panel,
+body.dark-mode #dashboardIndividualView .ind4-card,
+body.dark-mode #dashboardIndividualView .ind4-filter,
+body.dark-mode #dashboardIndividualView .ind4-summary,
+body.dark-mode #dashboardIndividualView .ind4-panel,
+body.dark-mode #dashboardIndividualView .ind4-chart-panel,
+html.theme-dark #dashboardIndividualView .ind4-card,
+html.theme-dark #dashboardIndividualView .ind4-filter,
+html.theme-dark #dashboardIndividualView .ind4-summary,
+html.theme-dark #dashboardIndividualView .ind4-panel,
+html.theme-dark #dashboardIndividualView .ind4-chart-panel {
+  background: #0e1d32 !important;
+  border-color: rgba(148, 163, 184, .22) !important;
+}
+
+body.theme-dark #dashboardIndividualView .ind4-value-box,
+body.theme-dark #dashboardIndividualView .ind4-insight,
+body.theme-dark #dashboardIndividualView .ind4-alert,
+body.theme-dark #dashboardIndividualView .ind4-table th,
+body.dark-mode #dashboardIndividualView .ind4-value-box,
+body.dark-mode #dashboardIndividualView .ind4-insight,
+body.dark-mode #dashboardIndividualView .ind4-alert,
+body.dark-mode #dashboardIndividualView .ind4-table th,
+html.theme-dark #dashboardIndividualView .ind4-value-box,
+html.theme-dark #dashboardIndividualView .ind4-insight,
+html.theme-dark #dashboardIndividualView .ind4-alert,
+html.theme-dark #dashboardIndividualView .ind4-table th {
+  background: #132840 !important;
+  border-color: rgba(148, 163, 184, .22) !important;
+}
+
+body.theme-dark #dashboardIndividualView .ind4-table-wrap,
+body.theme-dark #dashboardIndividualView .ind4-table td,
+body.dark-mode #dashboardIndividualView .ind4-table-wrap,
+body.dark-mode #dashboardIndividualView .ind4-table td,
+html.theme-dark #dashboardIndividualView .ind4-table-wrap,
+html.theme-dark #dashboardIndividualView .ind4-table td { border-color: rgba(148, 163, 184, .22) !important; color: #dbe7f6 !important; }
+
+body.theme-dark #dashboardIndividualView .ind4-filter select,
+body.theme-dark #dashboardIndividualView .ind4-filter input,
+body.dark-mode #dashboardIndividualView .ind4-filter select,
+body.dark-mode #dashboardIndividualView .ind4-filter input,
+html.theme-dark #dashboardIndividualView .ind4-filter select,
+html.theme-dark #dashboardIndividualView .ind4-filter input {
+  background: #0b1829 !important;
+  color: #e5eefb !important;
+  border-color: rgba(148, 163, 184, .26) !important;
+}
+
+@media (max-width: 1280px) {
+  #dashboardIndividualView .ind4-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  #dashboardIndividualView .ind4-insights { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+}
+
+@media (max-width: 980px) {
+  #dashboardIndividualView .ind4-shell { padding: 18px 14px 24px !important; }
+  #dashboardIndividualView .ind4-header { flex-direction: column !important; }
+  #dashboardIndividualView .ind4-actions,
+  #dashboardIndividualView .ind4-filter { width: 100% !important; justify-content: flex-start !important; }
+  #dashboardIndividualView .ind4-filter { flex-wrap: wrap !important; }
+  #dashboardIndividualView .ind4-filter label { flex: 1 1 180px !important; }
+  #dashboardIndividualView .ind4-filter select,
+  #dashboardIndividualView .ind4-filter input { width: 100% !important; min-width: 0 !important; }
+  #dashboardIndividualView .ind4-btn { width: 100% !important; }
+  #dashboardIndividualView .ind4-grid,
+  #dashboardIndividualView .ind4-summary,
+  #dashboardIndividualView .ind4-charts-grid,
+  #dashboardIndividualView .ind4-lower-grid,
+  .udash-salvo-grid { grid-template-columns: 1fr !important; }
+  #dashboardIndividualView .ind4-chart-panel { min-height: 260px !important; }
+  #dashboardIndividualView .ind4-chart-wrap { height: 205px !important; min-height: 205px !important; }
+}
+
+@media (max-width: 560px) {
+  #dashboardIndividualView.ind4-ready { width: 100vw !important; }
+  #dashboardIndividualView .ind4-title h1 { font-size: 22px !important; }
+  #dashboardIndividualView .ind4-card { min-height: 124px !important; padding: 12px !important; }
+  #dashboardIndividualView .ind4-values { grid-template-columns: 1fr 1fr !important; gap: 7px !important; }
+  #dashboardIndividualView .ind4-value-box { min-height: 54px !important; padding: 8px !important; }
+  #dashboardIndividualView .ind4-value-box strong { font-size: 16px !important; white-space: normal !important; text-align: center !important; }
+  #dashboardIndividualView .ind4-insights { grid-template-columns: 1fr !important; }
+  #dashboardIndividualView .ind4-panel,
+  #dashboardIndividualView .ind4-chart-panel,
+  #dashboardIndividualView .ind4-summary { padding: 13px !important; border-radius: 18px !important; }
+  #dashboardIndividualView .ind4-chart-head { flex-direction: column !important; }
+}
+
+.udash-salvos-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 4200 !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 24px !important;
+  background: rgba(2, 8, 23, .62) !important;
+}
+
+.udash-salvos-overlay.open { display: flex !important; }
+
+.udash-salvos-modal {
+  width: min(980px, 100%) !important;
+  max-height: min(760px, 92vh) !important;
+  overflow: auto !important;
+  background: #ffffff !important;
+  border-radius: 28px !important;
+  border: 1px solid #dbe7f3 !important;
+  box-shadow: 0 30px 80px rgba(0,0,0,.28) !important;
+  padding: 24px !important;
+}
+
+.udash-salvos-head {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin-bottom: 18px !important;
+}
+
+.udash-salvos-head h2 { margin: 0 !important; color: #0e3c6d !important; font-size: 24px !important; font-weight: 950 !important; }
+.udash-salvos-head p { margin: 6px 0 0 !important; color: #64748b !important; font-size: 13px !important; font-weight: 750 !important; }
+.udash-salvos-close { border: 0 !important; border-radius: 14px !important; width: 40px !important; height: 40px !important; color: #fff !important; background: #0e3c6d !important; cursor: pointer !important; font-size: 22px !important; }
+.udash-salvos-list { display: grid !important; gap: 12px !important; }
+.udash-salvo-card { border: 1px solid #dbe7f3 !important; border-radius: 18px !important; padding: 16px !important; background: #f8fbff !important; display: grid !important; gap: 12px !important; }
+.udash-salvo-card h3 { margin: 0 !important; color: #0f172a !important; font-size: 17px !important; font-weight: 950 !important; }
+.udash-salvo-meta { color: #64748b !important; font-size: 12px !important; font-weight: 800 !important; }
+.udash-salvo-grid { display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 10px !important; }
+.udash-salvo-grid div { border-radius: 14px !important; background: #ffffff !important; border: 1px solid #e3ebf5 !important; padding: 12px !important; display: grid !important; gap: 5px !important; }
+.udash-salvo-grid small { color: #8493a7 !important; font-size: 10px !important; font-weight: 950 !important; text-transform: uppercase !important; }
+.udash-salvo-grid strong { color: #0e3c6d !important; font-size: 15px !important; font-weight: 950 !important; }
+.udash-salvo-actions { display: flex !important; justify-content: flex-end !important; gap: 8px !important; }
+.udash-salvo-actions button { border: 0 !important; border-radius: 999px !important; padding: 10px 14px !important; font-size: 12px !important; font-weight: 900 !important; color: #fff !important; background: #0e3c6d !important; cursor: pointer !important; }
+.udash-salvo-actions button.danger { background: #dc2626 !important; }
+.udash-salvos-empty { padding: 34px 18px !important; text-align: center !important; color: #64748b !important; font-weight: 850 !important; }
+
+body.theme-dark .udash-salvos-modal,
+body.dark-mode .udash-salvos-modal,
+html.theme-dark .udash-salvos-modal {
+  background: #0e1d32 !important;
+  border-color: rgba(148, 163, 184, .22) !important;
+  color: #e5eefb !important;
+}
+
+body.theme-dark .udash-salvo-card,
+body.dark-mode .udash-salvo-card,
+html.theme-dark .udash-salvo-card { background: #132840 !important; border-color: rgba(148, 163, 184, .22) !important; }
+body.theme-dark .udash-salvo-grid div,
+body.dark-mode .udash-salvo-grid div,
+html.theme-dark .udash-salvo-grid div { background: #0b1829 !important; border-color: rgba(148, 163, 184, .22) !important; }
+body.theme-dark .udash-salvos-head h2,
+body.theme-dark .udash-salvo-card h3,
+body.theme-dark .udash-salvo-grid strong,
+body.dark-mode .udash-salvos-head h2,
+body.dark-mode .udash-salvo-card h3,
+body.dark-mode .udash-salvo-grid strong,
+html.theme-dark .udash-salvos-head h2,
+html.theme-dark .udash-salvo-card h3,
+html.theme-dark .udash-salvo-grid strong { color: #e5eefb !important; }
+
 /* Ícones do Dashboard Geral no mesmo padrão visual da referência enviada */
 #dashboardView .udash-card-icon .udash-svg-icon {
   width: 25px !important;
@@ -9819,7 +10291,56 @@ body.dark-mode #dashboardView .udash-meta-input input {
   if(window.__UNIFAHE_DASHBOARD_GERAL_MODELO_FOTO_FINAL__) return;
   window.__UNIFAHE_DASHBOARD_GERAL_MODELO_FOTO_FINAL__ = true;
 
-  var VIEWS = ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView','painelIndicadoresView','treinamentosCampanhasView','dashboardMensalSalvosView'];
+  var VIEWS = ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView','painelIndicadoresView','treinamentosCampanhasView','dashboardMensalSalvosView'];
+
+  function mostrarView(viewId){
+    VIEWS.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el) el.style.setProperty('display', 'none', 'important');
+    });
+
+    if(document.body){
+      document.body.classList.remove(
+        'view-home',
+        'view-vendas',
+        'view-times',
+        'view-dashboard',
+        'view-dashboard-individual',
+        'view-campanhas',
+        'view-comissoes',
+        'view-painel-indicadores'
+      );
+    }
+
+    var alvo = document.getElementById(viewId);
+    if(alvo){
+      alvo.style.setProperty('display', 'block', 'important');
+      alvo.style.setProperty('position', 'relative', 'important');
+      alvo.style.setProperty('z-index', '2', 'important');
+    }
+
+    if(document.body){
+      if(viewId === 'dashboardView') document.body.classList.add('view-dashboard');
+      else if(viewId === 'dashboardIndividualView') document.body.classList.add('view-dashboard-individual');
+      else if(viewId === 'homeView') document.body.classList.add('view-home');
+      else if(viewId === 'vendasView') document.body.classList.add('view-vendas');
+      else if(viewId === 'timesView') document.body.classList.add('view-times');
+      else if(viewId === 'campanhasView') document.body.classList.add('view-campanhas');
+      else if(viewId === 'comissoesView') document.body.classList.add('view-comissoes');
+      else if(viewId === 'painelIndicadoresView') document.body.classList.add('view-painel-indicadores');
+    }
+
+    var sidebar = document.getElementById('sidebar');
+    var toggle = document.getElementById('toggleSidebarBtn');
+    if(sidebar) sidebar.classList.remove('open');
+    if(toggle) toggle.classList.remove('open');
+
+    try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+    catch(e){ window.scrollTo(0,0); }
+
+    return alvo;
+  }
+
   var charts = {};
   var renderToken = 0;
   var chartLoaderPromise = null;
@@ -10044,8 +10565,14 @@ body.dark-mode #dashboardView .udash-meta-input input {
     return { inicio:inicioRef, fim:fimRef, dia:fimRef, mesInicio:mesInicio, mesFim:mesFim, corte:corte };
   }
 
-  function metaFaturados(){ return numero(document.getElementById('dashModeloMetaFaturados') && document.getElementById('dashModeloMetaFaturados').value); }
-  function metaMatriculas(){ return numero(document.getElementById('dashModeloMetaMatriculas') && document.getElementById('dashModeloMetaMatriculas').value); }
+  function metaFaturados(){
+    var el = document.getElementById('dashModeloMetaFaturados');
+    return numero((el && el.value) || localStorage.getItem('unifahe_meta_mensal_dashboard') || localStorage.getItem('unifahe_dashboard_meta_faturados') || 0);
+  }
+  function metaMatriculas(){
+    var el = document.getElementById('dashModeloMetaMatriculas');
+    return numero((el && el.value) || localStorage.getItem('unifahe_dashboard_meta_matriculas') || 0);
+  }
 
   function cardHTML(cfg){
     return ''+
@@ -10083,6 +10610,7 @@ body.dark-mode #dashboardView .udash-meta-input input {
               '<label>ATÉ<input id="dashModeloFim" type="date" value="'+fim+'"></label>'+
               '<button type="button" id="dashModeloFiltrar">Filtrar</button>'+
             '</div>'+
+            '<button type="button" class="udash-btn udash-btn-blue" id="udashBtnSalvar">Salvar dashboard</button>'+
             '<button type="button" class="udash-btn udash-btn-blue" id="udashBtnSalvos">Dashboards salvos</button>'+
           '</div>'+
         '</div>'+
@@ -10127,6 +10655,9 @@ body.dark-mode #dashboardView .udash-meta-input input {
 
     var btnInd = document.getElementById('udashBtnIndividual');
     if(btnInd) btnInd.addEventListener('click', function(){ window.abrirDashboardIndividual(); });
+
+    var btnSalvar = document.getElementById('udashBtnSalvar');
+    if(btnSalvar) btnSalvar.addEventListener('click', function(){ window.salvarDashboardGeral(); });
 
     var btnSalvos = document.getElementById('udashBtnSalvos');
     if(btnSalvos) btnSalvos.addEventListener('click', function(){
@@ -10390,54 +10921,525 @@ body.dark-mode #dashboardView .udash-meta-input input {
     return { vendasMes:vendasMes, vendasDia:vendasDia, metricasMes:metricasMes, metricasDia:metricasDia };
   }
 
-  function limparDashboardIndividual(){
+
+
+  function dashboardSalvosKey(){ return 'unifahe_dashboard_geral_salvos_v2'; }
+
+  function escapeDashHTML(valor){
+    return String(valor == null ? '' : valor).replace(/[&<>"']/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]; });
+  }
+
+  function getDashboardsSalvosLocal(){
+    try{
+      var lista = JSON.parse(localStorage.getItem(dashboardSalvosKey()) || '[]');
+      return Array.isArray(lista) ? lista : [];
+    }catch(e){ return []; }
+  }
+
+  function setDashboardsSalvosLocal(lista){
+    var vistos = {};
+    var limpa = (lista || []).filter(function(item){
+      if(!item || !item.id || vistos[item.id]) return false;
+      vistos[item.id] = true;
+      return true;
+    }).slice(0, 80);
+    try{ localStorage.setItem(dashboardSalvosKey(), JSON.stringify(limpa)); }catch(e){}
+    return limpa;
+  }
+
+  async function carregarDashboardsSalvos(){
+    var locais = getDashboardsSalvosLocal();
+    var remoto = [];
+    try{
+      if(typeof db !== 'undefined' && db && typeof db.collection === 'function'){
+        var snap = await db.collection('dashboardGeralSalvos').orderBy('salvoEm','desc').limit(80).get();
+        remoto = snap.docs.map(function(doc){ return Object.assign({ id: doc.id }, doc.data() || {}); });
+      }
+    }catch(e){ console.warn('Dashboards salvos: leitura remota indisponível.', e); }
+    var mapa = {};
+    remoto.concat(locais).forEach(function(item){ if(item && item.id && !mapa[item.id]) mapa[item.id] = item; });
+    var lista = Object.keys(mapa).map(function(id){ return mapa[id]; }).sort(function(a,b){ return String(b.salvoEm||'').localeCompare(String(a.salvoEm||'')); });
+    setDashboardsSalvosLocal(lista);
+    return lista;
+  }
+
+  async function persistirDashboardSalvo(item){
+    var lista = getDashboardsSalvosLocal().filter(function(x){ return x.id !== item.id; });
+    lista.unshift(item);
+    setDashboardsSalvosLocal(lista);
+    try{
+      if(typeof db !== 'undefined' && db && typeof db.collection === 'function'){
+        await db.collection('dashboardGeralSalvos').doc(item.id).set(item, { merge:true });
+      }
+    }catch(e){ console.warn('Dashboard salvo apenas no navegador.', e); }
+  }
+
+  async function salvarDashboardGeral(){
+    var resultado = await carregarDashboardGeral();
+    var periodo = periodoDashboard();
+    var metaFat = metaFaturados();
+    var metaMat = metaMatriculas();
+    var agora = new Date();
+    var item = {
+      id: 'dashboard_' + agora.getTime(),
+      titulo: 'Dashboard Geral - ' + brMes(periodo.mesInicio || periodo.inicio),
+      periodo: periodo,
+      metas: { faturados: metaFat, matriculas: metaMat },
+      metricasMes: resultado && resultado.metricasMes ? resultado.metricasMes : acumular([]),
+      metricasDia: resultado && resultado.metricasDia ? resultado.metricasDia : acumular([]),
+      salvoEm: agora.toISOString(),
+      salvoPor: (window.usuarioLogado && (usuarioLogado.nome || usuarioLogado.usuario || usuarioLogado.id)) || 'ADM'
+    };
+    await persistirDashboardSalvo(item);
+    if(typeof toast === 'function') toast('Dashboard geral salvo.');
+    return item;
+  }
+
+  function formatarDataHoraSalvo(iso){
+    try{ return new Date(iso).toLocaleString('pt-BR', { dateStyle:'short', timeStyle:'short' }); }catch(e){ return '--/--/----'; }
+  }
+
+  function resumoSalvoHTML(item){
+    var mes = item.metricasMes || {};
+    var dia = item.metricasDia || {};
+    var periodo = item.periodo || {};
+    return ''+
+      '<article class="udash-salvo-card" data-id="'+escapeDashHTML(item.id)+'">'+
+        '<div><h3>'+escapeDashHTML(item.titulo || 'Dashboard Geral')+'</h3><div class="udash-salvo-meta">'+escapeDashHTML(brData(periodo.inicio))+' até '+escapeDashHTML(brData(periodo.fim))+' • salvo em '+escapeDashHTML(formatarDataHoraSalvo(item.salvoEm))+' • '+escapeDashHTML(item.salvoPor || 'ADM')+'</div></div>'+
+        '<div class="udash-salvo-grid">'+
+          '<div><small>Faturado mensal</small><strong>'+dinheiro(mes.faturado || 0)+'</strong></div>'+
+          '<div><small>Qtd. faturado</small><strong>'+Math.round(mes.qtdFaturado || 0)+'</strong></div>'+
+          '<div><small>Taxa boleto mensal</small><strong>'+dinheiro(mes.taxaBoleto || 0)+'</strong></div>'+
+          '<div><small>Boletos mensais</small><strong>'+Math.round(mes.qtdBoleto || 0)+'</strong></div>'+
+          '<div><small>Faturado do dia</small><strong>'+dinheiro(dia.faturado || 0)+'</strong></div>'+
+          '<div><small>Qtd. dia</small><strong>'+Math.round(dia.qtdFaturado || 0)+'</strong></div>'+
+          '<div><small>Taxa do dia</small><strong>'+dinheiro(dia.taxaBoleto || 0)+'</strong></div>'+
+          '<div><small>Boletos dia</small><strong>'+Math.round(dia.qtdBoleto || 0)+'</strong></div>'+
+        '</div>'+
+        '<div class="udash-salvo-actions"><button type="button" class="danger" onclick="excluirDashboardSalvo(\''+escapeDashHTML(item.id)+'\')">Excluir</button></div>'+
+      '</article>';
+  }
+
+  function garantirModalDashboardsSalvos(){
+    var overlay = document.getElementById('udashSalvosOverlay');
+    if(overlay) return overlay;
+    overlay = document.createElement('div');
+    overlay.id = 'udashSalvosOverlay';
+    overlay.className = 'udash-salvos-overlay';
+    overlay.innerHTML = '<div class="udash-salvos-modal"><div class="udash-salvos-head"><div><h2>Dashboards salvos</h2><p>Snapshots gravados do Dashboard Geral. Eles continuam disponíveis após atualizar a página.</p></div><button type="button" class="udash-salvos-close" onclick="fecharModalDashboardsMensais()">×</button></div><div class="udash-salvos-list" id="udashSalvosLista"><div class="udash-salvos-empty">Carregando...</div></div></div>';
+    overlay.addEventListener('click', function(ev){ if(ev.target === overlay) fecharModalDashboardsMensais(); });
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  async function abrirModalDashboardsMensais(){
+    var overlay = garantirModalDashboardsSalvos();
+    var listaBox = document.getElementById('udashSalvosLista');
+    overlay.classList.add('open');
+    if(listaBox) listaBox.innerHTML = '<div class="udash-salvos-empty">Carregando dashboards salvos...</div>';
+    var lista = await carregarDashboardsSalvos();
+    if(listaBox){
+      listaBox.innerHTML = lista.length ? lista.map(resumoSalvoHTML).join('') : '<div class="udash-salvos-empty">Nenhum dashboard salvo ainda.</div>';
+    }
+  }
+
+  function fecharModalDashboardsMensais(){
+    var overlay = document.getElementById('udashSalvosOverlay');
+    if(overlay) overlay.classList.remove('open');
+  }
+
+  async function excluirDashboardSalvo(id){
+    if(!id) return;
+    if(!confirm('Excluir este dashboard salvo?')) return;
+    var lista = getDashboardsSalvosLocal().filter(function(item){ return item.id !== id; });
+    setDashboardsSalvosLocal(lista);
+    try{
+      if(typeof db !== 'undefined' && db && typeof db.collection === 'function'){
+        await db.collection('dashboardGeralSalvos').doc(id).delete();
+      }
+    }catch(e){ console.warn('Dashboard salvo removido localmente. Exclusão remota indisponível.', e); }
+    await abrirModalDashboardsMensais();
+    if(typeof toast === 'function') toast('Dashboard salvo excluído.');
+  }
+
+
+
+  function vendedoresDashboardIndividual(){
+    var base = [];
+    try{ if(typeof VENDEDORES !== 'undefined' && Array.isArray(VENDEDORES)) base = base.concat(VENDEDORES); }catch(e){}
+    getVendasCacheLocal().forEach(function(v){ if(v && v.vendedor) base.push(v.vendedor); });
+    var seen = {};
+    return base.map(function(nome){ return String(nome || '').trim(); }).filter(function(nome){ var k = normalizar(nome); if(!nome || seen[k]) return false; seen[k] = true; return true; }).sort(function(a,b){ return a.localeCompare(b, 'pt-BR'); });
+  }
+
+  function usuarioVendedorRestrito(){
+    if(!window.usuarioLogado) return false;
+    var perfil = normalizar(usuarioLogado.perfil || usuarioLogado.tipo || usuarioLogado.role || usuarioLogado.nivel || '');
+    return !(perfil === 'GESTOR' || perfil === 'ADM' || perfil === 'ADMIN' || perfil === 'ADMINISTRADOR');
+  }
+
+  function vendedorDashboardSelecionado(){
+    if(usuarioVendedorRestrito()) return usuarioLogado.nome || usuarioLogado.usuario || usuarioLogado.email || '';
+    var select = document.getElementById('selectVendedorDashboard');
+    if(select && select.value) return select.value;
+    var vendedores = vendedoresDashboardIndividual();
+    return vendedores[0] || '';
+  }
+
+  function optionsVendedoresDashboard(selected){
+    var vendedores = vendedoresDashboardIndividual();
+    if(selected && vendedores.map(normalizar).indexOf(normalizar(selected)) < 0) vendedores.unshift(selected);
+    if(!vendedores.length) return '<option value="">Sem vendedores</option>';
+    return vendedores.map(function(nome){ return '<option value="'+escapeDashHTML(nome)+'" '+(normalizar(nome) === normalizar(selected) ? 'selected' : '')+'>'+escapeDashHTML(nome)+'</option>'; }).join('');
+  }
+
+  function periodoDashboardIndividual(){
+    var hoje = hojeISO();
+    var input = document.getElementById('indModeloData');
+    var salvo = localStorage.getItem('unifahe_dashboard_individual_data') || hoje;
+    if(input && !input.value) input.value = salvo;
+    var dia = ((input && input.value) || salvo || hoje).slice(0,10);
+    if(input) input.value = dia;
+    localStorage.setItem('unifahe_dashboard_individual_data', dia);
+    return { dia: dia, mesInicio: primeiroDiaMesISO(dia), mesFim: ultimoDiaMesISO(dia) };
+  }
+
+  function indCardHTML(cfg){
+    return ''+
+      '<article class="ind4-card '+cfg.extra+'">'+
+        '<div class="ind4-card-head"><h3>'+cfg.titulo+'</h3><span>'+cfg.icone+'</span></div>'+ 
+        '<div class="ind4-values">'+
+          '<div class="ind4-value-box"><small>'+cfg.label1+'</small><strong id="'+cfg.id1+'">--</strong></div>'+ 
+          '<div class="ind4-value-box"><small>'+cfg.label2+'</small><strong id="'+cfg.id2+'">--</strong></div>'+ 
+        '</div>'+ 
+        '<div class="ind4-note" id="'+cfg.noteId+'">--</div>'+ 
+      '</article>';
+  }
+
+  function painelResumoDashboardIndividualHTML(){
+    return ''+
+      '<section class="ind4-summary">'+
+        '<div>'+ 
+          '<h3>Resumo do desempenho</h3>'+ 
+          '<p id="indResumoFrase">Os indicadores abaixo usam somente as vendas reais do vendedor selecionado.</p>'+ 
+          '<div class="ind4-insights">'+
+            '<div class="ind4-insight"><span>Meta mensal</span><strong id="indMetaMensal">--</strong></div>'+ 
+            '<div class="ind4-insight"><span>Faturado atual</span><strong id="indResumoFaturado">--</strong></div>'+ 
+            '<div class="ind4-insight"><span>Falta para meta</span><strong id="indFaltaMeta">--</strong></div>'+ 
+            '<div class="ind4-insight"><span>Comissão prevista</span><strong id="indComissaoPrevista">--</strong></div>'+ 
+          '</div>'+ 
+        '</div>'+ 
+        '<div class="ind4-progress-box">'+
+          '<div class="ind4-progress-head"><span>Progresso da meta</span><strong id="indProgressoMeta">0%</strong></div>'+ 
+          '<div class="ind4-progress-track"><i id="indProgressoBar"></i></div>'+ 
+          '<p id="indRitmoMeta">Defina uma meta mensal no Dashboard Geral para acompanhar o progresso.</p>'+ 
+        '</div>'+ 
+      '</section>';
+  }
+
+  function painelVendasRecentesHTML(){
+    return ''+
+      '<section class="ind4-panel">'+
+        '<div class="ind4-chart-head"><div><h3>Vendas recentes</h3><p>Últimas vendas reais do vendedor selecionado.</p></div><span class="ind4-badge">Últimas 6</span></div>'+ 
+        '<div class="ind4-table-wrap"><table class="ind4-table">'+
+          '<thead><tr><th>Aluno/cliente</th><th>Categoria</th><th>Pagamento</th><th>Valor</th><th>Data</th></tr></thead>'+ 
+          '<tbody id="indVendasRecentesBody"><tr><td colspan="5" class="ind4-empty">Nenhuma venda encontrada.</td></tr></tbody>'+ 
+        '</table></div>'+ 
+      '</section>';
+  }
+
+  function painelAlertasDashboardIndividualHTML(){
+    return ''+
+      '<aside class="ind4-panel">'+
+        '<div><h3>Alertas inteligentes</h3><p>Leitura automática baseada nos dados reais da área Vendas.</p></div>'+ 
+        '<div class="ind4-alert-list" id="indAlertasList"></div>'+ 
+      '</aside>';
+  }
+
+  function montarDashboardIndividual(){
     var ind = document.getElementById('dashboardIndividualView');
-    if(!ind) return;
-    qsa('canvas', ind).forEach(function(canvas){
-      try{ if(window.Chart && Chart.getChart){ var old = Chart.getChart(canvas); if(old) old.destroy(); } }catch(e){}
-    });
-    ind.innerHTML = '';
-    ind.classList.add('dashboard-empty-area');
+    if(!ind) return null;
+    var selected = vendedorDashboardSelecionado();
+    ind.classList.remove('dashboard-empty-area');
+    ind.classList.add('ind4-ready');
     ind.style.setProperty('padding','0','important');
     ind.style.setProperty('max-width','none','important');
-    ind.style.setProperty('background','transparent','important');
-    ind.style.setProperty('box-shadow','none','important');
+    ind.innerHTML = ''+
+      '<div class="ind4-shell">'+
+        '<div class="ind4-header">'+
+          '<div class="ind4-title"><h1>Dashboard Individual</h1><p id="indSubtituloVendedor">Indicadores mensais e do dia somente do vendedor selecionado.</p></div>'+ 
+          '<div class="ind4-actions">'+
+            '<div class="ind4-filter">'+
+              '<label>Vendedor<select id="selectVendedorDashboard">'+optionsVendedoresDashboard(selected)+'</select></label>'+ 
+              '<label>Data base<input id="indModeloData" type="date" value="'+(localStorage.getItem('unifahe_dashboard_individual_data') || hojeISO())+'"></label>'+ 
+            '</div>'+ 
+            '<button class="ind4-btn" type="button" id="ind4VoltarGeral">Voltar ao Geral</button>'+ 
+          '</div>'+ 
+        '</div>'+ 
+        '<div class="ind4-main-grid">'+
+          '<div class="ind4-grid">'+
+            indCardHTML({extra:'faturado mensal', titulo:'Faturado Mensal', icone:'💰', label1:'VALOR', label2:'QUANTIDADE', id1:'indFatMesValor', id2:'indFatMesQtd', noteId:'indFatMesNota'})+
+            indCardHTML({extra:'boleto mensal', titulo:'Boleto Mensal', icone:'🧾', label1:'TAXA', label2:'QUANTIDADE', id1:'indBolMesTaxa', id2:'indBolMesQtd', noteId:'indBolMesNota'})+
+            indCardHTML({extra:'faturado dia', titulo:'Faturado Hoje', icone:'📆', label1:'VALOR', label2:'QUANTIDADE', id1:'indFatDiaValor', id2:'indFatDiaQtd', noteId:'indFatDiaNota'})+
+            indCardHTML({extra:'boleto dia boleto', titulo:'Boleto Hoje', icone:'🏷️', label1:'TAXA', label2:'QUANTIDADE', id1:'indBolDiaTaxa', id2:'indBolDiaQtd', noteId:'indBolDiaNota'})+
+          '</div>'+ 
+          painelResumoDashboardIndividualHTML()+
+          '<div class="ind4-charts-grid">'+
+            '<section class="ind4-chart-panel"><div class="ind4-chart-head"><div><h3>Resultado</h3><p>Comparação entre faturado, boleto, meta e faltante para meta.</p></div><span class="ind4-badge">Mensal</span></div><div class="ind4-chart-wrap"><canvas id="indResultadoChart"></canvas></div></section>'+ 
+            '<section class="ind4-chart-panel"><div class="ind4-chart-head"><div><h3>Categoria</h3><p>Desempenho por modalidade/categoria do vendedor.</p></div><span class="ind4-badge">Vendedor</span></div><div class="ind4-chart-wrap"><canvas id="indCategoriaChart"></canvas></div></section>'+ 
+          '</div>'+ 
+          '<div class="ind4-lower-grid">'+painelVendasRecentesHTML()+painelAlertasDashboardIndividualHTML()+'</div>'+ 
+        '</div>'+ 
+      '</div>';
+    var select = document.getElementById('selectVendedorDashboard');
+    if(select){
+      select.value = selected;
+      select.disabled = usuarioVendedorRestrito();
+      select.addEventListener('change', function(){ window.carregarDashboardIndividual(); });
+    }
+    var data = document.getElementById('indModeloData');
+    if(data) data.addEventListener('change', function(){ window.carregarDashboardIndividual(); });
+    var voltar = document.getElementById('ind4VoltarGeral');
+    if(voltar) voltar.addEventListener('click', function(){ window.voltarDashboardGeral(); });
+    return ind;
   }
 
-  function fecharSidebar(){
-    var sidebar = document.getElementById('sidebar');
-    var toggle = document.getElementById('toggleSidebarBtn');
-    if(sidebar) sidebar.classList.remove('open');
-    if(toggle) toggle.classList.remove('open');
+  function categoriaVenda(venda){
+    var valor = venda && (venda.modalidade || venda.categoria || venda.segmento || venda.produto || venda.produtoServico || venda.curso || venda.nomeCurso);
+    valor = String(valor || '').trim();
+    return valor || 'Sem categoria';
   }
 
-  function mostrarView(id){
-    VIEWS.forEach(function(viewId){
-      var el = document.getElementById(viewId);
-      if(el) el.style.setProperty('display', viewId === id ? 'block' : 'none', 'important');
+  function agruparPorCategoriaDashboardIndividual(lista){
+    var mapa = {};
+    (lista || []).forEach(function(venda){
+      var nome = categoriaVenda(venda);
+      if(!mapa[nome]) mapa[nome] = { nome:nome, valor:0, qtd:0 };
+      mapa[nome].valor += valorResultado(venda);
+      mapa[nome].qtd += qtdCursos(venda);
     });
-    document.body.classList.remove('view-home','view-vendas','view-times','view-dashboard','view-dashboard-individual','view-diario','view-campanhas','view-comissoes','view-painel-indicadores','view-treinamentos-campanhas');
-    if(id === 'dashboardView') document.body.classList.add('view-dashboard');
-    if(id === 'dashboardIndividualView') document.body.classList.add('view-dashboard-individual');
-    fecharSidebar();
+    return Object.keys(mapa).map(function(k){ return mapa[k]; }).sort(function(a,b){ return b.valor - a.valor; }).slice(0, 7);
+  }
+
+  function pagamentoVendaTexto(venda){
+    var raw = venda && (venda.tipo || venda.pagamento || venda.formaPagamento || venda.tipoPagamento || venda.forma || venda.meioPagamento);
+    raw = String(raw || '').trim();
+    if(raw) return raw;
+    if(ehBoleto(venda)) return 'Boleto';
+    if(ehCartaoOuQuitado(venda)) return 'Cartão/Quitado';
+    return 'Não informado';
+  }
+
+  function alunoVenda(venda){
+    return String(venda && (venda.aluno || venda.cliente || venda.nomeAluno || venda.nomeCliente || venda.nome || venda.lead || venda.nomeCompleto) || 'Sem nome').trim();
+  }
+
+  function valorVendaTabela(venda){
+    var valor = valorResultado(venda);
+    if(valor) return valor;
+    return numero(venda && (venda.valorTotal || venda.total || venda.valor || venda.taxa));
+  }
+
+  function comissaoVenda(venda){
+    return numero(venda && (venda.comissao || venda.comissão || venda.valorComissao || venda.comissaoPrevista || venda.comissaoVendedor || venda.comissaoEstimativa));
+  }
+
+  function totalComissao(lista){
+    return (lista || []).reduce(function(total, venda){ return total + comissaoVenda(venda); }, 0);
+  }
+
+  function atualizarResumoDashboardIndividual(vendedor, periodo, vendasMes, vendasDia, mMes, mDia){
+    var meta = metaFaturados();
+    var falta = Math.max(meta - (mMes.faturado || 0), 0);
+    var pct = meta > 0 ? Math.min(100, Math.round(((mMes.faturado || 0) / meta) * 100)) : 0;
+    var comissao = totalComissao(vendasMes);
+    var comissaoTexto = comissao > 0 ? dinheiro(comissao) : 'Sem dado';
+    var ticket = mMes.qtdFaturado > 0 ? (mMes.faturado / mMes.qtdFaturado) : 0;
+    var faltamVendas = ticket > 0 ? Math.ceil(falta / ticket) : 0;
+    var diasMes = diasNoMes(periodo.mesInicio);
+    var diaAtual = Math.max(1, Math.min(diasMes, Number(String(periodo.dia || hojeISO()).slice(8,10)) || 1));
+    var mediaNecessaria = meta > 0 ? meta / diasMes : 0;
+    var mediaAtual = diaAtual > 0 ? (mMes.faturado || 0) / diaAtual : 0;
+
+    setText('indSubtituloVendedor', vendedor ? ('Visão de '+vendedor+' • '+brMes(periodo.dia)) : 'Selecione um vendedor para visualizar os dados.');
+    setText('indMetaMensal', meta > 0 ? dinheiro(meta) : 'Sem meta');
+    setText('indResumoFaturado', dinheiro(mMes.faturado));
+    setText('indFaltaMeta', meta > 0 ? dinheiro(falta) : 'Sem meta');
+    setText('indComissaoPrevista', comissaoTexto);
+    setText('indProgressoMeta', meta > 0 ? (pct + '%') : '0%');
+    var barra = document.getElementById('indProgressoBar');
+    if(barra) barra.style.width = (meta > 0 ? pct : 0) + '%';
+
+    if(!vendedor){
+      setText('indResumoFrase', 'Selecione um vendedor para carregar os dados reais da área Vendas.');
+      setText('indRitmoMeta', 'Nenhum vendedor selecionado.');
+    }else if(meta > 0){
+      var frase = falta <= 0 ? 'Meta mensal batida com base nas vendas reais cadastradas.' : ('Faltam '+dinheiro(falta)+' para bater a meta mensal.');
+      setText('indResumoFrase', frase);
+      setText('indRitmoMeta', falta <= 0 ? 'Excelente: meta atingida no mês selecionado.' : ('No ticket médio atual, faltam cerca de '+faltamVendas+' venda(s) faturadas para bater a meta.'));
+    }else{
+      setText('indResumoFrase', 'As vendas reais foram carregadas. Defina uma meta no Dashboard Geral para acompanhar progresso.');
+      setText('indRitmoMeta', 'Meta mensal não configurada.');
+    }
+
+    return { meta:meta, falta:falta, pct:pct, ticket:ticket, faltamVendas:faltamVendas, mediaAtual:mediaAtual, mediaNecessaria:mediaNecessaria, comissao:comissao };
+  }
+
+  function atualizarVendasRecentesDashboardIndividual(lista){
+    var tbody = document.getElementById('indVendasRecentesBody');
+    if(!tbody) return;
+    var recentes = (lista || []).slice().sort(function(a,b){ return String(dataVendaISO(b)).localeCompare(String(dataVendaISO(a))); }).slice(0, 6);
+    if(!recentes.length){
+      tbody.innerHTML = '<tr><td colspan="5" class="ind4-empty">Nenhuma venda encontrada para este vendedor.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = recentes.map(function(venda){
+      return '<tr>'+
+        '<td><strong>'+escapeDashHTML(alunoVenda(venda))+'</strong></td>'+ 
+        '<td>'+escapeDashHTML(categoriaVenda(venda))+'</td>'+ 
+        '<td><span class="ind4-pay">'+escapeDashHTML(pagamentoVendaTexto(venda))+'</span></td>'+ 
+        '<td>'+dinheiro(valorVendaTabela(venda))+'</td>'+ 
+        '<td>'+brData(dataVendaISO(venda))+'</td>'+ 
+      '</tr>';
+    }).join('');
+  }
+
+  function atualizarAlertasDashboardIndividual(metaInfo, mMes, mDia, vendasMes, vendasDia){
+    var box = document.getElementById('indAlertasList');
+    if(!box) return;
+    var totalMes = Math.max(1, (mMes.qtdFaturado || 0) + (mMes.qtdBoleto || 0));
+    var taxaBoletosMes = Math.round(((mMes.qtdBoleto || 0) / totalMes) * 100);
+    var alertas = [];
+
+    if(metaInfo.meta > 0){
+      if(metaInfo.falta <= 0) alertas.push({ icone:'🎯', titulo:'Meta batida', texto:'O vendedor já alcançou a meta mensal de faturamento.' });
+      else alertas.push({ icone:'🎯', titulo:'Meta em andamento', texto:'Faltam '+dinheiro(metaInfo.falta)+' para bater a meta mensal.' });
+    }else{
+      alertas.push({ icone:'🎯', titulo:'Meta não configurada', texto:'Configure a meta mensal no Dashboard Geral para liberar a leitura de progresso.' });
+    }
+
+    if(metaInfo.meta > 0 && metaInfo.mediaNecessaria > 0){
+      alertas.push({
+        icone: metaInfo.mediaAtual >= metaInfo.mediaNecessaria ? '📈' : '⚠️',
+        titulo: metaInfo.mediaAtual >= metaInfo.mediaNecessaria ? 'Ritmo saudável' : 'Ritmo abaixo da meta',
+        texto: 'Média atual: '+dinheiro(metaInfo.mediaAtual)+' por dia. Necessário: '+dinheiro(metaInfo.mediaNecessaria)+' por dia.'
+      });
+    }
+
+    alertas.push({ icone:'🧾', titulo:'Boletos no mês', texto:'Taxa de boletos em '+taxaBoletosMes+'% no mês, com '+Math.round(mMes.qtdBoleto || 0)+' boleto(s).' });
+    alertas.push({ icone:'📆', titulo:'Resultado do dia', texto:'Hoje foram '+Math.round(mDia.qtdFaturado || 0)+' venda(s) faturada(s) e '+Math.round(mDia.qtdBoleto || 0)+' boleto(s).' });
+
+    box.innerHTML = alertas.map(function(a){
+      return '<div class="ind4-alert"><i>'+escapeDashHTML(a.icone)+'</i><div><b>'+escapeDashHTML(a.titulo)+':</b> '+escapeDashHTML(a.texto)+'</div></div>';
+    }).join('');
+  }
+
+  function desenharGraficosDashboardIndividual(vendasMes, mMes, mDia, periodo){
+    if(!window.Chart) return;
+    var text = chartTextColor();
+    var grid = chartGridColor();
+    var metaFat = metaFaturados();
+    var falta = Math.max(metaFat - (mMes.faturado || 0), 0);
+    var resultadoLabels = ['Faturado', 'Boleto', 'Meta', 'Faltante'];
+    var resultadoDados = [mMes.faturado || 0, mMes.taxaBoleto || 0, metaFat || 0, falta || 0];
+
+    criarGrafico('indResultadoChart', {
+      type:'bar',
+      data:{
+        labels: resultadoLabels,
+        datasets:[{
+          label:'Resultado',
+          data: resultadoDados,
+          backgroundColor:[CORES.azulVivo, CORES.laranja, CORES.azul, CORES.cinza],
+          borderRadius:10,
+          maxBarThickness:46
+        }]
+      },
+      options:{
+        maintainAspectRatio:false,
+        responsive:true,
+        plugins:{
+          legend:{ display:false },
+          tooltip:{ callbacks:{ label:function(ctx){ return dinheiro(ctx.parsed.y || 0); } } }
+        },
+        scales:{
+          y:{ beginAtZero:true, ticks:{ color:text, callback:function(v){ return dinheiro0(v); }, font:{ size:10 } }, grid:{ color:grid } },
+          x:{ ticks:{ color:text, font:{ size:10 }, maxRotation:0, minRotation:0 }, grid:{ display:false } }
+        }
+      }
+    });
+
+    var categorias = agruparPorCategoriaDashboardIndividual(vendasMes);
+    var labels = categorias.length ? categorias.map(function(i){ return i.nome; }) : ['Sem dados'];
+    var valores = categorias.length ? categorias.map(function(i){ return i.valor; }) : [0];
+
+    criarGrafico('indCategoriaChart', {
+      type:'bar',
+      data:{
+        labels: labels,
+        datasets:[{
+          label:'Resultado por categoria',
+          data: valores,
+          backgroundColor: CORES.ciano,
+          borderRadius:9,
+          maxBarThickness:28
+        }]
+      },
+      options:{
+        indexAxis:'y',
+        maintainAspectRatio:false,
+        responsive:true,
+        plugins:{
+          legend:{ display:false },
+          tooltip:{ callbacks:{ label:function(ctx){ return dinheiro(ctx.parsed.x || 0); } } }
+        },
+        scales:{
+          x:{ beginAtZero:true, ticks:{ color:text, callback:function(v){ return dinheiro0(v); }, font:{ size:10 } }, grid:{ color:grid } },
+          y:{ ticks:{ color:text, font:{ size:10 } }, grid:{ display:false } }
+        }
+      }
+    });
   }
 
   async function carregarDashboardIndividualFinal(){
-    if(typeof carregarDashboardIndividualAnterior === 'function'){
-      try{ return await carregarDashboardIndividualAnterior.apply(this, arguments); }
-      catch(e){ console.warn('Dashboard individual anterior não pôde ser carregado.', e); }
-    }
-    limparDashboardIndividual();
-    return null;
+    montarDashboardIndividual();
+    var vendedor = vendedorDashboardSelecionado();
+    var periodo = periodoDashboardIndividual();
+    var lista = await obterVendas({ force:false });
+    var minhas = (lista || []).filter(function(v){ return normalizar(v && v.vendedor) === normalizar(vendedor); });
+    var vendasMes = filtrarPorData(minhas, periodo.mesInicio, periodo.mesFim);
+    var vendasDia = filtrarDia(minhas, periodo.dia);
+    var mMes = acumular(vendasMes);
+    var mDia = acumular(vendasDia);
+
+    setText('indFatMesValor', dinheiro(mMes.faturado));
+    setText('indFatMesQtd', String(Math.round(mMes.qtdFaturado)));
+    setText('indBolMesTaxa', dinheiro(mMes.taxaBoleto));
+    setText('indBolMesQtd', String(Math.round(mMes.qtdBoleto)));
+    setText('indFatDiaValor', dinheiro(mDia.faturado));
+    setText('indFatDiaQtd', String(Math.round(mDia.qtdFaturado)));
+    setText('indBolDiaTaxa', dinheiro(mDia.taxaBoleto));
+    setText('indBolDiaQtd', String(Math.round(mDia.qtdBoleto)));
+    setText('indFatMesNota', 'Mês: '+brData(periodo.mesInicio)+' até '+brData(periodo.mesFim));
+    setText('indBolMesNota', 'Somente boletos do vendedor.');
+    setText('indFatDiaNota', 'Data base: '+brData(periodo.dia));
+    setText('indBolDiaNota', 'Boletos da data selecionada.');
+
+    var metaInfo = atualizarResumoDashboardIndividual(vendedor, periodo, vendasMes, vendasDia, mMes, mDia);
+    atualizarVendasRecentesDashboardIndividual(minhas);
+    atualizarAlertasDashboardIndividual(metaInfo, mMes, mDia, vendasMes, vendasDia);
+
+    try{
+      await loadChart();
+      desenharGraficosDashboardIndividual(vendasMes, mMes, mDia, periodo);
+    }catch(e){ console.warn('Dashboard individual: gráficos indisponíveis.', e); }
+    return { vendedor:vendedor, periodo:periodo, metricasMes:mMes, metricasDia:mDia, vendasMes:vendasMes, vendasDia:vendasDia };
   }
   carregarDashboardIndividualFinal.__udashModeloFoto = true;
 
   async function prepararSelectDashboardIndividualFinal(){
-    if(typeof prepararSelectDashboardIndividualAnterior === 'function'){
-      try{ return await prepararSelectDashboardIndividualAnterior.apply(this, arguments); }
-      catch(e){ console.warn('Select do dashboard individual anterior não pôde ser preparado.', e); }
-    }
-    return null;
+    montarDashboardIndividual();
+    return true;
   }
   prepararSelectDashboardIndividualFinal.__udashModeloFoto = true;
 
@@ -10468,6 +11470,10 @@ body.dark-mode #dashboardView .udash-meta-input input {
   }
   navegarFinal.__udashModeloFoto = true;
 
+  window.salvarDashboardGeral = salvarDashboardGeral;
+  window.abrirModalDashboardsMensais = abrirModalDashboardsMensais;
+  window.fecharModalDashboardsMensais = fecharModalDashboardsMensais;
+  window.excluirDashboardSalvo = excluirDashboardSalvo;
   window.carregarDashboard = carregarDashboardGeral;
   window.carregarDashboardIndividual = carregarDashboardIndividualFinal;
   window.prepararSelectDashboardIndividual = prepararSelectDashboardIndividualFinal;
@@ -10686,10 +11692,11 @@ body.view-home #conteudoDinamico,
     margin: 0 !important;
     padding: 0 !important;
     display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: clamp(12px, 1.1vw, 16px) !important;
     align-items: stretch !important;
 }
+
 
 #homeView .menu-card.home-action-card,
 #homeView .home-action-card,
@@ -10997,6 +12004,57 @@ html[data-theme="dark"] #homeView .home-info-strip strong {
     }
 }
 
+
+/* Responsividade geral: evita scroll lateral e melhora uso em celular */
+@media (max-width: 768px) {
+    html,
+    body,
+    #mainPortal,
+    #conteudoDinamico,
+    .section-container {
+        width: 100% !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+
+    #conteudoDinamico {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #homeView .home-premium-hero,
+    #homeView .home-academic-clean {
+        padding: 34px 18px 26px !important;
+        border-radius: 0 0 22px 22px !important;
+    }
+
+    #homeView .home-premium-content,
+    #homeView .home-academic-clean-content {
+        padding: 20px 14px 28px !important;
+    }
+
+    #homeView .home-hero-content h1 {
+        font-size: clamp(1.65rem, 9vw, 2.2rem) !important;
+        letter-spacing: -.035em !important;
+    }
+
+    #homeView .home-hero-actions,
+    #homeView .home-hero-actions button {
+        width: 100% !important;
+    }
+
+    #homeView .home-hero-actions button {
+        justify-content: center !important;
+    }
+
+    #homeView .menu-card.home-action-card,
+    #homeView .home-action-card,
+    #homeView .academic-module-card {
+        padding: 16px !important;
+        border-radius: 18px !important;
+    }
+}
+
 /* Times: 7 times + último card com marca, sem valor individual e sem scroll interno */
 #timesView {
     padding-left: 82px !important;
@@ -11138,25 +12196,21 @@ body.dark-mode,
 html.theme-dark body,
 html.dark-mode body { background: #020617 !important; color: #f8fafc !important; }
 body.theme-dark #vendasView,
-body.theme-dark #diarioView,
 body.theme-dark #campanhasView,
 body.theme-dark #painelIndicadoresView,
 body.theme-dark #dashboardView,
 body.theme-dark #dashboardIndividualView,
 body.dark-mode #vendasView,
-body.dark-mode #diarioView,
 body.dark-mode #campanhasView,
 body.dark-mode #painelIndicadoresView,
 body.dark-mode #dashboardView,
 body.dark-mode #dashboardIndividualView,
 html.theme-dark #vendasView,
-html.theme-dark #diarioView,
 html.theme-dark #campanhasView,
 html.theme-dark #painelIndicadoresView,
 html.theme-dark #dashboardView,
 html.theme-dark #dashboardIndividualView,
 html.dark-mode #vendasView,
-html.dark-mode #diarioView,
 html.dark-mode #campanhasView,
 html.dark-mode #painelIndicadoresView,
 html.dark-mode #dashboardView,
@@ -11171,32 +12225,24 @@ body.theme-dark .dashboard-card,
 body.theme-dark .chart-container,
 body.theme-dark .dashboard-mini-card,
 body.theme-dark .dashboard-individual-panel,
-body.theme-dark .diario-kpi,
-body.theme-dark .diario-table-card,
 body.dark-mode .form-card,
 body.dark-mode .table-wrapper,
 body.dark-mode .dashboard-card,
 body.dark-mode .chart-container,
 body.dark-mode .dashboard-mini-card,
 body.dark-mode .dashboard-individual-panel,
-body.dark-mode .diario-kpi,
-body.dark-mode .diario-table-card,
 html.theme-dark .form-card,
 html.theme-dark .table-wrapper,
 html.theme-dark .dashboard-card,
 html.theme-dark .chart-container,
 html.theme-dark .dashboard-mini-card,
 html.theme-dark .dashboard-individual-panel,
-html.theme-dark .diario-kpi,
-html.theme-dark .diario-table-card,
 html.dark-mode .form-card,
 html.dark-mode .table-wrapper,
 html.dark-mode .dashboard-card,
 html.dark-mode .chart-container,
 html.dark-mode .dashboard-mini-card,
 html.dark-mode .dashboard-individual-panel,
-html.dark-mode .diario-kpi,
-html.dark-mode .diario-table-card {
     background: rgba(8, 20, 38, .96) !important;
     color: #f8fafc !important;
     border-color: rgba(249,115,22,.28) !important;
@@ -11458,7 +12504,6 @@ body:not(.theme-dark):not(.dark-mode) .comissoes-panel-head h2 { color: #0e3c6d 
 /* Modo escuro sem brilho radial: contraste, bordas e detalhes sólidos */
 body.theme-dark #homeView,
 body.theme-dark #vendasView,
-body.theme-dark #diarioView,
 body.theme-dark #timesView,
 body.theme-dark #dashboardView,
 body.theme-dark #dashboardIndividualView,
@@ -11467,7 +12512,6 @@ body.theme-dark #painelIndicadoresView,
 body.theme-dark #comissoesView,
 body.dark-mode #homeView,
 body.dark-mode #vendasView,
-body.dark-mode #diarioView,
 body.dark-mode #timesView,
 body.dark-mode #dashboardView,
 body.dark-mode #dashboardIndividualView,
@@ -11476,7 +12520,6 @@ body.dark-mode #painelIndicadoresView,
 body.dark-mode #comissoesView,
 html.theme-dark #homeView,
 html.theme-dark #vendasView,
-html.theme-dark #diarioView,
 html.theme-dark #timesView,
 html.theme-dark #dashboardView,
 html.theme-dark #dashboardIndividualView,
@@ -11485,7 +12528,6 @@ html.theme-dark #painelIndicadoresView,
 html.theme-dark #comissoesView,
 html.dark-mode #homeView,
 html.dark-mode #vendasView,
-html.dark-mode #diarioView,
 html.dark-mode #timesView,
 html.dark-mode #dashboardView,
 html.dark-mode #dashboardIndividualView,
@@ -13293,7 +14335,7 @@ html.dark-mode .indicador-card-action {
       var alvo=String(secao||'').toUpperCase();
       if(alvo === 'PAINEL_INDICADORES'){
         try{ if(typeof garantirViewsExtras === 'function') garantirViewsExtras(); }catch(e){}
-        ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','diarioView','campanhasView','comissoesView'].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display='none'; });
+        ['homeView','vendasView','timesView','dashboardView','dashboardIndividualView','campanhasView','comissoesView'].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display='none'; });
         var view=document.getElementById('painelIndicadoresView'); if(!view){ montarEstruturaPainel(); view=document.getElementById('painelIndicadoresView'); }
         if(view) view.style.display='block';
         document.body.classList.remove('view-campanhas'); document.body.classList.add('view-painel-indicadores');
@@ -13325,7 +14367,6 @@ html.dark-mode .indicador-card-action {
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #homeView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #vendasView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #timesView,
-body.view-painel-indicadores #mainPortal #conteudoDinamico > #diarioView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #dashboardView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #dashboardIndividualView,
 body.view-painel-indicadores #mainPortal #conteudoDinamico > #campanhasView,
@@ -13347,14 +14388,12 @@ body:not(.view-painel-indicadores) #mainPortal #conteudoDinamico > #painelIndica
 </style>
 <script id="navegacao-areas-extras-js">
 (function(){
-    if(window.__UNIFAHE_PAINEL_SIDEBAR_AREA_ISOLADA_FINAL__) return;
-    window.__UNIFAHE_PAINEL_SIDEBAR_AREA_ISOLADA_FINAL__ = true;
+    'use strict';
 
     var VIEW_CLASSES = [
         'view-home',
         'view-vendas',
         'view-times',
-        'view-diario',
         'view-dashboard',
         'view-dashboard-individual',
         'view-campanhas',
@@ -13366,7 +14405,6 @@ body:not(.view-painel-indicadores) #mainPortal #conteudoDinamico > #painelIndica
         'homeView',
         'vendasView',
         'timesView',
-        'diarioView',
         'dashboardView',
         'dashboardIndividualView',
         'campanhasView',
@@ -13381,11 +14419,63 @@ body:not(.view-painel-indicadores) #mainPortal #conteudoDinamico > #painelIndica
         if(toggle) toggle.classList.remove('open');
     }
 
+    function removerClassesDeView(){
+        if(!document.body) return;
+        VIEW_CLASSES.forEach(function(cls){ document.body.classList.remove(cls); });
+    }
+
     function esconderAreas(){
         AREA_IDS.forEach(function(id){
             var el = document.getElementById(id);
             if(el) el.style.setProperty('display', 'none', 'important');
         });
+    }
+
+    function mostrarArea(viewId, classe, display){
+        removerClassesDeView();
+        esconderAreas();
+
+        if(document.body && classe) document.body.classList.add(classe);
+
+        var el = document.getElementById(viewId);
+        if(el){
+            el.style.setProperty('display', display || 'block', 'important');
+            el.style.setProperty('position', 'relative', 'important');
+            el.style.setProperty('z-index', '2', 'important');
+        }
+
+        fecharMenuLateral();
+        try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+        catch(e){ window.scrollTo(0, 0); }
+        return el;
+    }
+
+    function normalizarSecao(secao){
+        var alvo = String(secao || 'home').trim().toUpperCase();
+        if(alvo === 'INICIO' || alvo === 'INÍCIO' || alvo === 'HOME') return 'HOME';
+        if(alvo === 'VENDA') return 'VENDAS';
+        if(alvo === 'TIME') return 'TIMES';
+        if(alvo === 'COMISSÕES') return 'COMISSOES';
+        if(alvo === 'TREINAMENTOS' || alvo === 'TREINAMENTOS_CAMPANHAS') return 'CAMPANHAS';
+        if(alvo === 'PAINEL' || alvo === 'PAINEL_INDICADOR') return 'PAINEL_INDICADORES';
+        if(alvo === 'DASHBOARD_GERAL') return 'DASHBOARD';
+        return alvo;
+    }
+
+    function atualizarItemAtivo(alvo){
+        document.querySelectorAll('#sidebar .nav-item').forEach(function(item){
+            item.classList.remove('active');
+        });
+
+        var seletor = '';
+        if(alvo === 'HOME') seletor = '#sidebar .nav-item[onclick*="home"], #sidebar .nav-item[onclick*="HOME"], #sidebar .nav-item[onclick*="INICIO"], #sidebar .nav-item[onclick*="INÍCIO"]';
+        else if(alvo === 'PAINEL_INDICADORES') seletor = '#sidebar .nav-item[data-extra="painel"], #sidebar .nav-item[data-extra="painel-sidebar-final"], #sidebar .nav-item[onclick*="PAINEL_INDICADORES"]';
+        else if(alvo === 'COMISSOES') seletor = '#sidebar .nav-item[data-extra="comissoes"], #sidebar .nav-item[onclick*="COMISSOES"], #sidebar .nav-item[onclick*="COMISSÕES"]';
+        else if(alvo === 'CAMPANHAS') seletor = '#sidebar .nav-item[data-extra="campanhas"], #sidebar .nav-item[onclick*="CAMPANHAS"], #sidebar .nav-item[onclick*="TREINAMENTOS"]';
+        else seletor = '#sidebar .nav-item[onclick*="' + alvo + '"]';
+
+        var ativo = document.querySelector(seletor);
+        if(ativo) ativo.classList.add('active');
     }
 
     function garantirPainelDentroDoConteudo(){
@@ -13398,21 +14488,10 @@ body:not(.view-painel-indicadores) #mainPortal #conteudoDinamico > #painelIndica
             painel.id = 'painelIndicadoresView';
             painel.className = 'section-container';
             conteudo.appendChild(painel);
-        } else if(painel.parentElement !== conteudo){
+        }else if(painel.parentElement !== conteudo){
             conteudo.appendChild(painel);
         }
         return painel;
-    }
-
-    function atualizarItemAtivo(alvo){
-        document.querySelectorAll('#sidebar .nav-item').forEach(function(item){
-            item.classList.remove('active');
-        });
-        var seletor = alvo === 'PAINEL_INDICADORES'
-            ? '#sidebar .nav-item[data-extra="painel"], #sidebar .nav-item[data-extra="painel-sidebar-final"]'
-            : (alvo === 'COMISSOES' ? '#sidebar .nav-item[data-extra="comissoes"]' : '#sidebar .nav-item[onclick*="' + alvo + '"]');
-        var ativo = document.querySelector(seletor);
-        if(ativo) ativo.classList.add('active');
     }
 
     function garantirItemPainelNaSidebar(){
@@ -13424,7 +14503,6 @@ body:not(.view-painel-indicadores) #mainPortal #conteudoDinamico > #painelIndica
             item = document.createElement('div');
             item.className = 'nav-item';
             item.setAttribute('data-extra', 'painel-sidebar-final');
-            item.textContent = 'Painel de Indicadores';
             var sair = sidebar.querySelector('.nav-item.sair');
             if(sair) sidebar.insertBefore(item, sair);
             else sidebar.appendChild(item);
@@ -13432,115 +14510,115 @@ body:not(.view-painel-indicadores) #mainPortal #conteudoDinamico > #painelIndica
 
         item.classList.remove('sidebar-admin-only');
         item.style.setProperty('display', 'block', 'important');
-        item.onclick = function(){ window.navegarPara('PAINEL_INDICADORES'); };
         item.textContent = 'Painel de Indicadores';
+        item.onclick = function(){ window.navegarPara('PAINEL_INDICADORES'); };
+    }
 
+    async function executarLoader(fn){
+        if(typeof fn !== 'function') return;
+        var retorno = fn();
+        if(retorno && typeof retorno.then === 'function') await retorno;
+    }
+
+    async function abrirHome(){
+        mostrarArea('homeView', 'view-home', 'block');
+        atualizarItemAtivo('HOME');
+    }
+
+    async function abrirVendas(){
+        mostrarArea('vendasView', 'view-vendas', 'block');
+        await executarLoader(window.carregarVendas);
+        atualizarItemAtivo('VENDAS');
+    }
+
+    async function abrirTimes(){
+        mostrarArea('timesView', 'view-times', 'block');
+        await executarLoader(window.carregarTimes);
+        atualizarItemAtivo('TIMES');
+    }
+
+    async function abrirDashboardGeral(){
+        mostrarArea('dashboardView', 'view-dashboard', 'block');
+        await executarLoader(window.carregarDashboard);
+        atualizarItemAtivo('DASHBOARD');
+    }
+
+    async function abrirDashboardIndividual(){
+        mostrarArea('dashboardIndividualView', 'view-dashboard-individual', 'block');
+        await executarLoader(window.prepararSelectDashboardIndividual);
+        await executarLoader(window.carregarDashboardIndividual);
+        atualizarItemAtivo('DASHBOARD');
+    }
+
+    async function abrirComissoesIsolado(){
+        mostrarArea('comissoesView', 'view-comissoes', 'block');
+        await executarLoader(window.carregarComissoes);
+        atualizarItemAtivo('COMISSOES');
+    }
+
+    async function abrirTreinamentosCampanhasIsolado(){
+        if(typeof window.abrirTreinamentosCampanhas === 'function'){
+            var retorno = window.abrirTreinamentosCampanhas();
+            if(retorno && typeof retorno.then === 'function') await retorno;
+            atualizarItemAtivo('CAMPANHAS');
+            fecharMenuLateral();
+            return;
+        }
+        mostrarArea('campanhasView', 'view-campanhas', 'block');
+        atualizarItemAtivo('CAMPANHAS');
     }
 
     async function abrirPainelIndicadoresIsolado(){
         garantirItemPainelNaSidebar();
-        garantirPainelDentroDoConteudo();
-
-        if(document.body){
-            VIEW_CLASSES.forEach(function(cls){ document.body.classList.remove(cls); });
-            document.body.classList.add('view-painel-indicadores');
-        }
-
-        esconderAreas();
-
-        if(typeof window.carregarPainelIndicadores === 'function'){
-            await window.carregarPainelIndicadores();
-            garantirPainelDentroDoConteudo();
-        }
-
         var painel = garantirPainelDentroDoConteudo();
+        mostrarArea('painelIndicadoresView', 'view-painel-indicadores', 'flex');
+
+        if(typeof window.carregarPainelIndicadores === 'function') await executarLoader(window.carregarPainelIndicadores);
+        else if(typeof window.renderizarPainel === 'function') await executarLoader(window.renderizarPainel);
+
+        painel = garantirPainelDentroDoConteudo();
         if(painel){
             painel.style.setProperty('display', 'flex', 'important');
             painel.style.setProperty('position', 'relative', 'important');
             painel.style.setProperty('z-index', '2', 'important');
         }
-
-        fecharMenuLateral();
         atualizarItemAtivo('PAINEL_INDICADORES');
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     }
 
-    async function abrirComissoesIsolado(){
-        if(document.body){
-            VIEW_CLASSES.forEach(function(cls){ document.body.classList.remove(cls); });
-            document.body.classList.add('view-comissoes');
-        }
-
-        esconderAreas();
-        if(typeof window.carregarComissoes === 'function'){ await window.carregarComissoes(); }
-        var view = document.getElementById('comissoesView');
-        if(view){
-            view.style.setProperty('display', 'block', 'important');
-            view.style.setProperty('position', 'relative', 'important');
-            view.style.setProperty('z-index', '2', 'important');
-        }
-        fecharMenuLateral();
-        atualizarItemAtivo('COMISSOES');
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    }
-
-    var navegarAnterior = window.navegarPara;
     window.navegarPara = async function(secao){
-        var alvo = String(secao || '').toUpperCase();
+        var alvo = normalizarSecao(secao);
 
-        if(alvo === 'COMISSOES' || alvo === 'COMISSÕES'){
-            await abrirComissoesIsolado();
-            return;
-        }
+        if(alvo === 'HOME') return abrirHome();
+        if(alvo === 'VENDAS') return abrirVendas();
+        if(alvo === 'TIMES') return abrirTimes();
+        if(alvo === 'DASHBOARD') return abrirDashboardGeral();
+        if(alvo === 'DASHBOARD_INDIVIDUAL') return abrirDashboardIndividual();
+        if(alvo === 'COMISSOES') return abrirComissoesIsolado();
+        if(alvo === 'CAMPANHAS') return abrirTreinamentosCampanhasIsolado();
+        if(alvo === 'PAINEL_INDICADORES') return abrirPainelIndicadoresIsolado();
 
-        if(alvo === 'CAMPANHAS' || alvo === 'TREINAMENTOS_CAMPANHAS'){
-            if(typeof window.abrirTreinamentosCampanhas === 'function'){
-                await window.abrirTreinamentosCampanhas();
-                atualizarItemAtivo('CAMPANHAS');
-                return;
-            }
-        }
-
-        if(alvo === 'PAINEL_INDICADORES'){
-            await abrirPainelIndicadoresIsolado();
-            return;
-        }
-
-        var retorno;
-        if(typeof navegarAnterior === 'function'){
-            retorno = navegarAnterior.apply(this, arguments);
-            if(retorno && typeof retorno.then === 'function') await retorno;
-        }
-
-        if(document.body){
-            document.body.classList.remove('view-painel-indicadores', 'view-comissoes');
-        }
-        var painel = document.getElementById('painelIndicadoresView');
-        if(painel) painel.style.setProperty('display', 'none', 'important');
-        var comissoes = document.getElementById('comissoesView');
-        if(comissoes) comissoes.style.setProperty('display', 'none', 'important');
-        garantirItemPainelNaSidebar();
-        atualizarItemAtivo(alvo);
-        return retorno;
+        return abrirHome();
     };
+
+    window.navegarPara.__navegacaoConsolidadaPrincipal = true;
     try { navegarPara = window.navegarPara; } catch(e) {}
 
     var iniciarAnterior = window.iniciarSessao;
-    if(typeof iniciarAnterior === 'function'){
-        window.iniciarSessao = async function(){
+    if(typeof iniciarAnterior === 'function' && !iniciarAnterior.__navegacaoConsolidadaPrincipal){
+        var iniciarNovo = async function(){
             var r = iniciarAnterior.apply(this, arguments);
             if(r && typeof r.then === 'function') await r;
-            setTimeout(garantirItemPainelNaSidebar, 0);
-            setTimeout(garantirItemPainelNaSidebar, 500);
+            garantirItemPainelNaSidebar();
             return r;
         };
+        iniciarNovo.__navegacaoConsolidadaPrincipal = true;
+        window.iniciarSessao = iniciarNovo;
+        try { iniciarSessao = window.iniciarSessao; } catch(e) {}
     }
 
     function init(){
         garantirItemPainelNaSidebar();
         garantirPainelDentroDoConteudo();
-        setTimeout(garantirItemPainelNaSidebar, 500);
-        setTimeout(garantirItemPainelNaSidebar, 1200);
     }
 
     if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
