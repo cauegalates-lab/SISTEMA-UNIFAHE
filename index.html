@@ -38,442 +38,96 @@
         /* ===== LOGIN ===== */
         #loginOverlay {
             position: fixed;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #020815 0%, #06162c 42%, #081f3d 100%);
-            color: #ffffff;
+            background:linear-gradient(359deg, #1060b5 0%, #01070c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             overflow: hidden;
             z-index: 10000;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
         }
-
-        #loginOverlay * {
-            box-sizing: border-box;
-        }
-
         #loginOverlay::before {
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
-                linear-gradient(0deg, rgba(255,255,255,0.018) 1px, transparent 1px),
-                linear-gradient(115deg, rgba(255,122,26,0.08), transparent 30%, rgba(21,96,181,0.08) 72%, transparent 100%);
-            background-size: 72px 72px, 72px 72px, 100% 100%;
+            background-image: repeating-linear-gradient(135deg,
+                rgba(255,255,255,0.04) 0,
+                rgba(255,255,255,0.04) 1px,
+                transparent 1px,
+                transparent 32px);
+            opacity: 0.25;
             pointer-events: none;
         }
-
-        .login-screen {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-            width: 100%;
-            display: grid;
-            grid-template-columns: minmax(440px, 1.05fr) minmax(360px, 0.95fr);
-            align-items: center;
-            gap: clamp(32px, 4vw, 72px);
-            padding: clamp(34px, 5.2vw, 86px) clamp(24px, 5vw, 112px) clamp(34px, 5.2vw, 86px) clamp(280px, 23vw, 390px);
-        }
-
-        .login-art-panel {
+        #loginOverlay::after {
+            content: '';
             position: absolute;
-            z-index: 0;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: min(360px, 23vw);
-            min-width: 292px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-auto-rows: minmax(74px, 1fr);
-            overflow: hidden;
-            border-right: 1px solid rgba(255,255,255,0.06);
-            background: #051328;
-            opacity: 0.98;
+            left: 12%;
+            top: 10%;
+            width: 60%;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.35), rgba(255,255,255,0));
+            filter: blur(0.8px);
+            animation: scanLine 5s ease-in-out infinite;
+            pointer-events: none;
         }
-
-        .login-art-panel span {
-            position: relative;
-            min-height: 70px;
-            background: rgba(6, 19, 42, 0.9);
-            border-right: 1px solid rgba(255,255,255,0.035);
-            border-bottom: 1px solid rgba(255,255,255,0.035);
-            overflow: hidden;
-        }
-
-        .tile-orange { background: linear-gradient(135deg, #f97316, #9f3412) !important; }
-        .tile-blue { background: linear-gradient(135deg, #155eb5, #062f68) !important; }
-        .tile-dark { background: linear-gradient(135deg, #061329, #020815) !important; }
-        .tile-cream { background: linear-gradient(135deg, #f2eadc, #cdbfa7) !important; }
-        .tile-half::after { content:''; position:absolute; inset:0; border-radius: 0 0 100% 0; background: rgba(255,255,255,0.12); }
-        .tile-curve::after { content:''; position:absolute; width: 176%; height:176%; right:-88%; bottom:-88%; border-radius:50%; background: rgba(255,255,255,0.12); }
-        .tile-curve-inv::after { content:''; position:absolute; width: 176%; height:176%; left:-88%; top:-88%; border-radius:50%; background: rgba(255,255,255,0.10); }
-        .tile-dot::after { content:''; position:absolute; width:22px; height:22px; border-radius:50%; left:50%; top:50%; transform:translate(-50%,-50%); background:#f97316; }
-        .tile-dot-blue::after { background:#236ac2; }
-        .tile-big-arc::after { content:''; position:absolute; width:220%; height:220%; right:-38%; bottom:-64%; border-radius:50%; border:64px solid rgba(242,234,220,0.94); }
-
-        .login-intro {
-            position: relative;
-            z-index: 1;
-            max-width: 640px;
-            color: #fff;
-        }
-
-        .login-intro-logo {
-            display: block;
-            width: clamp(184px, 14vw, 260px);
-            height: auto;
-            margin: 0 0 clamp(42px, 6vh, 72px);
-            object-fit: contain;
-        }
-
-        .login-accent-line {
-            display: block;
-            width: 62px;
-            height: 3px;
-            border-radius: 999px;
-            background: #f97316;
-            margin-bottom: 26px;
-        }
-
-        .login-intro h1 {
-            margin: 0;
-            color: #fff;
-            font-size: clamp(42px, 4vw, 64px);
-            line-height: 0.98;
-            letter-spacing: -0.055em;
-            font-weight: 300;
-        }
-
-        .login-intro h1 strong {
-            display: inline-block;
-            color: #fff;
-            font-weight: 850;
-            letter-spacing: -0.065em;
-        }
-
-        .login-intro-text {
-            margin: 24px 0 38px;
-            max-width: 500px;
-            color: rgba(248,250,252,0.82);
-            font-size: clamp(17px, 1.25vw, 21px);
-            line-height: 1.45;
-            font-weight: 400;
-        }
-
-        .login-feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(120px, 1fr));
-            gap: 22px;
-            max-width: 560px;
-        }
-
-        .login-feature-card {
-            min-height: 150px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            padding: 18px 16px;
-            border-radius: 16px;
-            background: rgba(7, 21, 45, 0.72);
-            border: 1px solid rgba(190, 210, 238, 0.18);
-            box-shadow: 0 22px 50px rgba(0,0,0,0.16), inset 0 1px 0 rgba(255,255,255,0.045);
-            text-align: center;
-        }
-
-        .login-feature-icon {
-            width: 54px;
-            height: 54px;
-            color: #ffffff;
-        }
-
-        .login-feature-icon .orange-stroke { stroke: #f97316; }
-        .login-feature-card strong { display: block; color: #fff; font-size: 14px; font-weight: 800; }
-        .login-feature-card small { display: block; margin-top: 4px; color: rgba(226,232,240,0.74); font-size: 12px; line-height: 1.35; }
-
-        .login-trust {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-top: 42px;
-            color: rgba(226,232,240,0.78);
-            font-size: 16px;
-            line-height: 1.45;
-        }
-
-        .login-trust svg {
-            flex: 0 0 34px;
-            color: #2b78dd;
-        }
-
-        .login-trust b { color: #fff; }
-
         .login-card {
             position: relative;
-            z-index: 2;
-            width: min(550px, 100%);
-            margin-left: auto;
-            padding: clamp(34px, 4vw, 54px) clamp(30px, 4vw, 46px);
-            border-radius: 30px;
-            background: rgba(6, 18, 38, 0.74);
-            border: 1px solid rgba(202, 217, 238, 0.34);
-            box-shadow: 0 34px 90px rgba(0,0,0,0.24), inset 0 1px 0 rgba(255,255,255,0.05);
+            background: rgba(8, 14, 32, 0.92);
+            border-radius: 32px;
+            padding: 48px 40px;
+            text-align: center;
+            width: min(420px, calc(100% - 48px));
+            box-shadow: 0 32px 70px rgba(3, 15, 40, 0.24);
+            animation: fadeUp 0.45s ease;
+            border: 1px solid rgba(255,255,255,0.08);
             overflow: hidden;
         }
-
         .login-card::before {
             content: '';
             position: absolute;
-            inset: 0;
-            border-radius: 30px;
-            border: 1px solid rgba(74, 144, 226, 0.16);
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(232,106,31,0.4), transparent);
+            opacity: 0.65;
             pointer-events: none;
         }
-
-        .login-card-head {
+        .login-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 32px;
+            pointer-events: none;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scanLine {
+            0% { transform: translateX(-100%); opacity: 0; }
+            25% { opacity: 0.3; }
+            50% { transform: translateX(100%); opacity: 0.15; }
+            100% { transform: translateX(200%); opacity: 0; }
+        }
+        .login-card img {
+            width: 200px;
+            margin-bottom: 24px;
             position: relative;
             z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
         }
-
-        .login-brand-star {
-            width: 112px;
-            height: 94px;
-            margin-bottom: 20px;
-        }
-
-        .login-brand-star svg { width: 100%; height: 100%; display: block; }
-
         .login-card h2 {
-            margin: 0 0 14px;
-            color: #fff;
-            font-size: clamp(24px, 2vw, 31px);
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            font-weight: 850;
-        }
-
-            margin: 0 0 28px;
-            color: rgba(226,232,240,0.86);
-            font-size: 16px;
-            line-height: 1.5;
-            max-width: 380px;
-        }
-
-        .login-tabs {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #fbfbfb;
             position: relative;
-            z-index: 2;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 0 0 26px;
+            z-index: 1;
         }
-
-        .login-tab {
-            min-height: 42px;
-            padding: 0 14px;
-            border: 1px solid rgba(203,213,225,0.12);
-            border-radius: 999px;
-            background: rgba(255,255,255,0.055);
-            color: rgba(255,255,255,0.82);
-            font-size: 13px;
-            font-weight: 750;
-            cursor: pointer;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-            transition: transform .18s ease, border-color .18s ease, background .18s ease;
-            white-space: nowrap;
-        }
-
-        .login-tab:hover {
-            transform: translateY(-1px);
-            border-color: rgba(249,115,22,0.38);
-            background: rgba(255,255,255,0.085);
-        }
-
-        .login-tab.active {
-            color: #fff;
-            border-color: rgba(249,115,22,0.65);
-            background: linear-gradient(135deg, #f97316, #c2410c);
-            box-shadow: 0 14px 30px rgba(194,65,12,0.26);
-        }
-
-        .login-panel { display: none; }
-        .login-panel.active { display: grid; }
-
-            position: relative;
-            z-index: 2;
-            gap: 16px;
-        }
-
-        .login-field {
-            display: grid;
-            gap: 9px;
-        }
-
-        .login-field > label,
-        .login-field > span,
-            color: rgba(241,245,249,0.86);
-            font-size: 12px;
-            font-weight: 850;
-            text-align: left;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-        }
-
-        .login-field-shell {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            width: 100%;
-            min-height: 58px;
-            padding: 0 18px;
-            border-radius: 18px;
-            background: rgba(255,255,255,0.075);
-            border: 1px solid rgba(203,213,225,0.13);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.035);
-        }
-
-        .login-input-icon {
-            flex: 0 0 22px;
-            width: 22px;
-            height: 22px;
-            color: rgba(255,255,255,0.9);
-        }
-
-            width: 100%;
-            min-width: 0;
-            height: 54px;
-            border: 0;
-            outline: none;
-            background: transparent;
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-
-        #loginOverlay .password-field-wrap {
-            flex: 1 1 auto;
-            display: flex;
-            align-items: center;
-            min-width: 0;
-        }
-
-        #loginOverlay .password-field-wrap input {
-            padding-right: 44px !important;
-        }
-
-        #loginOverlay .password-toggle-btn {
-            right: 0;
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            background: transparent;
-            color: rgba(255,255,255,0.86);
-        }
-
-        #loginOverlay .password-toggle-btn:hover {
-            background: rgba(255,255,255,0.08);
-            transform: translateY(-50%);
-        }
-
-            display: flex !important;
-            align-items: center;
-            gap: 10px;
-            margin: 0 0 4px;
-            color: rgba(255,255,255,0.86) !important;
-            font-size: 12px !important;
-            font-weight: 800;
-            line-height: 1.35;
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            text-align: left !important;
-            cursor: pointer;
-        }
-
-            appearance: none;
-            width: 18px !important;
-            height: 18px !important;
-            min-height: 18px !important;
-            border-radius: 5px;
-            border: 1px solid rgba(249,115,22,0.75);
-            background: rgba(255,255,255,0.08);
-            cursor: pointer;
-        }
-
-            background: #f97316;
-            box-shadow: inset 0 0 0 3px #f97316;
-            position: relative;
-        }
-
-            content: '✓';
-            display: block;
-            color: #06162c;
-            font-size: 14px;
-            font-weight: 950;
-            line-height: 17px;
-            text-align: center;
-        }
-
-            min-height: 18px;
-            color: #fecaca;
-            font-size: 12px;
-            font-weight: 750;
-            text-align: left;
-        }
-
-        #loginOverlay .btn-primary {
-            width: 100%;
-            min-height: 56px;
-            border: 0;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #f97316, #c2410c);
-            color: #ffffff;
-            font-size: 16px;
-            font-weight: 850;
-            letter-spacing: 0.01em;
-            cursor: pointer;
-            box-shadow: 0 18px 34px rgba(194,65,12,0.28), inset 0 1px 0 rgba(255,255,255,0.22);
-            transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
-        }
-
-        #loginOverlay .btn-primary:hover {
-            transform: translateY(-1px);
-            filter: brightness(1.04);
-            box-shadow: 0 22px 40px rgba(194,65,12,0.34), inset 0 1px 0 rgba(255,255,255,0.24);
-        }
-
-            margin: 2px 0 0;
-            color: rgba(226,232,240,0.68);
-            font-size: 13px;
-            line-height: 1.45;
-            text-align: center;
-        }
-
-
-        .recover-intro {
-            display: grid;
-            gap: 5px;
-            padding: 14px 16px;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.065);
-            border: 1px solid rgba(203,213,225,0.12);
-            text-align: left;
-        }
-
-        .recover-intro strong { color: #fff; font-size: 14px; }
-        .recover-intro span { color: rgba(226,232,240,0.7); font-size: 12px; line-height: 1.35; }
-        .recover-code-area { display: grid; gap: 14px; padding-top: 4px; }
-        .admin-first-access-note { margin-top: 8px; }
-
         .btn-primary {
             background:#c55a18;
             border: none;
@@ -494,33 +148,6 @@
             transform: translateY(-1px);
             box-shadow: 0 16px 30px rgba(14,60,109,0.22);
         }
-
-        @media (max-width: 1200px) {
-            .login-screen {
-                grid-template-columns: 1fr;
-                align-items: start;
-                gap: 30px;
-                padding: 54px 32px;
-                overflow: auto;
-            }
-            .login-art-panel { width: 100%; min-width: 0; height: 160px; bottom: auto; grid-auto-rows: 80px; opacity: .46; }
-            .login-intro { max-width: none; margin-top: 148px; }
-            .login-intro-logo { margin-bottom: 30px; }
-            .login-card { margin: 0; width: 100%; max-width: 640px; }
-        }
-
-        @media (max-width: 720px) {
-            .login-screen { padding: 38px 18px; }
-            .login-art-panel { height: 120px; grid-auto-rows: 60px; }
-            .login-intro { margin-top: 108px; }
-            .login-feature-grid { grid-template-columns: 1fr; gap: 12px; }
-            .login-feature-card { min-height: 112px; }
-            .login-tabs { grid-template-columns: 1fr; }
-            .login-card { padding: 28px 20px; border-radius: 24px; }
-            .login-card::before { border-radius: 24px; }
-            .login-trust { align-items: flex-start; font-size: 14px; }
-        }
-
 
         /* ===== SIDEBAR ===== */
         #sidebar {
@@ -2390,6 +2017,14 @@ html, body, button, input, select, textarea {
 /* ===== AJUSTES FINAIS: LOGIN REAL, MENU ESQUERDO, DIÁRIO, RANKING E TIMES GAMER ===== */
 body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important; }
 .sidebar-open-btn { left: 20px !important; right: auto !important; top: 20px !important; z-index: 3000 !important; }
+.login-card.login-real-card { width: min(460px, calc(100% - 44px)); padding: 38px 34px; }
+.login-real-subtitle { color: rgba(255,255,255,.72); font-size: 13px; line-height: 1.45; margin: -20px 0 22px; }
+.login-real-form { display: grid; gap: 12px; position: relative; z-index: 2; }
+.login-real-form label { text-align: left; color: rgba(255,255,255,.76); font-size: 12px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.login-real-form select,.login-real-form input { background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.16); border-radius: 16px; min-height: 46px; }
+.login-real-form select option { color: #0f172a; }
+.login-real-error { min-height: 18px; color: #fecaca; font-size: 12px; font-weight: 700; }
+.login-help { color: rgba(255,255,255,.55); font-size: 11px; line-height: 1.4; }
 #dashboardView .main-content, #dashboardIndividualView .ind-report-wrap { transform: scale(.985); transform-origin: top center; }
 #dashboardView .charts-grid { min-height: 0 !important; }
 #dashboardView .chart-container { min-height: 0 !important; }
@@ -3595,122 +3230,15 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
 </head>
 <body>
 <div id="loginOverlay">
-    <div class="login-screen">
-        <div class="login-art-panel" aria-hidden="true">
-            <span class="tile-orange"></span><span class="tile-dark"></span><span class="tile-blue"></span><span class="tile-dark tile-curve"></span>
-            <span class="tile-blue tile-curve-inv"></span><span class="tile-dark tile-dot"></span><span class="tile-dark tile-curve"></span><span class="tile-blue"></span>
-            <span class="tile-dark tile-curve"></span><span class="tile-cream tile-big-arc"></span><span class="tile-orange tile-curve"></span><span class="tile-dark"></span>
-            <span class="tile-blue tile-curve-inv"></span><span class="tile-cream tile-curve"></span><span class="tile-dark"></span><span class="tile-dark tile-dot tile-dot-blue"></span>
-            <span class="tile-dark"></span><span class="tile-dark tile-curve"></span><span class="tile-orange"></span><span class="tile-blue tile-curve"></span>
-            <span class="tile-dark tile-curve-inv"></span><span class="tile-blue"></span><span class="tile-dark"></span><span class="tile-dark"></span>
-            <span class="tile-orange tile-half"></span><span class="tile-dark"></span><span class="tile-dark tile-dot"></span><span class="tile-dark"></span>
-            <span class="tile-dark"></span><span class="tile-orange"></span><span class="tile-blue tile-curve-inv"></span><span class="tile-dark"></span>
-        </div>
-
-        <section class="login-intro" aria-label="Apresentação da Área Comercial">
-            <img class="login-intro-logo" alt="UNIFAHE" src="https://unifahe.edu.br/wp-content/uploads/2025/08/logo-unifahe.png"/>
-            <span class="login-accent-line"></span>
-            <h1>Bem-vindo à<br><strong>Área Comercial</strong></h1>
-            <p class="login-intro-text">Acesse sua plataforma e tenha tudo o que você precisa para gerir vendas, acompanhar comissões e gerar resultados.</p>
-
-            <div class="login-feature-grid">
-                <article class="login-feature-card">
-                    <svg class="login-feature-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-                        <path d="M22 28a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" stroke="currentColor" stroke-width="3"/>
-                        <path d="M42 30a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" stroke="currentColor" stroke-width="3"/>
-                        <path d="M8 54V43c0-7 6-12 14-12s14 5 14 12v11" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M34 54V43c0-3 2-7 5-9 9 0 17 5 17 13v7" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                    <div><strong>Gestão de vendas</strong><small>Organize oportunidades e acompanhe seus resultados.</small></div>
-                </article>
-                <article class="login-feature-card">
-                    <svg class="login-feature-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-                        <path d="M32 56c13.255 0 24-10.745 24-24S45.255 8 32 8 8 18.745 8 32s10.745 24 24 24Z" stroke="currentColor" stroke-width="3"/>
-                        <path d="M48 14c6 6 9 14 8 23" stroke="#f97316" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M24 43 40 21" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M23 25h.01M41 39h.01" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
-                    </svg>
-                    <div><strong>Comissões</strong><small>Acompanhe ganhos e pagamentos de forma transparente.</small></div>
-                </article>
-                <article class="login-feature-card">
-                    <svg class="login-feature-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
-                        <path d="M32 6 52 15v15c0 13-8 23-20 28C20 53 12 43 12 30V15l20-9Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
-                        <path d="m23 32 6 6 13-15" stroke="#f97316" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    <div><strong>Segurança</strong><small>Dados protegidos com tecnologia e conformidade.</small></div>
-                </article>
-            </div>
-
-            <div class="login-trust">
-                <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 4 42 12v13c0 10-7 17-18 21C13 42 6 35 6 25V12l18-8Z" stroke="currentColor" stroke-width="2.4"/><path d="M24 15v10" stroke="#f97316" stroke-width="2.8" stroke-linecap="round"/><path d="M24 32h.01" stroke="#f97316" stroke-width="4" stroke-linecap="round"/></svg>
-                <span>Segurança, performance e confiança para <b>impulsionar seus resultados</b> todos os dias.</span>
-            </div>
-        </section>
-
-        <section class="login-card login-real-card login-upgraded-card" aria-label="Login da Área Comercial">
-            <div class="login-card-head">
-                <div class="login-brand-star" aria-hidden="true">
-                    <svg viewBox="0 0 140 112" fill="none">
-                        <path d="M68 8 82 45h40L89 66l13 38-34-23-34 23 13-38-33-21h40L68 8Z" stroke="white" stroke-width="9" stroke-linejoin="round"/>
-                        <path d="M28 84 118 43 58 91 63 61 28 84Z" fill="#f97316"/>
-                    </svg>
-                </div>
-                <h2>Área Comercial</h2>
-                <p class="login-real-subtitle">Acesse com seu usuário. No primeiro acesso, crie seu usuário e senha.</p>
-            </div>
-
-            <div class="login-tabs">
-                <button type="button" class="login-tab active" onclick="mostrarAbaLogin('entrar')">Entrar</button>
-                <button type="button" class="login-tab" onclick="mostrarAbaLogin('primeiro')">Primeiro acesso</button>
-                <button type="button" class="login-tab" onclick="mostrarAbaLogin('recuperar')">Esqueci a senha</button>
-            </div>
-
-            <div class="login-real-form login-panel active" id="loginPanelEntrar">
-                <div class="login-field">
-                    <label for="loginUsuarioInput">Usuário</label>
-                    <div class="login-field-shell">
-                        <input id="loginUsuarioInput" type="text" placeholder="ADM ou @usuário" autocomplete="username" onkeydown="if(event.key==='Enter') iniciarSessao()"/>
-                        <svg class="login-input-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 21a8 8 0 0 0-16 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="currentColor" stroke-width="1.8"/></svg>
-                    </div>
-                </div>
-                <div class="login-field">
-                    <label for="loginSenhaInput">Senha</label>
-                    <div class="login-field-shell">
-                        <input id="loginSenhaInput" type="password" placeholder="Digite sua senha" autocomplete="current-password" onkeydown="if(event.key==='Enter') iniciarSessao()"/>
-                    </div>
-                </div>
-                <label class="login-remember-row"><input type="checkbox" id="manterConectadoCheck" checked><span>Manter conectado neste computador</span></label>
-                <div class="login-real-error" id="loginErroMsg"></div>
-                <button class="btn-primary" onclick="iniciarSessao()">Entrar no Sistema</button>
-                <p class="login-help">Gerente: usuário <b>ADM</b>, Vendedor: acesso com o <b>@usuário</b> criado no primeiro acesso.</p>
-            </div>
-
-            <div class="login-real-form login-panel" id="loginPanelPrimeiro">
-                <div class="login-field"><label for="primeiroVendedorSelect">Seu nome</label><div class="login-field-shell"><select id="primeiroVendedorSelect"></select></div></div>
-                <div class="login-field"><label for="primeiroUsuarioInput">Criar usuário</label><div class="login-field-shell"><input id="primeiroUsuarioInput" type="text" placeholder="Ex: @ana.silva" autocomplete="username"/></div></div>
-                <div class="login-field"><label for="primeiroEmailInput">E-mail para recuperação</label><div class="login-field-shell"><input id="primeiroEmailInput" type="email" placeholder="seuemail@gmail.com" autocomplete="email"/></div></div>
-                <div class="login-field"><label for="primeiroCelularInput">Celular opcional</label><div class="login-field-shell"><input id="primeiroCelularInput" type="tel" placeholder="DDD + número" autocomplete="tel"/></div></div>
-                <div class="login-field"><label for="primeiroSenhaInput">Criar senha</label><div class="login-field-shell"><input id="primeiroSenhaInput" type="password" placeholder="Digite uma senha" autocomplete="new-password"/></div></div>
-                <div class="login-field"><label for="primeiroSenhaConfirmaInput">Confirmar senha</label><div class="login-field-shell"><input id="primeiroSenhaConfirmaInput" type="password" placeholder="Repita a senha" autocomplete="new-password"/></div></div>
-                <div class="login-real-error" id="primeiroErroMsg"></div>
-                <button class="btn-primary" onclick="criarPrimeiroAcesso()">Criar acesso</button>
-            </div>
-
-            <div class="login-real-form login-panel recuperar-discreto" id="loginPanelRecuperar">
-                <div class="recover-intro"><strong>Recuperar acesso</strong><span>Informe seu @usuário e o e-mail cadastrado para receber o código.</span></div>
-                <div class="login-field"><label for="recuperarUsuarioInput">@Usuário</label><div class="login-field-shell"><input id="recuperarUsuarioInput" type="text" placeholder="Ex: @ana.silva" autocomplete="username"/></div></div>
-                <div class="login-field"><label for="recuperarEmailInput">E-mail de recuperação</label><div class="login-field-shell"><input id="recuperarEmailInput" type="email" placeholder="email cadastrado" autocomplete="email"/></div></div>
-                <button class="btn-primary recover-send-btn" type="button" onclick="gerarCodigoRecuperacao()">Enviar código</button>
-                <div class="recover-code-area">
-                    <div class="login-field"><label for="recuperarCodigoInput">Código recebido</label><div class="login-field-shell"><input id="recuperarCodigoInput" type="text" placeholder="Código de 6 dígitos" inputmode="numeric"/></div></div>
-                    <div class="login-field"><label for="recuperarNovaSenhaInput">Nova senha</label><div class="login-field-shell"><input id="recuperarNovaSenhaInput" type="password" placeholder="Nova senha" autocomplete="new-password"/></div></div>
-                    <button class="btn-primary" onclick="alterarSenhaComCodigo()">Alterar senha</button>
-                </div>
-                <div class="login-real-error" id="recuperarErroMsg"></div>
-                <p class="login-help">Código válido por 10 minutos.</p>
-            </div>
-        </section>
-    </div>
+<div class="login-card login-real-card login-upgraded-card">
+<img alt="UNIFAHE" src="https://unifahe.edu.br/wp-content/uploads/2025/08/logo-unifahe.png"/>
+<h2>Área Comercial</h2>
+<p class="login-real-subtitle">Acesse com seu usuário. No primeiro acesso, crie seu @usuário e senha.</p>
+<div class="login-tabs"><button type="button" class="login-tab active" onclick="mostrarAbaLogin('entrar')">Entrar</button><button type="button" class="login-tab" onclick="mostrarAbaLogin('primeiro')">Primeiro acesso</button><button type="button" class="login-tab" onclick="mostrarAbaLogin('recuperar')">Esqueci a senha</button></div>
+<div class="login-real-form login-panel active" id="loginPanelEntrar"><label>Usuário</label><input id="loginUsuarioInput" type="text" placeholder="Ex: @ana ou ADM" onkeydown="if(event.key==='Enter') iniciarSessao()"/><label>Senha</label><input id="loginSenhaInput" type="password" placeholder="Digite sua senha" onkeydown="if(event.key==='Enter') iniciarSessao()"/><div class="login-real-error" id="loginErroMsg"></div><button class="btn-primary" onclick="iniciarSessao()">Entrar no Sistema</button><p class="login-help">Gerente: usuário <b>ADM</b>. Vendedor acessa com o @usuário criado no primeiro acesso.</p></div>
+<div class="login-real-form login-panel" id="loginPanelPrimeiro"><label>Seu nome</label><select id="primeiroVendedorSelect"></select><label>Criar usuário</label><input id="primeiroUsuarioInput" type="text" placeholder="Ex: @ana.silva"/><label>E-mail para recuperação</label><input id="primeiroEmailInput" type="email" placeholder="seuemail@gmail.com"/><label>Celular opcional</label><input id="primeiroCelularInput" type="tel" placeholder="DDD + número"/><label>Criar senha</label><input id="primeiroSenhaInput" type="password" placeholder="Digite uma senha"/><label>Confirmar senha</label><input id="primeiroSenhaConfirmaInput" type="password" placeholder="Repita a senha"/><div class="login-real-error" id="primeiroErroMsg"></div><button class="btn-primary" onclick="criarPrimeiroAcesso()">Criar acesso</button></div>
+<div class="login-real-form login-panel recuperar-discreto" id="loginPanelRecuperar"><div class="recover-intro"><strong>Recuperar acesso</strong><span>Informe apenas seu @usuário e o e-mail cadastrado para receber o código.</span></div><label>@Usuário</label><input id="recuperarUsuarioInput" type="text" placeholder="Ex: @ana.silva"/><label>E-mail de recuperação</label><input id="recuperarEmailInput" type="email" placeholder="email cadastrado"/><button class="btn-primary recover-send-btn" type="button" onclick="gerarCodigoRecuperacao()">Enviar código</button><div class="recover-code-area"><label>Código recebido</label><input id="recuperarCodigoInput" type="text" placeholder="Código de 6 dígitos"/><label>Nova senha</label><input id="recuperarNovaSenhaInput" type="password" placeholder="Nova senha"/><button class="btn-primary" onclick="alterarSenhaComCodigo()">Alterar senha</button></div><div class="login-real-error" id="recuperarErroMsg"></div><p class="login-help">Código válido por 10 minutos.</p></div>
+</div>
 </div>
 <div id="mainPortal" style="display:none">
 <button type="button" class="sidebar-open-btn" id="toggleSidebarBtn" aria-label="Abrir menu">
@@ -5723,6 +5251,7 @@ window.addEventListener('DOMContentLoaded', ()=>{
 </script>
 
 <style>
+.login-upgraded-card{max-height:calc(100vh - 42px);overflow:auto}.login-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:-10px 0 16px;position:relative;z-index:2}.login-tab{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);color:rgba(255,255,255,.78);border-radius:14px;min-height:36px;cursor:pointer;font-size:11px;font-weight:800}.login-tab.active{background:#c55a18;color:#fff}.login-panel{display:none}.login-panel.active{display:grid}.login-real-form b{color:#fff}
 #diarioView{padding:24px 32px!important}.diario-shell{max-width:1240px;margin:0 auto;height:calc(100vh - 72px)!important;width:100%}.diario-table{min-width:760px!important}#timesView{padding:24px 32px!important}.times-arena{max-width:1240px;margin:0 auto;height:calc(100vh - 72px)!important;width:100%}.times-arena-top{padding:12px 16px!important}.times-grid.gamer-times-grid{gap:10px!important}.time-card.gamer-time-card{border-radius:20px!important}.gamer-time-head{padding:10px 12px!important}.gamer-time-body{padding:10px 12px!important;gap:7px!important}.gamer-member-row{padding:7px 9px!important}.gamer-time-actions button{flex:initial!important;width:100%}.times-config-btn-top{border:none;border-radius:999px;padding:10px 16px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(135deg,#f97316,#c55a18);box-shadow:0 14px 28px rgba(249,115,22,.24)}
 .dashboard-filter-box,.ind-filter-box{display:flex;align-items:end;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:10px 12px;box-shadow:0 12px 28px rgba(15,23,42,.05)}.dashboard-filter-box label,.ind-filter-box label{display:grid;gap:4px;font-size:10px;font-weight:900;color:#64748b;text-transform:uppercase;letter-spacing:.06em}.dashboard-filter-box select,.dashboard-filter-box input,.ind-filter-box select,.ind-filter-box input{height:34px;padding:6px 10px;border-radius:10px;font-size:12px;min-width:130px}.dashboard-filter-box button,.ind-filter-box button{height:34px;border:none;border-radius:999px;padding:0 14px;background:#0e3c6d;color:#fff;font-weight:900;cursor:pointer}.vendedor-lock-note{font-size:11px;color:#0e3c6d;font-weight:800;margin-top:8px}@media(max-width:1100px){.diario-shell,.times-arena{height:auto!important;overflow:visible!important}#diarioView,#timesView{overflow:auto!important}}
 
@@ -5897,7 +5426,7 @@ body{background:#f5f7fb!important;color:#111827!important;font-family:Arial,Helv
 .home-academic-hero:before{content:'';position:absolute;inset:0;background:linear-gradient(135deg, rgba(14,60,109,.12), rgba(249,115,22,.08));pointer-events:none;}
 .home-academic-content,.home-academic-card{position:relative;z-index:1}.home-brand-line{display:inline-flex;align-items:center;gap:14px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:10px 14px;border-radius:999px;margin-bottom:24px}.home-brand-line img{height:34px;width:auto}.home-brand-line span{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#fed7aa}.home-academic-content h1{max-width:720px;margin:0;color:#fff;font-size:clamp(2rem,4vw,4rem);line-height:1.02;letter-spacing:-.05em}.home-academic-content p{max-width:690px;margin:18px 0 0;color:rgba(255,255,255,.80);font-size:1.05rem;line-height:1.6}.home-academic-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.home-academic-actions button{border:none;border-radius:999px;padding:13px 20px;font-weight:800;cursor:pointer;background:#f97316;color:#fff;box-shadow:0 16px 32px rgba(249,115,22,.25)}.home-academic-actions button.secondary{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)}.home-academic-card{background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.5);border-radius:30px;padding:28px;box-shadow:0 28px 70px rgba(0,0,0,.18)}.home-academic-card>span{display:inline-block;color:#f97316;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px}.home-academic-card>strong{display:block;color:#0e3c6d;font-size:1.55rem;line-height:1.15}.home-academic-card p{color:#64748b;margin:12px 0 18px;line-height:1.5}.academic-mini-grid{display:grid;grid-template-columns:1fr;gap:10px}.academic-mini-grid div{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:12px 14px}.academic-mini-grid b{color:#0e3c6d}.academic-mini-grid small{color:#64748b;text-align:right}.home-academic-main{max-width:1180px;margin:0 auto;padding:42px 28px 54px}.academic-title{text-align:center;margin-bottom:24px}.academic-title span{color:#f97316;font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:12px}.academic-title h2{margin:8px 0 8px;color:#0e3c6d;font-size:2rem}.academic-title p{margin:0 auto;max-width:720px;color:#64748b;line-height:1.55}.home-academic-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.academic-module-card{text-align:left;border:1px solid #dbe5f0;background:#fff;border-radius:24px;padding:22px;min-height:190px;cursor:pointer;box-shadow:0 18px 45px rgba(14,60,109,.07);transition:.22s ease}.academic-module-card:hover{transform:translateY(-5px);border-color:#f97316;box-shadow:0 24px 56px rgba(14,60,109,.12)}.academic-module-card i{display:inline-flex;width:38px;height:38px;align-items:center;justify-content:center;border-radius:14px;background:#eff6ff;color:#0e3c6d;font-style:normal;font-weight:900;margin-bottom:18px}.academic-module-card strong{display:block;color:#0e3c6d;font-size:1.15rem;margin-bottom:10px}.academic-module-card span{display:block;color:#64748b;font-size:.9rem;line-height:1.45}.home-academic-footer-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.home-academic-footer-strip div{background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:16px 18px}.home-academic-footer-strip strong{display:block;color:#0e3c6d}.home-academic-footer-strip span{color:#64748b;font-size:.88rem}
 #diarioView{background:#f3f6fa!important;padding:24px 42px 32px 82px!important}.diario-shell{max-width:1120px!important;margin:0 auto!important;height:calc(100vh - 76px)!important}.diario-header{background:linear-gradient(135deg,#082947,#0e3c6d)!important;border:1px solid rgba(14,60,109,.12)!important;box-shadow:0 18px 42px rgba(14,60,109,.14)!important}.diario-cards{grid-template-columns:repeat(4,minmax(0,1fr))!important}.diario-kpi{border-radius:18px!important;box-shadow:0 10px 26px rgba(15,23,42,.05)!important}.ranking-card{background:linear-gradient(135deg,#082947,#0e3c6d)!important;border-color:rgba(249,115,22,.18)!important}.ranking-card:nth-child(1){background:linear-gradient(135deg,#0e3c6d,#b45309)!important}.ranking-card:nth-child(2){background:linear-gradient(135deg,#0e3c6d,#475569)!important}.ranking-card:nth-child(3){background:linear-gradient(135deg,#0e3c6d,#9a3412)!important}.diario-table th,.diario-table td{text-align:center!important}.diario-table td:nth-child(2){text-align:center!important}.diario-table tr.top1 td{background:rgba(249,115,22,.08)!important}.diario-table tr.top2 td,.diario-table tr.top3 td{background:#f8fafc!important}.diario-table{min-width:720px!important}.diario-table-card{border-radius:20px!important;box-shadow:0 14px 34px rgba(15,23,42,.06)!important}
-#timesView{padding-left:82px!important}.times-arena{max-width:1160px!important}.field select#vendaParcelas{font-weight:700;color:#0e3c6d}.vendas-table-wrapper{box-shadow:0 12px 34px rgba(14,60,109,.06)!important}
+#timesView{padding-left:82px!important}.times-arena{max-width:1160px!important}.login-card.login-real-card{width:min(420px,calc(100% - 44px))!important;padding:30px 28px!important}.login-card.login-real-card img{width:170px!important;margin-bottom:16px!important}.login-card.login-real-card h2{margin-bottom:10px!important}.login-real-subtitle{font-size:12px!important;margin:0 0 14px!important}.login-tabs{gap:5px!important;margin:0 0 14px!important}.login-tab{font-size:10px!important;min-height:34px!important}.recuperar-discreto .recover-intro{display:grid;gap:4px;text-align:left;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10);border-radius:16px;padding:12px}.recuperar-discreto .recover-intro strong{color:#fff;font-size:13px}.recuperar-discreto .recover-intro span{color:rgba(255,255,255,.58);font-size:11px;line-height:1.35}.recuperar-discreto .recover-code-area{display:grid;gap:10px;margin-top:4px;padding-top:10px;border-top:1px solid rgba(255,255,255,.10)}.recover-send-btn{padding:12px 18px!important}.login-help{font-size:10px!important;color:rgba(255,255,255,.48)!important}.login-real-form{gap:9px!important}.login-real-form input,.login-real-form select{min-height:42px!important;border-radius:13px!important}.login-real-form label{font-size:10px!important}.field select#vendaParcelas{font-weight:700;color:#0e3c6d}.vendas-table-wrapper{box-shadow:0 12px 34px rgba(14,60,109,.06)!important}
 @media(max-width:1100px){#vendasView,#diarioView,#timesView{padding-left:20px!important;padding-right:20px!important}.home-academic-hero{grid-template-columns:1fr;padding:70px 24px 38px}.home-academic-grid{grid-template-columns:repeat(2,1fr)}.home-academic-footer-strip{grid-template-columns:1fr}.sidebar-open-btn{top:14px!important;left:14px!important}.diario-shell,.times-arena{height:auto!important;overflow:visible!important}.diario-cards{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:700px){.home-academic-grid,.diario-cards{grid-template-columns:1fr!important}.home-academic-content h1{font-size:2.1rem}.home-academic-card{padding:22px}.diario-header{flex-direction:column;align-items:flex-start!important}.diario-controls{width:100%}}
 
@@ -6032,6 +5561,8 @@ body{background:#f5f7fb!important;color:#111827!important;font-family:Arial,Helv
 #vendasView th:nth-child(12),#vendasView td:nth-child(12){width:96px!important;}
 #vendasView th:nth-child(13),#vendasView td:nth-child(13){width:120px!important;}
 
+.login-remember-row{display:flex!important;align-items:center!important;gap:8px!important;margin:3px 0 8px!important;color:rgba(255,255,255,.72)!important;font-size:12px!important;text-align:left!important;}
+.login-remember-row input{width:15px!important;height:15px!important;min-height:15px!important;accent-color:#f97316!important;}
 
 
 /* ===== VER SENHA + PRIMEIRO ACESSO ADM ===== */
