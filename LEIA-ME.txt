@@ -1,0 +1,74 @@
+PAINEL RUMO AO 1 MILHÃO - UNIFAHE
+VERSÃO PROTEGIDA PARA VERCEL
+
+O QUE FOI ALTERADO
+- A URL do Apps Script foi removida totalmente do frontend.
+- O navegador agora chama somente /api/meta.
+- /api/meta exige uma sessão válida antes de consultar a planilha.
+- A URL real e o token ficam somente nas variáveis de ambiente da Vercel.
+- A rota metaMilhao do Apps Script agora exige um token salvo nas Propriedades do script.
+- A API devolve ao frontend apenas os campos necessários; ID da planilha, fórmula e outros diagnósticos não são expostos.
+- Foi criada uma página de login em login.html.
+- A sessão usa cookie HttpOnly, SameSite=Strict e Secure em produção.
+- Foi adicionado botão Sair no painel.
+
+1) CONFIGURAR O APPS SCRIPT
+- Substitua o Code.gs pelo arquivo desta pasta.
+- Abra Apps Script > Configurações do projeto > Propriedades do script.
+- Crie a propriedade: META_API_TOKEN
+- Gere um token forte (ideal: 32+ caracteres aleatórios) e salve como valor.
+- Vá em Implantar > Gerenciar implantações > Editar > Nova versão > Implantar.
+- Mantenha o Web App acessível para a Vercel (normalmente "Qualquer pessoa").
+
+IMPORTANTE: não escreva META_API_TOKEN dentro do Code.gs. Ele deve ficar nas Propriedades do script.
+
+2) CONFIGURAR A VERCEL
+Em Project > Settings > Environment Variables, crie:
+
+META_APPS_SCRIPT_URL
+- Valor: URL /exec da implantação do Apps Script.
+
+META_APPS_SCRIPT_TOKEN
+- Valor: exatamente o mesmo valor de META_API_TOKEN do Apps Script.
+
+DASHBOARD_LOGIN_USER
+- Valor: usuário que será usado na tela de login.
+
+DASHBOARD_LOGIN_PASSWORD
+- Valor: senha do painel. Use uma senha forte.
+
+DASHBOARD_SESSION_SECRET
+- Valor: outro segredo aleatório forte, diferente da senha e do token do Apps Script.
+
+Depois de adicionar/alterar variáveis, faça um novo deploy na Vercel.
+
+3) GITHUB
+- Não faça upload de .env nem .env.local.
+- O .gitignore já bloqueia esses arquivos.
+- .env.example contém somente exemplos e pode permanecer no repositório.
+
+ARQUITETURA
+Navegador -> login -> cookie de sessão -> /api/meta -> Apps Script (token secreto) -> planilha
+
+O navegador NÃO recebe:
+- URL do Apps Script
+- token do Apps Script
+- senha configurada na Vercel
+- segredo de sessão
+- ID/fórmula da planilha retornados pelo Apps Script
+
+OBSERVAÇÃO
+O estado salvo no localStorage continua existindo para carregar os últimos números rapidamente após o login. A API permanece protegida mesmo que alguém tente chamá-la diretamente.
+
+
+ATUALIZAÇÃO - LOGIN INTEGRADO
+----------------------------
+A tela de login agora está dentro do próprio index.html. Não existe mais redirecionamento para login.html. Ao abrir a raiz do projeto, o index verifica /api/session: se houver sessão válida, mostra o painel; caso contrário, mostra o formulário de login no mesmo endereço.
+
+
+ATUALIZAÇÃO - TOTAL MÊS ANTERIOR
+----------------------------------
+O painel agora exibe "TOTAL MÊS ANTERIOR" no cabeçalho do histórico diário.
+A origem está configurada no Code.gs em CONFIG_META_MILHAO.CELULA_MES_ANTERIOR.
+Valor atual configurado: Agosto!AK34.
+Para trocar a célula, altere somente CELULA_MES_ANTERIOR e publique uma nova versão do Apps Script.
