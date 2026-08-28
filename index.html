@@ -3190,6 +3190,10 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
     font-size: 11px !important;
   }
 }
+
+/* Acesso direto: a antiga tela de login não deve ser exibida nem por um instante. */
+#loginOverlay { display: none !important; }
+
 </style>
 
 </head>
@@ -3205,7 +3209,7 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
 <div class="login-real-form login-panel recuperar-discreto" id="loginPanelRecuperar"><div class="recover-intro"><strong>Recuperar acesso</strong><span>Informe apenas seu @usuário e o e-mail cadastrado para receber o código.</span></div><label>@Usuário</label><input id="recuperarUsuarioInput" type="text" placeholder="Ex: @ana.silva"/><label>E-mail de recuperação</label><input id="recuperarEmailInput" type="email" placeholder="email cadastrado"/><button class="btn-primary recover-send-btn" type="button" onclick="gerarCodigoRecuperacao()">Enviar código</button><div class="recover-code-area"><label>Código recebido</label><input id="recuperarCodigoInput" type="text" placeholder="Código de 6 dígitos"/><label>Nova senha</label><input id="recuperarNovaSenhaInput" type="password" placeholder="Nova senha"/><button class="btn-primary" onclick="alterarSenhaComCodigo()">Alterar senha</button></div><div class="login-real-error" id="recuperarErroMsg"></div><p class="login-help">Código válido por 10 minutos.</p></div>
 </div>
 </div>
-<div id="mainPortal" style="display:none">
+<div id="mainPortal" style="display:block">
 <button type="button" class="sidebar-open-btn" id="toggleSidebarBtn" aria-label="Abrir menu">
 <span></span>
 <span></span>
@@ -3220,7 +3224,6 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
 <div class="nav-item" data-extra="painel" onclick="navegarPara('PAINEL_INDICADORES')">Painel de Indicadores</div>
 <div class="nav-item" data-extra="comissoes" onclick="navegarPara('COMISSOES')">Comissões</div>
 <div class="nav-item" data-extra="campanhas" onclick="navegarPara('CAMPANHAS')">Treinamentos e Campanhas</div>
-<div class="nav-item sair" onclick="encerrarSessao()">Sair</div>
 </div>
 <div id="conteudoDinamico">
 <!-- HOME / INICIAL -->
@@ -4487,7 +4490,8 @@ html, body, button, input, select, textarea, table, th, td, div, span, p, h1, h2
 
 <script>
 /* ===== PACOTE FINAL: LOGIN REAL, DIÁRIO, RANKING, TIMES GAMER E TEMPO REAL ===== */
-let usuarioLogado = null;
+let usuarioLogado = { id: 'ADM', nome: 'Administrador', perfil: 'gestor', usuario: 'ADM' };
+window.usuarioLogado = usuarioLogado;
 let usuariosSistemaCache = [];
 let campanhaTimesConfig = { inicio: '', fim: '', meta: 250000 };
 
@@ -14147,5 +14151,53 @@ body.theme-dark .membro-valor-restrito { color: #7d8fa6 !important; }
     .materiais-hero { flex-direction: column !important; }
 }
 </style>
+
+<script id="acesso-direto-sem-login">
+(function(){
+    const ACESSO_DIRETO = { id: 'ADM', nome: 'Administrador', perfil: 'gestor', usuario: 'ADM' };
+
+    async function iniciarAcessoDireto(){
+        window.usuarioLogado = ACESSO_DIRETO;
+        try { usuarioLogado = ACESSO_DIRETO; } catch(e) {}
+
+        const login = document.getElementById('loginOverlay');
+        if(login) login.remove();
+
+        const portal = document.getElementById('mainPortal');
+        if(portal) portal.style.display = 'block';
+
+        try {
+            if(typeof carregarTimesConfig === 'function') await carregarTimesConfig();
+            if(typeof carregarCampanhaTimes === 'function') await carregarCampanhaTimes();
+            if(typeof carregarSelects === 'function') carregarSelects();
+            if(typeof setDefaultTimesRange === 'function') setDefaultTimesRange();
+            if(typeof prepararSelectDashboardIndividual === 'function') prepararSelectDashboardIndividual();
+
+            const vendaData = document.getElementById('vendaData');
+            if(vendaData && !vendaData.value) vendaData.valueAsDate = new Date();
+
+            const vendaSelect = document.getElementById('vendaVendedor');
+            if(vendaSelect) vendaSelect.disabled = false;
+
+            if(typeof setupVendasRealtime === 'function') setupVendasRealtime();
+            if(typeof carregarVendas === 'function') carregarVendas();
+            if(typeof carregarTimes === 'function') carregarTimes();
+            if(typeof carregarDashboard === 'function') carregarDashboard();
+            if(typeof carregarDashboardIndividual === 'function') carregarDashboardIndividual();
+
+            if(typeof navegarPara === 'function') await navegarPara('home');
+        } catch(erro) {
+            console.error('Erro ao iniciar acesso direto:', erro);
+        }
+    }
+
+    if(document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', iniciarAcessoDireto, { once: true });
+    } else {
+        iniciarAcessoDireto();
+    }
+})();
+</script>
+
 </body>
 </html>
